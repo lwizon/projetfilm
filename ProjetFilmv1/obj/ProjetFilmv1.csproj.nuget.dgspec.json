@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\louis\\RiderProjects\\ProjetFilmv1\\ProjetFilmv1\\ProjetFilmv1.csproj": {}
+    "C:\\Users\\nicol\\RiderProjects\\projetfilmV1\\ProjetFilmv1\\ProjetFilmv1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\louis\\RiderProjects\\ProjetFilmv1\\ProjetFilmv1\\ProjetFilmv1.csproj": {
+    "C:\\Users\\nicol\\RiderProjects\\projetfilmV1\\ProjetFilmv1\\ProjetFilmv1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\louis\\RiderProjects\\ProjetFilmv1\\ProjetFilmv1\\ProjetFilmv1.csproj",
+        "projectUniqueName": "C:\\Users\\nicol\\RiderProjects\\projetfilmV1\\ProjetFilmv1\\ProjetFilmv1.csproj",
         "projectName": "ProjetFilmv1",
-        "projectPath": "C:\\Users\\louis\\RiderProjects\\ProjetFilmv1\\ProjetFilmv1\\ProjetFilmv1.csproj",
-        "packagesPath": "C:\\Users\\louis\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\louis\\RiderProjects\\ProjetFilmv1\\ProjetFilmv1\\obj\\",
+        "projectPath": "C:\\Users\\nicol\\RiderProjects\\projetfilmV1\\ProjetFilmv1\\ProjetFilmv1.csproj",
+        "packagesPath": "C:\\Users\\nicol\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\nicol\\RiderProjects\\projetfilmV1\\ProjetFilmv1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\louis\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\nicol\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0-windows"
@@ -62,7 +62,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Users\\louis\\.dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Users\\nicol\\.dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
