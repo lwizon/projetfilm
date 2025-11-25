@@ -1,0 +1,16 @@
+<Page x:Class="ProjetFilmv1.ConnexionPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Connexion">
+    <Grid Background="White">
+        <StackPanel Margin="20" VerticalAlignment="Top">
+            <TextBlock Text="Connexion" FontSize="24" FontWeight="Bold" Margin="0,0,0,10"/>
+            <TextBlock Text="Email:"/>
+            <TextBox x:Name="EmailTextBox" Width="300" Margin="0,4,0,8"/>
+            <TextBlock Text="Mot de passe:"/>
+            <PasswordBox x:Name="PasswordBox" Width="300" Margin="0,4,0,12"/>
+            <Button Content="Se connecter" Width="120" Click="Login_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>
+

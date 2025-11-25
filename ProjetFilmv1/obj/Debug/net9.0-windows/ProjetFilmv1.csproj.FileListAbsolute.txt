@@ -27,7 +27,6 @@ C:\Users\nicol\RiderProjects\projetfilmV1\ProjetFilmv1\bin\Debug\net9.0-windows\
 C:\Users\nicol\RiderProjects\projetfilmV1\ProjetFilmv1\obj\Debug\net9.0-windows\MainWindow.g.cs
 C:\Users\nicol\RiderProjects\projetfilmV1\ProjetFilmv1\obj\Debug\net9.0-windows\App.g.cs
 C:\Users\nicol\RiderProjects\projetfilmV1\ProjetFilmv1\obj\Debug\net9.0-windows\ProjetFilmv1_MarkupCompile.cache
-C:\Users\nicol\RiderProjects\projetfilmV1\ProjetFilmv1\obj\Debug\net9.0-windows\ProjetFilmv1_MarkupCompile.lref
 C:\Users\nicol\RiderProjects\projetfilmV1\ProjetFilmv1\obj\Debug\net9.0-windows\MainWindow.baml
 C:\Users\nicol\RiderProjects\projetfilmV1\ProjetFilmv1\obj\Debug\net9.0-windows\ProjetFilmv1.g.resources
 C:\Users\nicol\RiderProjects\projetfilmV1\ProjetFilmv1\obj\Debug\net9.0-windows\ProjetFilmv1.GeneratedMSBuildEditorConfig.editorconfig
@@ -61,3 +60,11 @@ C:\Users\pro\RiderProjects\projetfilmv1\ProjetFilmv1\obj\Debug\net9.0-windows\re
 C:\Users\pro\RiderProjects\projetfilmv1\ProjetFilmv1\obj\Debug\net9.0-windows\ProjetFilmv1.pdb
 C:\Users\pro\RiderProjects\projetfilmv1\ProjetFilmv1\obj\Debug\net9.0-windows\ProjetFilmv1.genruntimeconfig.cache
 C:\Users\pro\RiderProjects\projetfilmv1\ProjetFilmv1\obj\Debug\net9.0-windows\ref\ProjetFilmv1.dll
+C:\Users\nicol\RiderProjects\projetfilmV1\ProjetFilmv1\obj\Debug\net9.0-windows\InscriptionPage.baml
+C:\Users\nicol\RiderProjects\projetfilmV1\ProjetFilmv1\obj\Debug\net9.0-windows\InscriptionPage.g.cs
+C:\Users\nicol\RiderProjects\projetfilmV1\ProjetFilmv1\obj\Debug\net9.0-windows\AccueilPage.baml
+C:\Users\nicol\RiderProjects\projetfilmV1\ProjetFilmv1\obj\Debug\net9.0-windows\ConnexionPage.baml
+C:\Users\nicol\RiderProjects\projetfilmV1\ProjetFilmv1\obj\Debug\net9.0-windows\AccueilPage.g.cs
+C:\Users\nicol\RiderProjects\projetfilmV1\ProjetFilmv1\obj\Debug\net9.0-windows\ConnexionPage.g.cs
+C:\Users\nicol\RiderProjects\projetfilmV1\ProjetFilmv1\obj\Debug\net9.0-windows\FilmPage.baml
+C:\Users\nicol\RiderProjects\projetfilmV1\ProjetFilmv1\obj\Debug\net9.0-windows\FilmPage.g.cs

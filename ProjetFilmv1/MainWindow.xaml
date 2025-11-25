@@ -4,17 +4,22 @@
         Title="Projet Film" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="60"/>    
-            <RowDefinition Height="Auto"/>  
-            <RowDefinition Height="*"/>     
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
         <!-- NAVBAR -->
-        <DockPanel Grid.Row="0" Background="#222">
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="10,0,0,0">
+        <DockPanel Grid.Row="0" Background="#222" LastChildFill="False">
+            <!-- Left: logo / accueil -->
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" DockPanel.Dock="Left" Margin="10,0,0,0">
                 <Button Content="Accueil" Width="90" Margin="0,0,5,0" Click="Accueil_Click"/>
-                <Button Content="Inscription" Width="90" Margin="500,0,5,0" Click="Inscription_Click"/>
-                <Button Content="Connexion" Width="90" Margin="0,0,5,0" Click="Connexion_Click"/>
+            </StackPanel>
+
+            <!-- Right: actions -->
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" DockPanel.Dock="Right" Margin="0,0,10,0">
+                <Button Content="Inscription" Width="100" Margin="0,0,8,0" Click="Inscription_Click"/>
+                <Button Content="Connexion" Width="100" Click="Connexion_Click"/>
             </StackPanel>
         </DockPanel>
 

@@ -1,0 +1,21 @@
+<Page x:Class="ProjetFilmv1.InscriptionPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Inscription">
+    <Grid Background="White">
+        <StackPanel Margin="20" VerticalAlignment="Top">
+            <TextBlock Text="Inscription" FontSize="24" FontWeight="Bold" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Nom:"/>
+            <TextBox x:Name="NomTextBox" Width="300" Margin="0,4,0,8"/>
+
+            <TextBlock Text="Email:"/>
+            <TextBox x:Name="EmailTextBox" Width="300" Margin="0,4,0,8"/>
+
+            <TextBlock Text="Mot de passe:"/>
+            <PasswordBox x:Name="PasswordBox" Width="300" Margin="0,4,0,12"/>
+
+            <Button Content="S'inscrire" Width="120" Click="Register_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>
