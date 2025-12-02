@@ -1,9 +1,124 @@
 <Page x:Class="ProjetFilmv1.AccueilPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:models="clr-namespace:ProjetFilmv1.Models"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d"
       Title="Accueil">
-    <Grid Background="White">
-        <TextBlock Text="Bienvenue sur Projet Film" FontSize="26" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    <Grid Background="White" Margin="12">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header + Genre/Page selector (stacked vertically to avoid overlap) -->
+        <StackPanel Grid.Row="0" Orientation="Vertical" Margin="0,0,0,12">
+            <DockPanel Margin="0,0,0,6">
+                <TextBlock Text="Bienvenue sur Projet Film" FontSize="26" FontWeight="Bold" DockPanel.Dock="Left" VerticalAlignment="Center"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" DockPanel.Dock="Right" VerticalAlignment="Center">
+                    <TextBlock Text="Aller à la page :" VerticalAlignment="Center" Margin="0,0,6,0" FontWeight="SemiBold"/>
+                    <Border Background="#FFFDE7" Padding="4" CornerRadius="4" Margin="0,0,12,0">
+                        <ComboBox x:Name="PageComboBox" Width="120" VerticalAlignment="Center" IsEnabled="True" ToolTip="Sélectionner une page (1..20)"/>
+                    </Border>
+                    <!-- Refresh button removed as requested -->
+                </StackPanel>
+            </DockPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,0">
+                <TextBlock Text="Filtrer par genre :" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                <ComboBox x:Name="GenreComboBox" Width="200" DisplayMemberPath="Name" SelectedValuePath="Id"/>
+            </StackPanel>
+        </StackPanel>
+
+        <!-- Content: left list + right details -->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <!-- two equal columns: left = 1*, splitter = Auto(width), right = 1* -->
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="12"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Left: vertical list -->
+            <Border Grid.Column="0" BorderBrush="#DDD" BorderThickness="1" CornerRadius="6">
+                <DockPanel>
+                    <ListBox x:Name="MoviesListBox" ItemsSource="{Binding Movies}" SelectedItem="{Binding SelectedMovie, Mode=TwoWay}" VirtualizingStackPanel.IsVirtualizing="True" ScrollViewer.VerticalScrollBarVisibility="Auto" HorizontalContentAlignment="Stretch" DockPanel.Dock="Top" BorderThickness="0">
+                        <ListBox.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <VirtualizingStackPanel Orientation="Vertical" />
+                            </ItemsPanelTemplate>
+                        </ListBox.ItemsPanel>
+
+                        <ListBox.ItemContainerStyle>
+                            <Style TargetType="ListBoxItem">
+                                <Setter Property="Margin" Value="8"/>
+                                <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                                <Setter Property="Background" Value="Transparent"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#F5F5F5"/>
+                                    </Trigger>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter Property="Background" Value="#E3F2FD"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </ListBox.ItemContainerStyle>
+
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Border BorderBrush="#DDD" BorderThickness="1" CornerRadius="6" Padding="8" Height="160">
+                                    <DockPanel LastChildFill="True">
+                                        <!-- slightly larger poster to be more visible -->
+                                        <Image Source="{Binding PosterFullPath}" Width="120" Height="150" Stretch="UniformToFill" DockPanel.Dock="Left" Margin="0,0,12,0" />
+                                        <StackPanel VerticalAlignment="Top">
+                                            <TextBlock Text="{Binding Title}" FontWeight="Bold" TextWrapping="Wrap"/>
+                                            <TextBlock Text="{Binding VoteAverage, StringFormat=Note : {0:N1}}" Margin="0,6,0,6"/>
+                                            <TextBlock Text="{Binding Overview}" TextWrapping="Wrap" MaxHeight="40"/>
+                                        </StackPanel>
+                                    </DockPanel>
+                                </Border>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+
+                    <!-- Pagination footer -->
+                    <StackPanel DockPanel.Dock="Bottom" Orientation="Vertical" HorizontalAlignment="Center" Margin="0,8,0,8">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Button x:Name="PrevPageButton" Content="Précédent" Width="90" Margin="8"/>
+                            <TextBlock x:Name="PageText" VerticalAlignment="Center" Margin="8"/>
+                            <Button x:Name="NextPageButton" Content="Suivant" Width="90" Margin="8"/>
+                            <Button x:Name="LoadAllButton" Content="Charger tout" Width="110" Margin="8"/>
+                        </StackPanel>
+
+                        <!-- Visible page buttons (1..20) -->
+                        <Border Background="#F3E5F5" CornerRadius="6" Padding="6" Margin="8,8,8,0">
+                            <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
+                                <WrapPanel x:Name="PageButtonsPanel" Orientation="Horizontal" HorizontalAlignment="Center"/>
+                            </ScrollViewer>
+                        </Border>
+                     
+                     </StackPanel>
+                </DockPanel>
+            </Border>
+
+            <!-- splitter -->
+            <GridSplitter Grid.Column="1" Width="12" HorizontalAlignment="Stretch" Background="Transparent" ShowsPreview="True"/>
+
+            <!-- Right: details panel -->
+            <Border Grid.Column="2" BorderBrush="#EEE" BorderThickness="1" CornerRadius="6" Padding="12">
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <StackPanel>
+                        <!-- Make the detail poster scale with the right column (max width) -->
+                        <Image x:Name="DetailPosterImage" Width="400" Height="600" Stretch="UniformToFill" HorizontalAlignment="Left" Margin="0,0,0,12"/>
+                        <TextBlock x:Name="DetailTitleText" FontSize="22" FontWeight="Bold" TextWrapping="Wrap" Margin="0,0,0,8"/>
+                        <TextBlock x:Name="DetailVoteText" FontSize="14" Margin="0,0,0,12"/>
+                        <TextBlock Text="Résumé:" FontWeight="Bold" Margin="0,0,0,6"/>
+                        <TextBlock x:Name="DetailOverviewText" TextWrapping="Wrap"/>
+                    </StackPanel>
+                </ScrollViewer>
+            </Border>
+        </Grid>
     </Grid>
 </Page>
-
