@@ -25,18 +25,97 @@
 
         <!-- BARRE DE RECHERCHE -->
         <Grid Grid.Row="1" Margin="10,8">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <TextBox x:Name="SearchBox"
-                         Width="320"
-                         Height="30"
-                         VerticalAlignment="Center"
-                         Margin="0,0,8,0"
-                         ToolTip="Rechercher un film..."/>
-                <Button Content="Rechercher"
-                        Width="100"
-                        Height="30"
-                        VerticalAlignment="Center"
-                        Click="Search_Click"/>
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                <!-- Barre de recherche épurée (arrondie, ombre légère) -->
+                <Grid>
+                    <Border CornerRadius="20" Background="#FFFFFFFF" Padding="6" Width="520" Height="44">
+                        <Border.Effect>
+                            <DropShadowEffect Color="#000000" BlurRadius="12" ShadowDepth="0" Opacity="0.08" />
+                        </Border.Effect>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+
+                            <!-- Icône loupe -->
+                            <TextBlock Text="🔍" VerticalAlignment="Center" Margin="10,4,8,4" FontSize="14" Opacity="0.6" />
+
+                            <!-- Zone de saisie sans bordure pour un rendu épuré -->
+                            <TextBox x:Name="SearchBox"
+                                     Grid.Column="1"
+                                     Background="Transparent"
+                                     BorderThickness="0"
+                                     VerticalContentAlignment="Center"
+                                     FontSize="14"
+                                     Padding="4,0"
+                                     TextChanged="SearchBox_TextChanged"
+                                     KeyDown="SearchBox_KeyDown"
+                                     ToolTip="Rechercher un film..." />
+
+                            <!-- Bouton de recherche style iOS -->
+                            <Button Grid.Column="2"
+                                    Content="Rechercher"
+                                    Click="Search_Click"
+                                    VerticalAlignment="Center"
+                                    Margin="6"
+                                    Padding="10,4"
+                                    Cursor="Hand">
+                                <Button.Template>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Background="#007AFF" CornerRadius="14" Padding="6,2" SnapsToDevicePixels="True">
+                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" RecognizesAccessKey="True" />
+                                        </Border>
+                                    </ControlTemplate>
+                                </Button.Template>
+                                <Button.Foreground>White</Button.Foreground>
+                            </Button>
+                        </Grid>
+                    </Border>
+                </Grid>
+
+                <!-- Suggestions d'auto-complétion stylées -->
+                <Border x:Name="SuggestionsBorder" Width="520" CornerRadius="12" Margin="0,8,0,0" Background="#FFFFFFFF" Visibility="Collapsed">
+                    <Border.Effect>
+                        <DropShadowEffect Color="#000000" BlurRadius="12" ShadowDepth="0" Opacity="0.06" />
+                    </Border.Effect>
+                    <ListBox x:Name="SearchSuggestions"
+                             MaxHeight="260"
+                             ScrollViewer.VerticalScrollBarVisibility="Auto"
+                             MouseDoubleClick="SearchSuggestions_MouseDoubleClick"
+                             BorderThickness="0"
+                             Padding="6"
+                             Background="Transparent"
+                             >
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Border Padding="6" CornerRadius="8" Background="Transparent">
+                                    <StackPanel Orientation="Horizontal" Margin="0,4">
+                                        <!-- Affiche (poster) du film dans un bord arrondi -->
+                                        <Border Width="40" Height="60" CornerRadius="6" ClipToBounds="True" Background="#EEE">
+                                            <Image Source="{Binding PosterImage}" Stretch="UniformToFill" />
+                                        </Border>
+
+                                        <StackPanel Orientation="Vertical" Margin="12,0,0,0" Width="360">
+                                            <!-- Titre du film en gras -->
+                                            <TextBlock Text="{Binding Title}" FontWeight="Bold" FontSize="14" Foreground="#222" />
+
+                                            <StackPanel Orientation="Horizontal" Margin="0,6,0,0">
+                                                <!-- Note du film, avec icône étoile léger -->
+                                                <TextBlock Text="★" Foreground="#FFD54A" FontSize="12" Margin="0,0,6,0" />
+                                                <TextBlock Text="{Binding Rating}" FontSize="12" Foreground="#777" />
+                                            </StackPanel>
+
+                                            <!-- Aperçu tronqué -->
+                                            <TextBlock Text="{Binding Description}" FontSize="12" Foreground="#555" TextTrimming="CharacterEllipsis" MaxHeight="40" />
+                                        </StackPanel>
+                                    </StackPanel>
+                                </Border>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Border>
             </StackPanel>
         </Grid>
 

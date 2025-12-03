@@ -64,5 +64,22 @@ namespace ProjetFilmv1.Services
             var data = JsonSerializer.Deserialize<GenresResponse>(json, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
             return data?.Genres ?? new List<Genre>();
         }
+
+        // Recherche par texte (TMDB)
+        public async Task<TmdbResponse?> SearchMoviesResponseAsync(string query, int page = 1)
+        {
+            var url = $"search/movie?api_key={_apiKey}&language=fr-FR&query={Uri.EscapeDataString(query)}&page={page}&include_adult=false";
+            using var resp = await _http.GetAsync(url);
+            resp.EnsureSuccessStatusCode();
+            var json = await resp.Content.ReadAsStringAsync();
+            var data = JsonSerializer.Deserialize<TmdbResponse>(json, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+            return data;
+        }
+
+        public async Task<List<Movie>> SearchMoviesAsync(string query, int page = 1)
+        {
+            var data = await SearchMoviesResponseAsync(query, page);
+            return data?.Results ?? new List<Movie>();
+        }
     }
 }
