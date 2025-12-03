@@ -7,7 +7,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8edff7d4-ad7d-4e2e-87f3-a43ca20b22ac" name="Changes" comment="" />
+    <list default="true" id="8edff7d4-ad7d-4e2e-87f3-a43ca20b22ac" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/ProjetFilmv1/Models/SuggestionItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/MainWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/MainWindow.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/MainWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/MainWindow.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/ProjetFilmv1.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/ProjetFilmv1.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/bin/Debug/net9.0-windows/ProjetFilmv1.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/bin/Debug/net9.0-windows/ProjetFilmv1.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/bin/Debug/net9.0-windows/ProjetFilmv1.exe" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/bin/Debug/net9.0-windows/ProjetFilmv1.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/bin/Debug/net9.0-windows/ProjetFilmv1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/bin/Debug/net9.0-windows/ProjetFilmv1.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/bin/Debug/net9.0-windows/tmdb_debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/bin/Debug/net9.0-windows/tmdb_debug.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/MainWindow.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/MainWindow.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.g.resources" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.g.resources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/apphost.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/ref/ProjetFilmv1.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/ref/ProjetFilmv1.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/refint/ProjetFilmv1.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/refint/ProjetFilmv1.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/obj/rider.project.restore.info" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,7 +62,7 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/ProjetFilmv1/SearchResultsPage.xaml.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ProjetFilmv1/Models/SuggestionItem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/MainWindow.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/pro/RiderProjects/projetfilmv1/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.AssemblyInfo.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/pro/RiderProjects/projetfilmv1/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.AssemblyInfo.cs" root0="SKIP_HIGHLIGHTING" />
