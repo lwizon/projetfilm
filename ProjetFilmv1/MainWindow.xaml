@@ -1,6 +1,7 @@
 ﻿<Window x:Class="ProjetFilmv1.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:models="clr-namespace:ProjetFilmv1.Models"
         Title="Projet Film" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
@@ -10,17 +11,102 @@
         </Grid.RowDefinitions>
 
         <!-- NAVBAR -->
-        <DockPanel Grid.Row="0" Background="#222" LastChildFill="False">
-            <!-- Left: logo / accueil -->
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" DockPanel.Dock="Left" Margin="10,0,0,0">
-                <Button Content="Accueil" Width="90" Margin="0,0,5,0" Click="Accueil_Click"/>
-            </StackPanel>
+        <DockPanel Grid.Row="0" LastChildFill="False">
+            <DockPanel.Resources>
+                <LinearGradientBrush x:Key="NavBackground" StartPoint="0,0" EndPoint="0,1">
+                    <GradientStop Color="#0F1724" Offset="0"/>
+                    <GradientStop Color="#0B1220" Offset="1"/>
+                </LinearGradientBrush>
 
-            <!-- Right: actions -->
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" DockPanel.Dock="Right" Margin="0,0,10,0">
-                <Button Content="Inscription" Width="100" Margin="0,0,8,0" Click="Inscription_Click"/>
-                <Button Content="Connexion" Width="100" Click="Connexion_Click"/>
-            </StackPanel>
+                <Style x:Key="TopButtonStyle" TargetType="Button">
+                    <Setter Property="Background" Value="Transparent" />
+                    <Setter Property="Foreground" Value="White" />
+                    <Setter Property="BorderThickness" Value="0" />
+                    <Setter Property="Padding" Value="10,6" />
+                    <Setter Property="FontSize" Value="14" />
+                    <Setter Property="Cursor" Value="Hand" />
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border x:Name="bd" Background="{TemplateBinding Background}" CornerRadius="8" Padding="{TemplateBinding Padding}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="bd" Property="Background" Value="#20FFFFFF"/>
+                                    </Trigger>
+                                    <Trigger Property="IsPressed" Value="True">
+                                        <Setter TargetName="bd" Property="Background" Value="#30FFFFFF"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </DockPanel.Resources>
+
+            <!-- Background + shadow -->
+            <Border Background="{StaticResource NavBackground}" DockPanel.Dock="Top" Height="60">
+                <Border.Effect>
+                    <DropShadowEffect Color="#000000" BlurRadius="8" ShadowDepth="1" Opacity="0.12"/>
+                </Border.Effect>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Logo -->
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="14,0" Grid.Column="0">
+                        <Border Width="36" Height="36" CornerRadius="18">
+                            <Border.Background>
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                    <GradientStop Color="#4F46E5" Offset="0"/>
+                                    <GradientStop Color="#06B6D4" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Border.Background>
+                        </Border>
+                        <TextBlock Text="ProjetFilm" Foreground="White" FontWeight="SemiBold" FontSize="16" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                    </StackPanel>
+
+                    <!-- Center navigation -->
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1">
+                        <Button Style="{StaticResource TopButtonStyle}" Click="Accueil_Click" Margin="4,0">Accueil</Button>
+                        <Button Style="{StaticResource TopButtonStyle}" Click="Film_Click" Margin="4,0">Films</Button>
+                        <Button Style="{StaticResource TopButtonStyle}" Click="Inscription_Click" Margin="4,0">Inscription</Button>
+                        <Button Style="{StaticResource TopButtonStyle}" Click="Connexion_Click" Margin="4,0">Connexion</Button>
+                    </StackPanel>
+
+                    <!-- Right actions: small profile + settings -->
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="2" Margin="0,0,14,0">
+                        <!-- small icon button (could be notifications) -->
+                        <Button Style="{StaticResource TopButtonStyle}" Margin="0,0,8,0" Width="36" Height="36">
+                            <TextBlock Text="⚙" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Button>
+
+                        <!-- Profile avatar (bouton) avec menu -->
+                        <Button x:Name="ProfileButton" Width="36" Height="36" Background="#1F2937" BorderThickness="0" Click="ProfileButton_Click">
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border CornerRadius="18" Background="{TemplateBinding Background}">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+                            <TextBlock Text="P" Foreground="White" FontWeight="Bold"/>
+                            <Button.ContextMenu>
+                                <ContextMenu>
+                                    <MenuItem Header="Profil" Click="ProfileMenu_Profil_Click" />
+                                    <MenuItem Header="Paramètres" Click="ProfileMenu_Settings_Click" />
+                                    <Separator />
+                                    <MenuItem Header="Déconnexion" Click="ProfileMenu_Logout_Click" />
+                                </ContextMenu>
+                            </Button.ContextMenu>
+                        </Button>
+                    </StackPanel>
+                </Grid>
+            </Border>
         </DockPanel>
 
         <!-- BARRE DE RECHERCHE -->
@@ -39,8 +125,13 @@
                                 <ColumnDefinition Width="Auto" />
                             </Grid.ColumnDefinitions>
 
-                            <!-- Icône loupe -->
-                            <TextBlock Text="🔍" VerticalAlignment="Center" Margin="10,4,8,4" FontSize="14" Opacity="0.6" />
+                            <!-- Icône loupe (vector) -->
+                            <Viewbox Width="18" Height="18" VerticalAlignment="Center" Margin="10,4,8,4" Opacity="0.7">
+                                <Canvas Width="24" Height="24">
+                                    <Path Data="M15.5,14h-0.8l-0.3-0.3a6.5,6.5 0 1 0-1,1l0.3,0.3v0.8L20,20.5 21.5,19 15.5,14z M10,15a5,5 0 1 1 0-10 5,5 0 0 1 0,10z"
+                                          Fill="#666" Stretch="Uniform" />
+                                </Canvas>
+                            </Viewbox>
 
                             <!-- Zone de saisie sans bordure pour un rendu épuré -->
                             <TextBox x:Name="SearchBox"
@@ -76,10 +167,13 @@
                 </Grid>
 
                 <!-- Suggestions d'auto-complétion stylées -->
-                <Border x:Name="SuggestionsBorder" Width="520" CornerRadius="12" Margin="0,8,0,0" Background="#FFFFFFFF" Visibility="Collapsed">
+                <Border x:Name="SuggestionsBorder" Width="520" CornerRadius="12" Margin="0,8,0,0" Background="#FFFFFFFF" Visibility="Collapsed" Opacity="0">
                     <Border.Effect>
                         <DropShadowEffect Color="#000000" BlurRadius="12" ShadowDepth="0" Opacity="0.06" />
                     </Border.Effect>
+                    <Border.RenderTransform>
+                        <TranslateTransform Y="-6" />
+                    </Border.RenderTransform>
                     <ListBox x:Name="SearchSuggestions"
                              MaxHeight="260"
                              ScrollViewer.VerticalScrollBarVisibility="Auto"
@@ -89,7 +183,7 @@
                              Background="Transparent"
                              >
                         <ListBox.ItemTemplate>
-                            <DataTemplate>
+                            <DataTemplate DataType="{x:Type models:SuggestionItem}">
                                 <Border Padding="6" CornerRadius="8" Background="Transparent">
                                     <StackPanel Orientation="Horizontal" Margin="0,4">
                                         <!-- Affiche (poster) du film dans un bord arrondi -->

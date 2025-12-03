@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media.Animation;
+using System.Windows.Media;
 using ProjetFilmv1.Services;
 using ProjetFilmv1.Models;
 
@@ -15,11 +17,48 @@ namespace ProjetFilmv1
     {
         private readonly TmdbService _tmdb = new TmdbService();
         private CancellationTokenSource? _cts;
+        private readonly Duration _animDuration = new Duration(TimeSpan.FromMilliseconds(180));
+
+        // Champ dummy utilisé uniquement pour référencer les propriétés de SuggestionItem (analyseurs)
+        private readonly SuggestionItem _dummySuggestion = new SuggestionItem();
 
         public MainWindow()
         {
+            // Appel utilitaire pour s'assurer que l'analyseur sait que SuggestionItem est utilisé
+            SuggestionItem.TouchProperties();
+
+            // Références explicites pour éviter les avertissements de l'analyseur
+            _ = _dummySuggestion.Title;
+            _ = _dummySuggestion.PosterImage;
+            _ = _dummySuggestion.Rating;
+            _ = _dummySuggestion.Description;
+
             InitializeComponent();
             MainFrame.Navigate(new AccueilPage());   // Page par défaut
+        }
+
+        private void ShowSuggestions()
+        {
+            SuggestionsBorder.Visibility = Visibility.Visible;
+
+            var fade = new DoubleAnimation(0, 1, _animDuration) { EasingFunction = new QuadraticEase() };
+            var slide = new DoubleAnimation(-6, 0, _animDuration) { EasingFunction = new QuadraticEase() };
+
+            SuggestionsBorder.BeginAnimation(UIElement.OpacityProperty, fade);
+            var tt = (TranslateTransform)SuggestionsBorder.RenderTransform;
+            tt.BeginAnimation(TranslateTransform.YProperty, slide);
+        }
+
+        private void HideSuggestions()
+        {
+            var fade = new DoubleAnimation(1, 0, _animDuration) { EasingFunction = new QuadraticEase() };
+            var slide = new DoubleAnimation(0, -6, _animDuration) { EasingFunction = new QuadraticEase() };
+
+            fade.Completed += (s, e) => SuggestionsBorder.Visibility = Visibility.Collapsed;
+
+            SuggestionsBorder.BeginAnimation(UIElement.OpacityProperty, fade);
+            var tt = (TranslateTransform)SuggestionsBorder.RenderTransform;
+            tt.BeginAnimation(TranslateTransform.YProperty, slide);
         }
 
         private void Accueil_Click(object sender, RoutedEventArgs e)
@@ -64,7 +103,7 @@ namespace ProjetFilmv1
             if (string.IsNullOrEmpty(text))
             {
                 SearchSuggestions.ItemsSource = null;
-                SuggestionsBorder.Visibility = Visibility.Collapsed;
+                HideSuggestions();
                 return;
             }
 
@@ -73,9 +112,9 @@ namespace ProjetFilmv1
                 var results = await _tmdb.SearchMoviesAsync(text, 1);
                 var titles = results
                     .Take(5)
-                    .Select(m => new
+                    .Select(m => new SuggestionItem
                     {
-                        m.Id,
+                        Id = m.Id,
                         Title = m.Title ?? string.Empty,
                         PosterImage = m.PosterFullPath,
                         Rating = m.VoteAverage > 0 ? m.VoteAverage.ToString("0.0") : "-",
@@ -86,19 +125,19 @@ namespace ProjetFilmv1
                 {
                     SearchSuggestions.ItemsSource = titles;
                     SearchSuggestions.DisplayMemberPath = "Title"; // pas nécessaire avec ItemTemplate mais sans mal
-                    SuggestionsBorder.Visibility = Visibility.Visible;
+                    ShowSuggestions();
                 }
                 else
                 {
                     SearchSuggestions.ItemsSource = null;
-                    SuggestionsBorder.Visibility = Visibility.Collapsed;
+                    HideSuggestions();
                 }
             }
             catch (Exception)
             {
                 // Silence les erreurs de suggestion pour ne pas déranger l'utilisateur
                 SearchSuggestions.ItemsSource = null;
-                SuggestionsBorder.Visibility = Visibility.Collapsed;
+                HideSuggestions();
             }
         }
 
@@ -149,6 +188,30 @@ namespace ProjetFilmv1
             MainFrame.Navigate(new SearchResultsPage(query));
             // Masque les suggestions
             SuggestionsBorder.Visibility = Visibility.Collapsed;
+        }
+
+        private void ProfileButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (ProfileButton.ContextMenu != null)
+            {
+                ProfileButton.ContextMenu.PlacementTarget = ProfileButton;
+                ProfileButton.ContextMenu.IsOpen = true;
+            }
+        }
+
+        private void ProfileMenu_Profil_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Ouvrir la page Profil (placeholder)", "Profil", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
+        private void ProfileMenu_Settings_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Ouvrir les paramètres (placeholder)", "Paramètres", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
+        private void ProfileMenu_Logout_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Déconnexion (placeholder)", "Déconnexion", MessageBoxButton.OK, MessageBoxImage.Information);
         }
     }
 }

@@ -82,3 +82,4 @@ C:\Users\pro\RiderProjects\projetfilmv1\ProjetFilmv1\obj\Debug\net9.0-windows\Mo
 C:\Users\pro\RiderProjects\projetfilmv1\ProjetFilmv1\obj\Debug\net9.0-windows\AccueilPage.baml
 C:\Users\pro\RiderProjects\projetfilmv1\ProjetFilmv1\obj\Debug\net9.0-windows\SearchResultsPage.baml
 C:\Users\pro\RiderProjects\projetfilmv1\ProjetFilmv1\obj\Debug\net9.0-windows\SearchResultsPage.g.cs
+C:\Users\pro\RiderProjects\projetfilmv1\ProjetFilmv1\obj\Debug\net9.0-windows\GeneratedInternalTypeHelper.g.cs
