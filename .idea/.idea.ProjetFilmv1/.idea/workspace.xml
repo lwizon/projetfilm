@@ -8,27 +8,91 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8edff7d4-ad7d-4e2e-87f3-a43ca20b22ac" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ProjetFilmv1/Models/SuggestionItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/MainWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/MainWindow.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/MainWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/MainWindow.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/ProjetFilmv1.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/ProjetFilmv1.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/bin/Debug/net9.0-windows/ProjetFilmv1.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/bin/Debug/net9.0-windows/ProjetFilmv1.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/bin/Debug/net9.0-windows/ProjetFilmv1.exe" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/bin/Debug/net9.0-windows/ProjetFilmv1.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/bin/Debug/net9.0-windows/ProjetFilmv1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/bin/Debug/net9.0-windows/ProjetFilmv1.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/bin/Debug/net9.0-windows/tmdb_debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/bin/Debug/net9.0-windows/tmdb_debug.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/copilot.data.migration.ask2agent.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/copilot.data.migration.ask2agent.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Checkout_at_02_12_2025_16_35_[Changes]/ProjetFilmv1.AssemblyInfoInputs.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Checkout_at_02_12_2025_16_35_[Changes]/ProjetFilmv1.assets.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Checkout_at_02_12_2025_16_35_[Changes]/project.nuget.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Checkout_at_02_12_2025_16_35_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Checkout_at_02_12_2025_16_35__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_11_2025_09_31_[Changes]/ProjetFilmv1.AssemblyInfoInputs.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_11_2025_09_31_[Changes]/ProjetFilmv1.assets.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_11_2025_09_31_[Changes]/ProjetFilmv1.csproj.CoreCompileInputs.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_11_2025_09_31_[Changes]/ProjetFilmv1.g.resources" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_11_2025_09_31_[Changes]/project.nuget.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_11_2025_09_31_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_11_2025_09_31__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_11_2025_09_36_[Changes]/ProjetFilmv1.AssemblyInfoInputs.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_11_2025_09_36_[Changes]/ProjetFilmv1.assets.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_11_2025_09_36_[Changes]/ProjetFilmv1.csproj.CoreCompileInputs.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_11_2025_09_36_[Changes]/ProjetFilmv1.g.resources" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_11_2025_09_36_[Changes]/project.nuget.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_11_2025_09_36_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_11_2025_09_36__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_11_2025_09_50_[Changes]/ProjetFilmv1.AssemblyInfoInputs.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_11_2025_09_50_[Changes]/ProjetFilmv1.assets.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_11_2025_09_50_[Changes]/ProjetFilmv1.csproj.CoreCompileInputs.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_11_2025_09_50_[Changes]/ProjetFilmv1.g.resources" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_11_2025_09_50_[Changes]/project.nuget.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_11_2025_09_50_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_11_2025_09_50__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_11_2025_10_59_[Changes]/ProjetFilmv1.AssemblyInfoInputs.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_11_2025_10_59_[Changes]/ProjetFilmv1.assets.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_11_2025_10_59_[Changes]/ProjetFilmv1.csproj.CoreCompileInputs.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_11_2025_10_59_[Changes]/ProjetFilmv1.g.resources" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_11_2025_10_59_[Changes]/project.nuget.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_11_2025_10_59_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_11_2025_10_59__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Update_at_02_12_2025_16_14_[Changes]/ProjetFilmv1.AssemblyInfoInputs.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Update_at_02_12_2025_16_14_[Changes]/ProjetFilmv1.assets.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Update_at_02_12_2025_16_14_[Changes]/ProjetFilmv1.csproj.CoreCompileInputs.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Update_at_02_12_2025_16_14_[Changes]/ProjetFilmv1.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Update_at_02_12_2025_16_14_[Changes]/ProjetFilmv1.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Update_at_02_12_2025_16_14_[Changes]/ProjetFilmv1.g.resources" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Update_at_02_12_2025_16_14_[Changes]/ProjetFilmv1.genruntimeconfig.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Update_at_02_12_2025_16_14_[Changes]/ProjetFilmv1.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Update_at_02_12_2025_16_14_[Changes]/ProjetFilmv11.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Update_at_02_12_2025_16_14_[Changes]/ProjetFilmv11.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Update_at_02_12_2025_16_14_[Changes]/ProjetFilmv12.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Update_at_02_12_2025_16_14_[Changes]/ProjetFilmv13.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Update_at_02_12_2025_16_14_[Changes]/apphost.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Update_at_02_12_2025_16_14_[Changes]/project.nuget.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Update_at_02_12_2025_16_14_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Update_at_02_12_2025_16_14__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Update_at_02_12_2025_16_38_[Changes]/ProjetFilmv1.AssemblyInfoInputs.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Update_at_02_12_2025_16_38_[Changes]/ProjetFilmv1.assets.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Update_at_02_12_2025_16_38_[Changes]/ProjetFilmv1.csproj.CoreCompileInputs.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Update_at_02_12_2025_16_38_[Changes]/ProjetFilmv1.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Update_at_02_12_2025_16_38_[Changes]/ProjetFilmv1.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Update_at_02_12_2025_16_38_[Changes]/ProjetFilmv1.genruntimeconfig.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Update_at_02_12_2025_16_38_[Changes]/ProjetFilmv1.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Update_at_02_12_2025_16_38_[Changes]/ProjetFilmv11.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Update_at_02_12_2025_16_38_[Changes]/ProjetFilmv11.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Update_at_02_12_2025_16_38_[Changes]/ProjetFilmv12.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Update_at_02_12_2025_16_38_[Changes]/ProjetFilmv13.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Update_at_02_12_2025_16_38_[Changes]/apphost.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Update_at_02_12_2025_16_38_[Changes]/project.nuget.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Update_at_02_12_2025_16_38_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Update_at_02_12_2025_16_38__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Update_at_26_11_2025_09_50_[Changes]/ProjetFilmv1.AssemblyInfoInputs.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Update_at_26_11_2025_09_50_[Changes]/ProjetFilmv1.assets.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Update_at_26_11_2025_09_50_[Changes]/ProjetFilmv1.csproj.CoreCompileInputs.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Update_at_26_11_2025_09_50_[Changes]/ProjetFilmv1.g.resources" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Update_at_26_11_2025_09_50_[Changes]/project.nuget.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Update_at_26_11_2025_09_50_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Update_at_26_11_2025_09_50__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/App.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/App.g.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/MainWindow.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/MainWindow.g.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.GlobalUsings.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.GlobalUsings.g.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.g.resources" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.g.resources" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.sourcelink.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/apphost.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/ref/ProjetFilmv1.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/ref/ProjetFilmv1.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/refint/ProjetFilmv1.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/refint/ProjetFilmv1.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/obj/ProjetFilmv1.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/obj/ProjetFilmv1.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/obj/ProjetFilmv1.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/obj/ProjetFilmv1.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/obj/project.nuget.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjetFilmv1/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/obj/project.packagespec.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjetFilmv1/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/obj/rider.project.model.nuget.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjetFilmv1/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/obj/rider.project.restore.info" afterDir="false" />
@@ -55,12 +119,12 @@
     &quot;assignee&quot;: &quot;glaurdev&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/lwizon/projetfilm.git&quot;,
-    &quot;accountId&quot;: &quot;dd898bcb-8df7-43e6-ad0b-ed79b36596d1&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/lwizon/projetfilm.git",
+    "accountId": "e874464a-f4a5-4bfb-8a28-32012fc8a8b0"
   }
-}</component>
+}]]></component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/ProjetFilmv1/Models/SuggestionItem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/MainWindow.g.cs" root0="SKIP_HIGHLIGHTING" />
@@ -78,26 +142,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;.NET Project.ProjetFilmv1.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1&quot;: &quot;true&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Project.ProjetFilmv1.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "emre",
+    "junie.onboarding.icon.badge.shown": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="ProjetFilmv1" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
@@ -138,6 +202,7 @@
       <workItem from="1764145830965" duration="8256000" />
       <workItem from="1764681136288" duration="2937000" />
       <workItem from="1764749970671" duration="3925000" />
+      <workItem from="1768403634993" duration="37000" />
     </task>
     <task id="LOCAL-00001" summary="init V2">
       <option name="closed" value="true" />
@@ -187,6 +252,17 @@
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="init V2" />
