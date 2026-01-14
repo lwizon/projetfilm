@@ -1,2 +1,4 @@
 ﻿.idea
 obj/
+**/obj/
+**/bin/
