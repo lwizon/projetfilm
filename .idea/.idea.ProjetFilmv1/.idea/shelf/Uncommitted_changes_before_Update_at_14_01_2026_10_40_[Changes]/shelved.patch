@@ -1,0 +1,225 @@
+Index: ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.GeneratedMSBuildEditorConfig.editorconfig
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>is_global = true\r\nbuild_property.TargetFramework = net9.0-windows\r\nbuild_property.TargetPlatformMinVersion = 7.0\r\nbuild_property.UsingMicrosoftNETSdkWeb = \r\nbuild_property.ProjectTypeGuids = \r\nbuild_property.InvariantGlobalization = \r\nbuild_property.PlatformNeutralAssembly = \r\nbuild_property.EnforceExtendedAnalyzerRules = \r\nbuild_property._SupportedPlatformList = Linux,macOS,Windows\r\nbuild_property.RootNamespace = ProjetFilmv1\r\nbuild_property.ProjectDir = C:\\Users\\pro\\RiderProjects\\projetfilmv1\\ProjetFilmv1\\\r\nbuild_property.EnableComHosting = \r\nbuild_property.EnableGeneratedComInterfaceComImportInterop = \r\nbuild_property.CsWinRTUseWindowsUIXamlProjections = false\r\nbuild_property.EffectiveAnalysisLevelStyle = 9.0\r\nbuild_property.EnableCodeStyleSeverity = \r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.GeneratedMSBuildEditorConfig.editorconfig b/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.GeneratedMSBuildEditorConfig.editorconfig
+--- a/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.GeneratedMSBuildEditorConfig.editorconfig	(revision 764f72dab404904e434a2bc7d4a8c92d7fb4bcc9)
++++ b/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.GeneratedMSBuildEditorConfig.editorconfig	(date 1768383405123)
+@@ -8,7 +8,7 @@
+ build_property.EnforceExtendedAnalyzerRules = 
+ build_property._SupportedPlatformList = Linux,macOS,Windows
+ build_property.RootNamespace = ProjetFilmv1
+-build_property.ProjectDir = C:\Users\pro\RiderProjects\projetfilmv1\ProjetFilmv1\
++build_property.ProjectDir = C:\Users\Luizon\RiderProjects\projetfilm\ProjetFilmv1\
+ build_property.EnableComHosting = 
+ build_property.EnableGeneratedComInterfaceComImportInterop = 
+ build_property.CsWinRTUseWindowsUIXamlProjections = false
+Index: ProjetFilmv1/obj/project.packagespec.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\"restore\":{\"projectUniqueName\":\"C:\\\\Users\\\\pro\\\\RiderProjects\\\\projetfilmv1\\\\ProjetFilmv1\\\\ProjetFilmv1.csproj\",\"projectName\":\"ProjetFilmv1\",\"projectPath\":\"C:\\\\Users\\\\pro\\\\RiderProjects\\\\projetfilmv1\\\\ProjetFilmv1\\\\ProjetFilmv1.csproj\",\"outputPath\":\"C:\\\\Users\\\\pro\\\\RiderProjects\\\\projetfilmv1\\\\ProjetFilmv1\\\\obj\\\\\",\"projectStyle\":\"PackageReference\",\"originalTargetFrameworks\":[\"net9.0-windows\"],\"sources\":{\"https://api.nuget.org/v3/index.json\":{}},\"frameworks\":{\"net9.0-windows7.0\":{\"targetAlias\":\"net9.0-windows\",\"projectReferences\":{}}},\"warningProperties\":{\"warnAsError\":[\"NU1605\"]},\"restoreAuditProperties\":{\"enableAudit\":\"true\",\"auditLevel\":\"low\",\"auditMode\":\"direct\"},\"SdkAnalysisLevel\":\"9.0.300\"}\"frameworks\":{\"net9.0-windows7.0\":{\"targetAlias\":\"net9.0-windows\",\"imports\":[\"net461\",\"net462\",\"net47\",\"net471\",\"net472\",\"net48\",\"net481\"],\"assetTargetFallback\":true,\"warn\":true,\"frameworkReferences\":{\"Microsoft.NETCore.App\":{\"privateAssets\":\"all\"},\"Microsoft.WindowsDesktop.App.WPF\":{\"privateAssets\":\"none\"}},\"runtimeIdentifierGraphPath\":\"C:\\\\Users\\\\pro\\\\.dotnet\\\\sdk\\\\9.0.306/PortableRuntimeIdentifierGraph.json\"}}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ProjetFilmv1/obj/project.packagespec.json b/ProjetFilmv1/obj/project.packagespec.json
+--- a/ProjetFilmv1/obj/project.packagespec.json	(revision 764f72dab404904e434a2bc7d4a8c92d7fb4bcc9)
++++ b/ProjetFilmv1/obj/project.packagespec.json	(date 1768383405205)
+@@ -1,1 +1,1 @@
+-"restore":{"projectUniqueName":"C:\\Users\\pro\\RiderProjects\\projetfilmv1\\ProjetFilmv1\\ProjetFilmv1.csproj","projectName":"ProjetFilmv1","projectPath":"C:\\Users\\pro\\RiderProjects\\projetfilmv1\\ProjetFilmv1\\ProjetFilmv1.csproj","outputPath":"C:\\Users\\pro\\RiderProjects\\projetfilmv1\\ProjetFilmv1\\obj\\","projectStyle":"PackageReference","originalTargetFrameworks":["net9.0-windows"],"sources":{"https://api.nuget.org/v3/index.json":{}},"frameworks":{"net9.0-windows7.0":{"targetAlias":"net9.0-windows","projectReferences":{}}},"warningProperties":{"warnAsError":["NU1605"]},"restoreAuditProperties":{"enableAudit":"true","auditLevel":"low","auditMode":"direct"},"SdkAnalysisLevel":"9.0.300"}"frameworks":{"net9.0-windows7.0":{"targetAlias":"net9.0-windows","imports":["net461","net462","net47","net471","net472","net48","net481"],"assetTargetFallback":true,"warn":true,"frameworkReferences":{"Microsoft.NETCore.App":{"privateAssets":"all"},"Microsoft.WindowsDesktop.App.WPF":{"privateAssets":"none"}},"runtimeIdentifierGraphPath":"C:\\Users\\pro\\.dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"}}
+\ No newline at end of file
++"restore":{"projectUniqueName":"C:\\Users\\Luizon\\RiderProjects\\projetfilm\\ProjetFilmv1\\ProjetFilmv1.csproj","projectName":"ProjetFilmv1","projectPath":"C:\\Users\\Luizon\\RiderProjects\\projetfilm\\ProjetFilmv1\\ProjetFilmv1.csproj","outputPath":"C:\\Users\\Luizon\\RiderProjects\\projetfilm\\ProjetFilmv1\\obj\\","projectStyle":"PackageReference","originalTargetFrameworks":["net9.0-windows"],"sources":{"https://api.nuget.org/v3/index.json":{}},"frameworks":{"net9.0-windows7.0":{"targetAlias":"net9.0-windows","projectReferences":{}}},"warningProperties":{"warnAsError":["NU1605"]},"restoreAuditProperties":{"enableAudit":"true","auditLevel":"low","auditMode":"all"},"SdkAnalysisLevel":"9.0.100"}"frameworks":{"net9.0-windows7.0":{"targetAlias":"net9.0-windows","imports":["net461","net462","net47","net471","net472","net48","net481"],"assetTargetFallback":true,"warn":true,"frameworkReferences":{"Microsoft.NETCore.App":{"privateAssets":"all"},"Microsoft.WindowsDesktop.App.WPF":{"privateAssets":"none"}},"runtimeIdentifierGraphPath":"C:\\Users\\Luizon\\.dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"}}
+\ No newline at end of file
+Index: ProjetFilmv1/obj/ProjetFilmv1.csproj.nuget.dgspec.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\r\n  \"format\": 1,\r\n  \"restore\": {\r\n    \"C:\\\\Users\\\\pro\\\\RiderProjects\\\\projetfilmv1\\\\ProjetFilmv1\\\\ProjetFilmv1.csproj\": {}\r\n  },\r\n  \"projects\": {\r\n    \"C:\\\\Users\\\\pro\\\\RiderProjects\\\\projetfilmv1\\\\ProjetFilmv1\\\\ProjetFilmv1.csproj\": {\r\n      \"version\": \"1.0.0\",\r\n      \"restore\": {\r\n        \"projectUniqueName\": \"C:\\\\Users\\\\pro\\\\RiderProjects\\\\projetfilmv1\\\\ProjetFilmv1\\\\ProjetFilmv1.csproj\",\r\n        \"projectName\": \"ProjetFilmv1\",\r\n        \"projectPath\": \"C:\\\\Users\\\\pro\\\\RiderProjects\\\\projetfilmv1\\\\ProjetFilmv1\\\\ProjetFilmv1.csproj\",\r\n        \"packagesPath\": \"C:\\\\Users\\\\pro\\\\.nuget\\\\packages\\\\\",\r\n        \"outputPath\": \"C:\\\\Users\\\\pro\\\\RiderProjects\\\\projetfilmv1\\\\ProjetFilmv1\\\\obj\\\\\",\r\n        \"projectStyle\": \"PackageReference\",\r\n        \"configFilePaths\": [\r\n          \"C:\\\\Users\\\\pro\\\\AppData\\\\Roaming\\\\NuGet\\\\NuGet.Config\"\r\n        ],\r\n        \"originalTargetFrameworks\": [\r\n          \"net9.0-windows\"\r\n        ],\r\n        \"sources\": {\r\n          \"https://api.nuget.org/v3/index.json\": {}\r\n        },\r\n        \"frameworks\": {\r\n          \"net9.0-windows7.0\": {\r\n            \"targetAlias\": \"net9.0-windows\",\r\n            \"projectReferences\": {}\r\n          }\r\n        },\r\n        \"warningProperties\": {\r\n          \"warnAsError\": [\r\n            \"NU1605\"\r\n          ]\r\n        },\r\n        \"restoreAuditProperties\": {\r\n          \"enableAudit\": \"true\",\r\n          \"auditLevel\": \"low\",\r\n          \"auditMode\": \"direct\"\r\n        },\r\n        \"SdkAnalysisLevel\": \"9.0.300\"\r\n      },\r\n      \"frameworks\": {\r\n        \"net9.0-windows7.0\": {\r\n          \"targetAlias\": \"net9.0-windows\",\r\n          \"imports\": [\r\n            \"net461\",\r\n            \"net462\",\r\n            \"net47\",\r\n            \"net471\",\r\n            \"net472\",\r\n            \"net48\",\r\n            \"net481\"\r\n          ],\r\n          \"assetTargetFallback\": true,\r\n          \"warn\": true,\r\n          \"frameworkReferences\": {\r\n            \"Microsoft.NETCore.App\": {\r\n              \"privateAssets\": \"all\"\r\n            },\r\n            \"Microsoft.WindowsDesktop.App.WPF\": {\r\n              \"privateAssets\": \"none\"\r\n            }\r\n          },\r\n          \"runtimeIdentifierGraphPath\": \"C:\\\\Users\\\\pro\\\\.dotnet\\\\sdk\\\\9.0.306/PortableRuntimeIdentifierGraph.json\"\r\n        }\r\n      }\r\n    }\r\n  }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ProjetFilmv1/obj/ProjetFilmv1.csproj.nuget.dgspec.json b/ProjetFilmv1/obj/ProjetFilmv1.csproj.nuget.dgspec.json
+--- a/ProjetFilmv1/obj/ProjetFilmv1.csproj.nuget.dgspec.json	(revision 764f72dab404904e434a2bc7d4a8c92d7fb4bcc9)
++++ b/ProjetFilmv1/obj/ProjetFilmv1.csproj.nuget.dgspec.json	(date 1768383405371)
+@@ -1,20 +1,20 @@
+ {
+   "format": 1,
+   "restore": {
+-    "C:\\Users\\pro\\RiderProjects\\projetfilmv1\\ProjetFilmv1\\ProjetFilmv1.csproj": {}
++    "C:\\Users\\Luizon\\RiderProjects\\projetfilm\\ProjetFilmv1\\ProjetFilmv1.csproj": {}
+   },
+   "projects": {
+-    "C:\\Users\\pro\\RiderProjects\\projetfilmv1\\ProjetFilmv1\\ProjetFilmv1.csproj": {
++    "C:\\Users\\Luizon\\RiderProjects\\projetfilm\\ProjetFilmv1\\ProjetFilmv1.csproj": {
+       "version": "1.0.0",
+       "restore": {
+-        "projectUniqueName": "C:\\Users\\pro\\RiderProjects\\projetfilmv1\\ProjetFilmv1\\ProjetFilmv1.csproj",
++        "projectUniqueName": "C:\\Users\\Luizon\\RiderProjects\\projetfilm\\ProjetFilmv1\\ProjetFilmv1.csproj",
+         "projectName": "ProjetFilmv1",
+-        "projectPath": "C:\\Users\\pro\\RiderProjects\\projetfilmv1\\ProjetFilmv1\\ProjetFilmv1.csproj",
+-        "packagesPath": "C:\\Users\\pro\\.nuget\\packages\\",
+-        "outputPath": "C:\\Users\\pro\\RiderProjects\\projetfilmv1\\ProjetFilmv1\\obj\\",
++        "projectPath": "C:\\Users\\Luizon\\RiderProjects\\projetfilm\\ProjetFilmv1\\ProjetFilmv1.csproj",
++        "packagesPath": "C:\\Users\\Luizon\\.nuget\\packages\\",
++        "outputPath": "C:\\Users\\Luizon\\RiderProjects\\projetfilm\\ProjetFilmv1\\obj\\",
+         "projectStyle": "PackageReference",
+         "configFilePaths": [
+-          "C:\\Users\\pro\\AppData\\Roaming\\NuGet\\NuGet.Config"
++          "C:\\Users\\Luizon\\AppData\\Roaming\\NuGet\\NuGet.Config"
+         ],
+         "originalTargetFrameworks": [
+           "net9.0-windows"
+@@ -36,9 +36,9 @@
+         "restoreAuditProperties": {
+           "enableAudit": "true",
+           "auditLevel": "low",
+-          "auditMode": "direct"
++          "auditMode": "all"
+         },
+-        "SdkAnalysisLevel": "9.0.300"
++        "SdkAnalysisLevel": "9.0.100"
+       },
+       "frameworks": {
+         "net9.0-windows7.0": {
+@@ -62,7 +62,7 @@
+               "privateAssets": "none"
+             }
+           },
+-          "runtimeIdentifierGraphPath": "C:\\Users\\pro\\.dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
++          "runtimeIdentifierGraphPath": "C:\\Users\\Luizon\\.dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
+         }
+       }
+     }
+Index: ProjetFilmv1/obj/rider.project.model.nuget.info
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>17646899043394168
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ProjetFilmv1/obj/rider.project.model.nuget.info b/ProjetFilmv1/obj/rider.project.model.nuget.info
+--- a/ProjetFilmv1/obj/rider.project.model.nuget.info	(revision 764f72dab404904e434a2bc7d4a8c92d7fb4bcc9)
++++ b/ProjetFilmv1/obj/rider.project.model.nuget.info	(date 1768383402836)
+@@ -1,1 +1,1 @@
+-17646899043394168
+\ No newline at end of file
++17683833717705999
+\ No newline at end of file
+Index: ProjetFilmv1/obj/rider.project.restore.info
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>17646899043394168
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ProjetFilmv1/obj/rider.project.restore.info b/ProjetFilmv1/obj/rider.project.restore.info
+--- a/ProjetFilmv1/obj/rider.project.restore.info	(revision 764f72dab404904e434a2bc7d4a8c92d7fb4bcc9)
++++ b/ProjetFilmv1/obj/rider.project.restore.info	(date 1768383405374)
+@@ -1,1 +1,1 @@
+-17646899043394168
+\ No newline at end of file
++17683834053715019
+\ No newline at end of file
+Index: ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.AssemblyInfo.cs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>//------------------------------------------------------------------------------\r\n// <auto-generated>\r\n//     This code was generated by a tool.\r\n//\r\n//     Changes to this file may cause incorrect behavior and will be lost if\r\n//     the code is regenerated.\r\n// </auto-generated>\r\n//------------------------------------------------------------------------------\r\n\r\nusing System;\r\nusing System.Reflection;\r\n\r\n[assembly: System.Reflection.AssemblyCompanyAttribute(\"ProjetFilmv1\")]\r\n[assembly: System.Reflection.AssemblyConfigurationAttribute(\"Debug\")]\r\n[assembly: System.Reflection.AssemblyFileVersionAttribute(\"1.0.0.0\")]\r\n[assembly: System.Reflection.AssemblyInformationalVersionAttribute(\"1.0.0+5ea562d113d979c48315c8b52f6c5d42e5709702\")]\r\n[assembly: System.Reflection.AssemblyProductAttribute(\"ProjetFilmv1\")]\r\n[assembly: System.Reflection.AssemblyTitleAttribute(\"ProjetFilmv1\")]\r\n[assembly: System.Reflection.AssemblyVersionAttribute(\"1.0.0.0\")]\r\n[assembly: System.Runtime.Versioning.TargetPlatformAttribute(\"Windows7.0\")]\r\n[assembly: System.Runtime.Versioning.SupportedOSPlatformAttribute(\"Windows7.0\")]\r\n\r\n// Généré par la classe MSBuild WriteCodeFragment.\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.AssemblyInfo.cs b/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.AssemblyInfo.cs
+--- a/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.AssemblyInfo.cs	(revision 764f72dab404904e434a2bc7d4a8c92d7fb4bcc9)
++++ b/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.AssemblyInfo.cs	(date 1768383405138)
+@@ -13,7 +13,7 @@
+ [assembly: System.Reflection.AssemblyCompanyAttribute("ProjetFilmv1")]
+ [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+ [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5ea562d113d979c48315c8b52f6c5d42e5709702")]
++[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+764f72dab404904e434a2bc7d4a8c92d7fb4bcc9")]
+ [assembly: System.Reflection.AssemblyProductAttribute("ProjetFilmv1")]
+ [assembly: System.Reflection.AssemblyTitleAttribute("ProjetFilmv1")]
+ [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
+Index: ProjetFilmv1/obj/ProjetFilmv1.csproj.nuget.g.props
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"no\"?>\r\n<Project ToolsVersion=\"14.0\" xmlns=\"http://schemas.microsoft.com/developer/msbuild/2003\">\r\n  <PropertyGroup Condition=\" '$(ExcludeRestorePackageImports)' != 'true' \">\r\n    <RestoreSuccess Condition=\" '$(RestoreSuccess)' == '' \">True</RestoreSuccess>\r\n    <RestoreTool Condition=\" '$(RestoreTool)' == '' \">NuGet</RestoreTool>\r\n    <ProjectAssetsFile Condition=\" '$(ProjectAssetsFile)' == '' \">$(MSBuildThisFileDirectory)project.assets.json</ProjectAssetsFile>\r\n    <NuGetPackageRoot Condition=\" '$(NuGetPackageRoot)' == '' \">$(UserProfile)\\.nuget\\packages\\</NuGetPackageRoot>\r\n    <NuGetPackageFolders Condition=\" '$(NuGetPackageFolders)' == '' \">C:\\Users\\pro\\.nuget\\packages\\</NuGetPackageFolders>\r\n    <NuGetProjectStyle Condition=\" '$(NuGetProjectStyle)' == '' \">PackageReference</NuGetProjectStyle>\r\n    <NuGetToolVersion Condition=\" '$(NuGetToolVersion)' == '' \">6.14.0</NuGetToolVersion>\r\n  </PropertyGroup>\r\n  <ItemGroup Condition=\" '$(ExcludeRestorePackageImports)' != 'true' \">\r\n    <SourceRoot Include=\"C:\\Users\\pro\\.nuget\\packages\\\" />\r\n  </ItemGroup>\r\n</Project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ProjetFilmv1/obj/ProjetFilmv1.csproj.nuget.g.props b/ProjetFilmv1/obj/ProjetFilmv1.csproj.nuget.g.props
+--- a/ProjetFilmv1/obj/ProjetFilmv1.csproj.nuget.g.props	(revision 764f72dab404904e434a2bc7d4a8c92d7fb4bcc9)
++++ b/ProjetFilmv1/obj/ProjetFilmv1.csproj.nuget.g.props	(date 1768383405357)
+@@ -5,11 +5,11 @@
+     <RestoreTool Condition=" '$(RestoreTool)' == '' ">NuGet</RestoreTool>
+     <ProjectAssetsFile Condition=" '$(ProjectAssetsFile)' == '' ">$(MSBuildThisFileDirectory)project.assets.json</ProjectAssetsFile>
+     <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">$(UserProfile)\.nuget\packages\</NuGetPackageRoot>
+-    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\pro\.nuget\packages\</NuGetPackageFolders>
++    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\Luizon\.nuget\packages\</NuGetPackageFolders>
+     <NuGetProjectStyle Condition=" '$(NuGetProjectStyle)' == '' ">PackageReference</NuGetProjectStyle>
+-    <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">6.14.0</NuGetToolVersion>
++    <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">7.0.0</NuGetToolVersion>
+   </PropertyGroup>
+   <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+-    <SourceRoot Include="C:\Users\pro\.nuget\packages\" />
++    <SourceRoot Include="C:\Users\Luizon\.nuget\packages\" />
+   </ItemGroup>
+ </Project>
+\ No newline at end of file
+Index: ProjetFilmv1/obj/project.assets.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\r\n  \"version\": 3,\r\n  \"targets\": {\r\n    \"net9.0-windows7.0\": {}\r\n  },\r\n  \"libraries\": {},\r\n  \"projectFileDependencyGroups\": {\r\n    \"net9.0-windows7.0\": []\r\n  },\r\n  \"packageFolders\": {\r\n    \"C:\\\\Users\\\\pro\\\\.nuget\\\\packages\\\\\": {}\r\n  },\r\n  \"project\": {\r\n    \"version\": \"1.0.0\",\r\n    \"restore\": {\r\n      \"projectUniqueName\": \"C:\\\\Users\\\\pro\\\\RiderProjects\\\\projetfilmv1\\\\ProjetFilmv1\\\\ProjetFilmv1.csproj\",\r\n      \"projectName\": \"ProjetFilmv1\",\r\n      \"projectPath\": \"C:\\\\Users\\\\pro\\\\RiderProjects\\\\projetfilmv1\\\\ProjetFilmv1\\\\ProjetFilmv1.csproj\",\r\n      \"packagesPath\": \"C:\\\\Users\\\\pro\\\\.nuget\\\\packages\\\\\",\r\n      \"outputPath\": \"C:\\\\Users\\\\pro\\\\RiderProjects\\\\projetfilmv1\\\\ProjetFilmv1\\\\obj\\\\\",\r\n      \"projectStyle\": \"PackageReference\",\r\n      \"configFilePaths\": [\r\n        \"C:\\\\Users\\\\pro\\\\AppData\\\\Roaming\\\\NuGet\\\\NuGet.Config\"\r\n      ],\r\n      \"originalTargetFrameworks\": [\r\n        \"net9.0-windows\"\r\n      ],\r\n      \"sources\": {\r\n        \"https://api.nuget.org/v3/index.json\": {}\r\n      },\r\n      \"frameworks\": {\r\n        \"net9.0-windows7.0\": {\r\n          \"targetAlias\": \"net9.0-windows\",\r\n          \"projectReferences\": {}\r\n        }\r\n      },\r\n      \"warningProperties\": {\r\n        \"warnAsError\": [\r\n          \"NU1605\"\r\n        ]\r\n      },\r\n      \"restoreAuditProperties\": {\r\n        \"enableAudit\": \"true\",\r\n        \"auditLevel\": \"low\",\r\n        \"auditMode\": \"direct\"\r\n      },\r\n      \"SdkAnalysisLevel\": \"9.0.300\"\r\n    },\r\n    \"frameworks\": {\r\n      \"net9.0-windows7.0\": {\r\n        \"targetAlias\": \"net9.0-windows\",\r\n        \"imports\": [\r\n          \"net461\",\r\n          \"net462\",\r\n          \"net47\",\r\n          \"net471\",\r\n          \"net472\",\r\n          \"net48\",\r\n          \"net481\"\r\n        ],\r\n        \"assetTargetFallback\": true,\r\n        \"warn\": true,\r\n        \"frameworkReferences\": {\r\n          \"Microsoft.NETCore.App\": {\r\n            \"privateAssets\": \"all\"\r\n          },\r\n          \"Microsoft.WindowsDesktop.App.WPF\": {\r\n            \"privateAssets\": \"none\"\r\n          }\r\n        },\r\n        \"runtimeIdentifierGraphPath\": \"C:\\\\Users\\\\pro\\\\.dotnet\\\\sdk\\\\9.0.306/PortableRuntimeIdentifierGraph.json\"\r\n      }\r\n    }\r\n  }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ProjetFilmv1/obj/project.assets.json b/ProjetFilmv1/obj/project.assets.json
+--- a/ProjetFilmv1/obj/project.assets.json	(revision 764f72dab404904e434a2bc7d4a8c92d7fb4bcc9)
++++ b/ProjetFilmv1/obj/project.assets.json	(date 1768383405360)
+@@ -8,19 +8,19 @@
+     "net9.0-windows7.0": []
+   },
+   "packageFolders": {
+-    "C:\\Users\\pro\\.nuget\\packages\\": {}
++    "C:\\Users\\Luizon\\.nuget\\packages\\": {}
+   },
+   "project": {
+     "version": "1.0.0",
+     "restore": {
+-      "projectUniqueName": "C:\\Users\\pro\\RiderProjects\\projetfilmv1\\ProjetFilmv1\\ProjetFilmv1.csproj",
++      "projectUniqueName": "C:\\Users\\Luizon\\RiderProjects\\projetfilm\\ProjetFilmv1\\ProjetFilmv1.csproj",
+       "projectName": "ProjetFilmv1",
+-      "projectPath": "C:\\Users\\pro\\RiderProjects\\projetfilmv1\\ProjetFilmv1\\ProjetFilmv1.csproj",
+-      "packagesPath": "C:\\Users\\pro\\.nuget\\packages\\",
+-      "outputPath": "C:\\Users\\pro\\RiderProjects\\projetfilmv1\\ProjetFilmv1\\obj\\",
++      "projectPath": "C:\\Users\\Luizon\\RiderProjects\\projetfilm\\ProjetFilmv1\\ProjetFilmv1.csproj",
++      "packagesPath": "C:\\Users\\Luizon\\.nuget\\packages\\",
++      "outputPath": "C:\\Users\\Luizon\\RiderProjects\\projetfilm\\ProjetFilmv1\\obj\\",
+       "projectStyle": "PackageReference",
+       "configFilePaths": [
+-        "C:\\Users\\pro\\AppData\\Roaming\\NuGet\\NuGet.Config"
++        "C:\\Users\\Luizon\\AppData\\Roaming\\NuGet\\NuGet.Config"
+       ],
+       "originalTargetFrameworks": [
+         "net9.0-windows"
+@@ -42,9 +42,9 @@
+       "restoreAuditProperties": {
+         "enableAudit": "true",
+         "auditLevel": "low",
+-        "auditMode": "direct"
++        "auditMode": "all"
+       },
+-      "SdkAnalysisLevel": "9.0.300"
++      "SdkAnalysisLevel": "9.0.100"
+     },
+     "frameworks": {
+       "net9.0-windows7.0": {
+@@ -68,7 +68,7 @@
+             "privateAssets": "none"
+           }
+         },
+-        "runtimeIdentifierGraphPath": "C:\\Users\\pro\\.dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
++        "runtimeIdentifierGraphPath": "C:\\Users\\Luizon\\.dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
+       }
+     }
+   }

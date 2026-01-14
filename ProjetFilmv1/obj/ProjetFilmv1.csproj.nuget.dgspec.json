@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\pro\\RiderProjects\\projetfilmv1\\ProjetFilmv1\\ProjetFilmv1.csproj": {}
+    "C:\\Users\\Luizon\\RiderProjects\\projetfilm\\ProjetFilmv1\\ProjetFilmv1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\pro\\RiderProjects\\projetfilmv1\\ProjetFilmv1\\ProjetFilmv1.csproj": {
+    "C:\\Users\\Luizon\\RiderProjects\\projetfilm\\ProjetFilmv1\\ProjetFilmv1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pro\\RiderProjects\\projetfilmv1\\ProjetFilmv1\\ProjetFilmv1.csproj",
+        "projectUniqueName": "C:\\Users\\Luizon\\RiderProjects\\projetfilm\\ProjetFilmv1\\ProjetFilmv1.csproj",
         "projectName": "ProjetFilmv1",
-        "projectPath": "C:\\Users\\pro\\RiderProjects\\projetfilmv1\\ProjetFilmv1\\ProjetFilmv1.csproj",
-        "packagesPath": "C:\\Users\\pro\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pro\\RiderProjects\\projetfilmv1\\ProjetFilmv1\\obj\\",
+        "projectPath": "C:\\Users\\Luizon\\RiderProjects\\projetfilm\\ProjetFilmv1\\ProjetFilmv1.csproj",
+        "packagesPath": "C:\\Users\\Luizon\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Luizon\\RiderProjects\\projetfilm\\ProjetFilmv1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\pro\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Luizon\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0-windows"
@@ -36,13 +36,19 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "direct"
+          "auditMode": "all"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net9.0-windows7.0": {
           "targetAlias": "net9.0-windows",
+          "dependencies": {
+            "JetBrains.Annotations": {
+              "target": "Package",
+              "version": "[2024.3.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -62,7 +68,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Users\\pro\\.dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Users\\Luizon\\.dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

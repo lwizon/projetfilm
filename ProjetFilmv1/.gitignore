@@ -1,2 +1,15 @@
-﻿.idea
-obj/
+﻿# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/.idea.ProjetFilmv1.iml
+/modules.xml
+/projectSettingsUpdater.xml
+/contentModel.xml
+# Ignored default folder with query files
+/queries/
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/

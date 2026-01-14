@@ -1,0 +1,19 @@
+<changelist name="Uncommitted_changes_before_Update_at_14_01_2026_10_40_[Changes]" date="1768383917724" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Update_at_14_01_2026_10_40_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 14/01/2026 10:40 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="ProjetFilmv1/obj/project.nuget.cache" />
+    <option name="AFTER_PATH" value="ProjetFilmv1/obj/project.nuget.cache" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Update_at_14_01_2026_10_40_[Changes]/project.nuget.cache" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.assets.cache" />
+    <option name="AFTER_PATH" value="ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.assets.cache" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Update_at_14_01_2026_10_40_[Changes]/ProjetFilmv1.assets.cache" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.AssemblyInfoInputs.cache" />
+    <option name="AFTER_PATH" value="ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.AssemblyInfoInputs.cache" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Update_at_14_01_2026_10_40_[Changes]/ProjetFilmv1.AssemblyInfoInputs.cache" />
+  </binary>
+</changelist>

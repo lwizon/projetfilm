@@ -8,27 +8,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8edff7d4-ad7d-4e2e-87f3-a43ca20b22ac" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ProjetFilmv1/Models/SuggestionItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/MainWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/MainWindow.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/MainWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/MainWindow.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/ProjetFilmv1.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/ProjetFilmv1.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/bin/Debug/net9.0-windows/ProjetFilmv1.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/bin/Debug/net9.0-windows/ProjetFilmv1.deps.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjetFilmv1/bin/Debug/net9.0-windows/ProjetFilmv1.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/bin/Debug/net9.0-windows/ProjetFilmv1.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjetFilmv1/bin/Debug/net9.0-windows/ProjetFilmv1.exe" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/bin/Debug/net9.0-windows/ProjetFilmv1.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjetFilmv1/bin/Debug/net9.0-windows/ProjetFilmv1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/bin/Debug/net9.0-windows/ProjetFilmv1.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjetFilmv1/bin/Debug/net9.0-windows/tmdb_debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/bin/Debug/net9.0-windows/tmdb_debug.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/App.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/App.g.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/MainWindow.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/MainWindow.g.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.assets.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.g.resources" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.g.resources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.genruntimeconfig.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.genruntimeconfig.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.sourcelink.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/apphost.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/ref/ProjetFilmv1.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/ref/ProjetFilmv1.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/refint/ProjetFilmv1.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/refint/ProjetFilmv1.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/obj/ProjetFilmv1.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/obj/ProjetFilmv1.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/obj/ProjetFilmv1.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/obj/ProjetFilmv1.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/obj/project.nuget.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjetFilmv1/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/obj/project.packagespec.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjetFilmv1/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/obj/rider.project.model.nuget.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjetFilmv1/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/obj/rider.project.restore.info" afterDir="false" />
@@ -44,7 +50,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="gregoire" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -63,11 +69,15 @@
 }</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/ProjetFilmv1/Models/SuggestionItem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/App.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/MainWindow.g.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/pro/RiderProjects/projetfilmv1/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.AssemblyInfo.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/pro/RiderProjects/projetfilmv1/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.AssemblyInfo.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/ProjetFilmv1.sourcelink.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ProjetFilmv1/obj/project.assets.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ProjetFilmv1/obj/project.packagespec.json" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -78,36 +88,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;.NET Project.ProjetFilmv1.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1&quot;: &quot;true&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Project.ProjetFilmv1.executor": "Run",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "dev",
+    "junie.onboarding.icon.badge.shown": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="ProjetFilmv1" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="PASS_PARENT_ENVS" value="1" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <option name="ENV_FILE_PATHS" value="" />
       <option name="REDIRECT_INPUT_PATH" value="" />
-      <option name="PTY_MODE" value="Auto" />
       <option name="MIXED_MODE_DEBUG" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
