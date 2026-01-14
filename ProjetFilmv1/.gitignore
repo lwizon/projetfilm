@@ -13,6 +13,8 @@
 /dataSources.local.xml
 # Editor-based HTTP Client requests
 /httpRequests/
-.idea/
-bin/
-obj/
+.idea
+**/bin/
+**/obj/
+**/.idea/
+*.user
