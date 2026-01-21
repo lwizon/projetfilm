@@ -21,7 +21,7 @@ namespace ProjetFilmv1
             catch (Exception initEx)
             {
                 Debug.WriteLine($"InitializeComponent failed: {initEx}");
-                try { MessageBox.Show($"Erreur lors de l'initialisation de la fenêtre de détails:\n{initEx}", "Erreur XAML", MessageBoxButton.OK, MessageBoxImage.Error); } catch { }
+                try { MessageBox.Show($"Erreur lors de l'initialisation:\n{initEx}", "Erreur XAML", MessageBoxButton.OK, MessageBoxImage.Error); } catch { }
                 return;
             }
 

@@ -3,7 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       Title="Détails du film">
     <Grid Background="#FF1F1F1F">
-        <Border Padding="16" Background="White" Margin="20">
+        <Border Padding="17" Background="White" Margin="20">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="340"/>      <!-- Poster -->
