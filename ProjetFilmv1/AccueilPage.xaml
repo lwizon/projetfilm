@@ -107,17 +107,9 @@
             <GridSplitter Grid.Column="1" Width="12" HorizontalAlignment="Stretch" Background="Transparent" ShowsPreview="True"/>
 
             <!-- Right: details panel -->
+            <!-- Right: details panel -->
             <Border Grid.Column="2" BorderBrush="#EEE" BorderThickness="1" CornerRadius="6" Padding="12">
-                <ScrollViewer VerticalScrollBarVisibility="Auto">
-                    <StackPanel>
-                        <!-- Make the detail poster scale with the right column (max width) -->
-                        <Image x:Name="DetailPosterImage" Width="400" Height="600" Stretch="UniformToFill" HorizontalAlignment="Left" Margin="0,0,0,12"/>
-                        <TextBlock x:Name="DetailTitleText" FontSize="22" FontWeight="Bold" TextWrapping="Wrap" Margin="0,0,0,8"/>
-                        <TextBlock x:Name="DetailVoteText" FontSize="14" Margin="0,0,0,12"/>
-                        <TextBlock Text="Résumé:" FontWeight="Bold" Margin="0,0,0,6"/>
-                        <TextBlock x:Name="DetailOverviewText" TextWrapping="Wrap"/>
-                    </StackPanel>
-                </ScrollViewer>
+                <Frame x:Name="DetailsFrame" NavigationUIVisibility="Hidden"/>
             </Border>
         </Grid>
     </Grid>

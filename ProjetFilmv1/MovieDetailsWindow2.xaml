@@ -1,29 +1,122 @@
-<Window x:Class="ProjetFilmv1.MovieDetailsWindow2"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Détails du film" Height="700" Width="1000" WindowStartupLocation="CenterOwner" ResizeMode="CanResize" WindowStyle="SingleBorderWindow">
-    <Grid Background="White">
-        <Border Padding="16" Background="Transparent">
+<Page x:Class="ProjetFilmv1.MovieDetailsWindow2"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Détails du film">
+    <Grid Background="#FF1F1F1F">
+        <Border Padding="16" Background="White" Margin="20">
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="340"/>      <!-- Poster -->
+                    <ColumnDefinition Width="*"/>        <!-- Contenu central -->
+                    <ColumnDefinition Width="320"/>      <!-- Note + commentaires -->
                 </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>       <!-- Titre + bouton favoris -->
+                    <RowDefinition Height="*"/>          <!-- Contenu -->
+                </Grid.RowDefinitions>
 
-                <Image x:Name="PosterImage" Width="340" Height="510" Stretch="UniformToFill" Margin="0,0,16,0"/>
+                <!-- Colonne 0 : poster -->
+                <Image Grid.Row="1" Grid.Column="0"
+                       x:Name="PosterImage"
+                       Width="340" Height="510"
+                       Stretch="UniformToFill"
+                       Margin="0,0,16,0"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Top"/>
 
-                <StackPanel Grid.Column="1">
-                    <TextBlock x:Name="TitleText" FontSize="26" FontWeight="Bold" TextWrapping="Wrap"/>
-                    <TextBlock x:Name="VoteText" Margin="0,8,0,16"/>
-                    <ScrollViewer Height="480" VerticalScrollBarVisibility="Auto">
-                        <TextBlock x:Name="OverviewText" TextWrapping="Wrap"/>
+                <!-- Ligne 0 : titre + bouton favoris (colonne centrale) -->
+                <StackPanel Grid.Row="0" Grid.Column="1"
+                            Orientation="Horizontal"
+                            VerticalAlignment="Center"
+                            Margin="0,0,0,12">
+                    <TextBlock x:Name="TitleText"
+                               FontSize="26"
+                               FontWeight="Bold"
+                               TextWrapping="Wrap"
+                               VerticalAlignment="Center"/>
+                    <Button x:Name="FavoriteButton"
+                            Content="Ajouter aux favoris"
+                            Margin="16,0,0,0"
+                            Padding="12,4"
+                            Background="#FF5C6BC0"
+                            Foreground="White"
+                            BorderThickness="0"
+                            Cursor="Hand"
+                            VerticalAlignment="Center"/>
+                </StackPanel>
+
+                <!-- Contenu central (synopsis / vidéo / etc.) -->
+                <StackPanel Grid.Row="1" Grid.Column="1">
+                    <TextBlock x:Name="VoteText"
+                               Margin="0,0,0,8"
+                               FontWeight="SemiBold"/>
+                    <ScrollViewer VerticalScrollBarVisibility="Auto"
+                                  Height="200"
+                                  Margin="0,0,0,12">
+                        <TextBlock x:Name="OverviewText"
+                                   TextWrapping="Wrap"/>
                     </ScrollViewer>
 
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,12,0,0">
-                        <Button x:Name="CloseButton" Content="Fermer" Width="90"/>
+                    <!-- Bouton fermer en bas à droite du centre -->
+                    <StackPanel Orientation="Horizontal"
+                                HorizontalAlignment="Right"
+                                Margin="0,12,0,0">
+                        <Button x:Name="CloseButton"
+                                Content="Fermer"
+                                Width="90"/>
                     </StackPanel>
+                </StackPanel>
+
+                <!-- Colonne droite : note circulaire + commentaires -->
+                <StackPanel Grid.Row="1" Grid.Column="2" Margin="16,0,0,0">
+                    
+                    <!-- Bloc note circulaire -->
+                    <StackPanel Margin="0,0,0,24" HorizontalAlignment="Center">
+                        <TextBlock Text="Note"
+                                   FontWeight="Bold"
+                                   HorizontalAlignment="Center"
+                                   Margin="0,0,0,8"/>
+                        <!-- Conteneur de la progress bar circulaire -->
+                        <Grid Width="150" Height="150">
+                            <!-- Cercle de fond -->
+                            <Ellipse Stroke="#FFE0E0E0"
+                                     StrokeThickness="10"/>
+                            <!-- Arc de progression : à implémenter via Path + binding -->
+                            <Path x:Name="ScoreArc"
+                                  Stroke="#FF4CAF50"
+                                  StrokeThickness="10"
+                                  Fill="Transparent"/>
+                            <!-- Texte au centre -->
+                            <TextBlock x:Name="CircleScoreText"
+                                       Text="0/100"
+                                       FontSize="18"
+                                       FontWeight="Bold"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"/>
+                        </Grid>
+                    </StackPanel>
+
+                    <!-- Espace commentaires -->
+                    <TextBlock Text="Commentaires"
+                               FontWeight="Bold"
+                               Margin="0,0,0,8"/>
+                    <ScrollViewer Height="200"
+                                  VerticalScrollBarVisibility="Auto"
+                                  Margin="0,0,0,8">
+                        <StackPanel x:Name="CommentsPanel"/>
+                    </ScrollViewer>
+
+                    <TextBox x:Name="CommentTextBox"
+                             Height="70"
+                             TextWrapping="Wrap"
+                             AcceptsReturn="True"
+                             Margin="0,0,0,8"/>
+                    <Button x:Name="AddCommentButton"
+                            Content="Ajouter un commentaire"
+                            HorizontalAlignment="Right"
+                            Padding="8,4"/>
                 </StackPanel>
             </Grid>
         </Border>
     </Grid>
-</Window>
+</Page>
