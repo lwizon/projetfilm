@@ -1,0 +1,37 @@
+﻿<Page x:Class="ProjetFilmV1.GestionInfoProfil_xaml"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Profil" Height="700" Width="1100" Background="White">
+    
+    <Grid Margin="30">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" HorizontalAlignment="Center" Margin="0,10,0,15">
+            <Image Source="/gestion profile/img/photoprofile.jpg"
+                   Width="70" Height="70"
+                   Stretch="UniformToFill"/>
+            <TextBlock Text="Nom_Utilisateur" FontWeight="Bold" FontSize="18" Margin="0,12,0,0" HorizontalAlignment="Center"/>
+            <TextBlock Text="utilisateur@mail.fr" Foreground="Gray" HorizontalAlignment="Center" Margin="0,4,0,0"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" VerticalAlignment="Top">
+            <TextBlock Text="Modifier vos informations" FontWeight="Bold" Margin="0,4,0,10"/>
+            
+            <TextBlock Text="Nom d'utilisateur"/>
+            <TextBox Name="UsernameTextBox" Margin="0,2,0,10"/>
+            <TextBlock Text="Email"/>
+            <TextBox Name="EmailTextBox" Margin="0,2,0,10"/>
+            <TextBlock Text="Mot de passe"/>
+            <PasswordBox Name="PasswordBox" Margin="0,2,0,10"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Right">
+            <Button Content="Enregistrer" Width="100" Margin="0,10,10,0"/>
+            <Button Content="Annuler" Width="80" Margin="0,10,0,0"/>
+        </StackPanel>
+    </Grid>
+</Page>
