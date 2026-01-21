@@ -3,21 +3,25 @@ using System.Diagnostics;
 using System.Windows;
 using System.Windows.Media.Imaging;
 using ProjetFilmv1.Models;
+using System.Windows.Controls;
 
 namespace ProjetFilmv1
 {
-    public partial class MovieDetailsWindow2 : Window
+    public partial class MovieDetailsWindow2 : Page
     {
+        private readonly Movie _movie;
         public MovieDetailsWindow2(Movie movie)
         {
             try
             {
                 InitializeComponent();
+                _movie = movie;
+                DataContext = movie;
             }
             catch (Exception initEx)
             {
                 Debug.WriteLine($"InitializeComponent failed: {initEx}");
-                try { MessageBox.Show($"Erreur lors de l'initialisation de la fenêtre de détails:\n{initEx}", "Erreur XAML", MessageBoxButton.OK, MessageBoxImage.Error); } catch { }
+                try { MessageBox.Show($"Erreur lors de l'initialisation:\n{initEx}", "Erreur XAML", MessageBoxButton.OK, MessageBoxImage.Error); } catch { }
                 return;
             }
 
@@ -77,11 +81,43 @@ namespace ProjetFilmv1
             try
             {
                 if (CloseButton != null)
-                    CloseButton.Click += (s, e) => this.Close();
+                    CloseButton.Click += (s, e) =>
+                    {
+                        if (NavigationService?.CanGoBack == true)
+                            NavigationService.GoBack();
+                    };
             }
             catch (Exception ex)
             {
                 Debug.WriteLine($"Error wiring CloseButton: {ex}");
+            }
+            
+            // Bouton commentaire fonctionnel
+            try
+            {
+                if (AddCommentButton != null)
+                    AddCommentButton.Click += (s, e) =>
+                    {
+                        var text = CommentTextBox?.Text?.Trim();
+
+                        if (!string.IsNullOrEmpty(text) && CommentsPanel != null)
+                        {
+                            // Créer un nouveau TextBlock pour ce commentaire
+                            var commentBlock = new TextBlock
+                            {
+                                Text = text,
+                                TextWrapping = TextWrapping.Wrap,
+                                Margin = new Thickness(0, 0, 0, 8)
+                            };
+
+                            CommentsPanel.Children.Add(commentBlock);
+                            CommentTextBox.Text = string.Empty;
+                        }
+                    };
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error wiring AddCommentButton: {ex}");
             }
         }
     }
