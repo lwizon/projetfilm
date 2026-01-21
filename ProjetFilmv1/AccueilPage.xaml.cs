@@ -9,6 +9,15 @@ using System.Diagnostics;
 using ProjetFilmv1.Services;
 using ProjetFilmv1.Models;
 using System.ComponentModel;
+using System;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Diagnostics;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using ProjetFilmv1.Models;
+using ProjetFilmv1.Services;
 
 namespace ProjetFilmv1
 {
@@ -242,31 +251,24 @@ namespace ProjetFilmv1
         {
             try
             {
-                Debug.WriteLine($"ShowDetailsInPane movie id={movie?.Id} title={movie?.Title}");
                 if (movie == null) return;
 
-                DetailTitleText.Text = movie.Title ?? "Sans titre";
-                DetailVoteText.Text = $"Note : {movie.VoteAverage:N1}";
-                DetailOverviewText.Text = movie.Overview ?? string.Empty;
+                // Crée la page de détails et lui passe le film sélectionné
+                var detailsPage = new MovieDetailsWindow2(movie);
+                DetailsFrame.Navigate(detailsPage);
+                
 
-                if (!string.IsNullOrEmpty(movie.PosterFullPath))
-                {
-                    var bitmap = new BitmapImage();
-                    bitmap.BeginInit();
-                    bitmap.UriSource = new Uri(movie.PosterFullPath);
-                    bitmap.CacheOption = BitmapCacheOption.OnLoad;
-                    bitmap.EndInit();
-                    DetailPosterImage.Source = bitmap;
-                }
-                else
-                {
-                    DetailPosterImage.Source = null;
-                }
+                // Navigation dans le Frame de droite
+                DetailsFrame.Navigate(detailsPage);
             }
             catch (Exception ex)
             {
                 Debug.WriteLine($"Erreur ShowDetailsInPane: {ex}");
-                MessageBox.Show($"Erreur en affichant le détail: {ex.Message}", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(
+                    $"Erreur en affichant le détail : {ex.Message}",
+                    "Erreur",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
             }
         }
 
@@ -331,7 +333,7 @@ namespace ProjetFilmv1
                 MessageBox.Show($"Erreur lors du chargement total : {ex.Message}", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
-
+        
         private void UpdatePageButtons()
         {
             // Highlight the current page button and reset others
