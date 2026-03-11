@@ -18,6 +18,7 @@ namespace ProjetFilmv1
         private readonly TmdbService _tmdb = new TmdbService();
         private CancellationTokenSource? _cts;
         private readonly Duration _animDuration = new Duration(TimeSpan.FromMilliseconds(180));
+        private readonly dbservice _dbservice = new dbservice();
 
         // Champ dummy utilisé uniquement pour référencer les propriétés de SuggestionItem (analyseurs)
         private readonly SuggestionItem _dummySuggestion = new SuggestionItem();
@@ -73,7 +74,7 @@ namespace ProjetFilmv1
 
         private void Inscription_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Navigate(new InscriptionPage());
+            MainFrame.Navigate(new InscriptionPage(_dbservice));
         }
 
         private void Film_Click(object sender, RoutedEventArgs e)
