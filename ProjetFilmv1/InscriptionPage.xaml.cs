@@ -7,11 +7,13 @@ namespace ProjetFilmv1
     public partial class InscriptionPage : Page
     {
         private readonly dbservice _dbservice;
+
         public InscriptionPage()
         {
             InitializeComponent();
+            _dbservice = new dbservice();
         }
-        
+
         public InscriptionPage(dbservice dbservice) : this()
         {
             _dbservice = dbservice;
@@ -23,9 +25,17 @@ namespace ProjetFilmv1
             string email = EmailTextBox.Text;
             string password = PasswordBox.Password;
 
-            MessageBox.Show($"Inscription : {nom} ({email})\nMot de passe : {new string('*', password.Length)}");
-            // TODO : implémenter la logique d'inscription réelle (validation, enregistrement)
-            _dbservice.getusers(nom, email, password);
+            if (string.IsNullOrWhiteSpace(nom) || 
+                string.IsNullOrWhiteSpace(email) || 
+                string.IsNullOrWhiteSpace(password))
+            {
+                MessageBox.Show("Veuillez remplir tous les champs");
+                return;
+            }
+
+            _dbservice.RegisterUser(nom, email, password);
+
+            MessageBox.Show("Utilisateur créé avec succès !");
         }
     }
 }
