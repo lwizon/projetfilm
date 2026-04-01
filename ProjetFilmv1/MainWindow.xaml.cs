@@ -120,7 +120,7 @@ namespace ProjetFilmv1
                         Title = m.Title ?? string.Empty,
                         PosterImage = m.PosterFullPath,
                         Rating = m.VoteAverage > 0 ? m.VoteAverage.ToString("0.0") : "-",
-                        Description = string.IsNullOrWhiteSpace(m.Overview) ? "" : m.Overview.Length > 120 ? m.Overview.Substring(0, 117) + "..." : m.Overview
+                        Description = string.IsNullOrWhiteSpace(m.Overview) ? "" : m.Overview.Length > 120 ? m.Overview.Substring(0, 117) + "..." : m.Overview,
                     })
                     .ToList();
                 if (titles.Count > 0)
@@ -190,6 +190,28 @@ namespace ProjetFilmv1
             MainFrame.Navigate(new SearchResultsPage(query));
             // Masque les suggestions
             SuggestionsBorder.Visibility = Visibility.Collapsed;
+        }
+        
+        private void SearchSuggestions_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            try
+            {
+                //if (SearchSuggestions.SelectedItem is SuggestionItem sel &&  != null)
+                //{
+                //    SearchBox.Text = sel.Title;
+                //    HideSuggestions();
+                //    MainFrame.Navigate(new MovieDetailsWindow2());
+                //    SearchSuggestions.SelectedItem = null;
+                //}
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    $"Erreur lors de l'ouverture du détail : {ex.Message}",
+                    "Erreur",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
+            }
         }
 
         private void ProfileButton_Click(object sender, RoutedEventArgs e)
