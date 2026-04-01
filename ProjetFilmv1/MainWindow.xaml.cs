@@ -8,6 +8,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media.Animation;
 using System.Windows.Media;
+using ProjetFilmV1;
 using ProjetFilmv1.Services;
 using ProjetFilmv1.Models;
 
@@ -202,7 +203,9 @@ namespace ProjetFilmv1
 
         private void ProfileMenu_Profil_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Ouvrir la page Profil (placeholder)", "Profil", MessageBoxButton.OK, MessageBoxImage.Information);
+            MainFrame.Visibility = Visibility.Visible;
+            
+            MainFrame.Navigate(new GestionProfile());
         }
 
         private void ProfileMenu_Settings_Click(object sender, RoutedEventArgs e)
