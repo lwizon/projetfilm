@@ -20,4 +20,8 @@
       <Resource Include="Images\Logo.png" />
     </ItemGroup>
 
+    <ItemGroup>
+        <Resource Include="GestionProfile\img\photoprofile.jpg" />
+    </ItemGroup>
+
 </Project>
