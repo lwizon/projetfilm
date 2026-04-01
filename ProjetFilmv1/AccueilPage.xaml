@@ -1,0 +1,83 @@
+<Page x:Class="ProjetFilmv1.AccueilPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Accueil">
+    <Grid Background="{DynamicResource AppBackgroundBrush}" Margin="12">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Vertical" Margin="0,0,0,14">
+            
+
+            <WrapPanel Orientation="Horizontal" Margin="0,0,0,8">
+                <TextBlock Text="Aller a la page :" VerticalAlignment="Center" Margin="0,0,6,8" FontWeight="SemiBold"/>
+                <Border Background="{DynamicResource AccentSoftBrush}" Padding="3" CornerRadius="10" Margin="0,0,14,8">
+                    <ComboBox x:Name="PageComboBox" Width="104" MinWidth="96" VerticalAlignment="Center" IsEnabled="True" ToolTip="Selectionner une page"/>
+                </Border>
+                <TextBlock Text="Filtrer par genre :" VerticalAlignment="Center" Margin="0,0,8,8"/>
+                <Border Background="{DynamicResource AccentSoftBrush}" Padding="3" CornerRadius="10" Margin="0,0,0,8">
+                    <ComboBox x:Name="GenreComboBox" Width="180" MinWidth="140" DisplayMemberPath="Name" SelectedValuePath="Id"/>
+                </Border>
+            </WrapPanel>
+        </StackPanel>
+
+        <Border Grid.Row="1" BorderBrush="{DynamicResource BorderBrush}" BorderThickness="1" CornerRadius="18" Padding="14" Background="{DynamicResource SurfaceBrush}" MinWidth="0">
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <ItemsControl x:Name="MoviesItemsControl" ItemsSource="{Binding Movies}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel Orientation="Horizontal" />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Button Click="OnMovieButtonClick" DataContext="{Binding}" Margin="10" Padding="0" Width="224" Height="392" Background="Transparent" BorderThickness="0" Cursor="Hand">
+                                <Button.Template>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Background="{DynamicResource SurfaceBrush}" BorderBrush="{DynamicResource BorderBrush}" BorderThickness="1" CornerRadius="18" Padding="10">
+                                            <Border.Effect>
+                                                <DropShadowEffect BlurRadius="14" ShadowDepth="3" Opacity="0.08" Color="#111827"/>
+                                            </Border.Effect>
+                                            <Grid>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="224"/>
+                                                    <RowDefinition Height="Auto"/>
+                                                    <RowDefinition Height="Auto"/>
+                                                    <RowDefinition Height="*"/>
+                                                </Grid.RowDefinitions>
+                                                <Border Grid.Row="0" CornerRadius="12" ClipToBounds="True" Background="#E5E7EB">
+                                                    <Grid>
+                                                        <Image Source="{Binding PosterFullPath}" Stretch="UniformToFill"/>
+                                                        <Border HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10" Background="#AA7D5FFF" CornerRadius="10" Padding="8,4">
+                                                            <TextBlock Text="{Binding VoteAverage, StringFormat={}{0:N1}}" FontWeight="Bold" Foreground="White"/>
+                                                        </Border>
+                                                    </Grid>
+                                                </Border>
+                                                <TextBlock Grid.Row="1" Text="{Binding Title}" Margin="0,14,0,6" FontSize="17" FontWeight="Bold" Foreground="{DynamicResource TextBrush}" TextWrapping="Wrap" MaxHeight="46"/>
+                                                <Border Grid.Row="2" HorizontalAlignment="Left" Background="{DynamicResource AccentSoftBrush}" CornerRadius="10" Padding="8,4" Margin="0,0,0,10">
+                                                    <TextBlock Text="Voir la fiche" FontWeight="SemiBold" Foreground="{DynamicResource AccentBrush}"/>
+                                                </Border>
+                                                <TextBlock Grid.Row="3" Text="{Binding Overview}" TextWrapping="Wrap" TextTrimming="CharacterEllipsis" Foreground="{DynamicResource SecondaryTextBrush}" FontSize="12" MaxHeight="78"/>
+                                            </Grid>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
+        </Border>
+
+        <Border Grid.Row="2" HorizontalAlignment="Center" Background="{DynamicResource AccentSoftBrush}" BorderBrush="{DynamicResource BorderBrush}" BorderThickness="1" CornerRadius="16" Padding="8,4" Margin="0,10,0,0">
+            <WrapPanel HorizontalAlignment="Center">
+                <Button x:Name="PrevPageButton" Content="Precedent" MinWidth="88" Margin="4,0" Background="{DynamicResource AccentBrush}" Foreground="White" BorderThickness="0"/>
+                <TextBlock x:Name="PageText" VerticalAlignment="Center" Margin="10,6" FontWeight="SemiBold" Foreground="{DynamicResource AccentBrush}"/>
+                <Button x:Name="NextPageButton" Content="Suivant" MinWidth="88" Margin="4,0" Background="{DynamicResource AccentBrush}" Foreground="White" BorderThickness="0"/>
+            </WrapPanel>
+        </Border>
+    </Grid>
+</Page>
