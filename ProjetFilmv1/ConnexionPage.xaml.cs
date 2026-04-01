@@ -1,3 +1,4 @@
+using System;
 using System.Windows;
 using System.Windows.Controls;
 using ProjetFilmv1.Services;
@@ -24,15 +25,32 @@ namespace ProjetFilmv1
             string email = EmailTextBox.Text;
             string mdp = PasswordBox.Password;
 
-            bool isConnected = _dbservice.LoginUser(email, mdp);
+            try
+            {
+                bool isConnected = _dbservice.LoginUser(email, mdp);
 
-            if (isConnected)
-            {
-                MessageBox.Show("Connexion réussie !");
+                if (isConnected)
+                {
+                    if (Application.Current.MainWindow is MainWindow mainWindow)
+                    {
+                        mainWindow.SetAuthenticatedUser(email);
+                        mainWindow.NavigateToAccueil();
+                    }
+
+                    MessageBox.Show("Connexion reussie !");
+                }
+                else
+                {
+                    MessageBox.Show("Email ou mot de passe incorrect");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Email ou mot de passe incorrect");
+                MessageBox.Show(
+                    $"Erreur lors de la connexion : {ex.Message}",
+                    "Connexion impossible",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
             }
         }
     }

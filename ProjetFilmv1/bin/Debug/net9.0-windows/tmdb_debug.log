@@ -369,3 +369,448 @@ Loading movies for genre 0 page 1...
 Loading movies for genre 0 page 1...
 Movies loaded: 20
 Movies loaded: 20
+Nombre de films récupérés : 20
+- Your Heart Will Be Broken (note: 7,0)
+- Avatar : De feu et de cendres (note: 7,3)
+- Mike & Nick & Nick & Alice (note: 6,7)
+- Pirouette fatale (note: 6,7)
+- GOAT : Rêver plus haut (note: 7,7)
+- Refuge Fatal (note: 6,8)
+- Projet dernière chance (note: 8,2)
+- Scream 7 (note: 5,9)
+- Send Help (note: 7,1)
+- Crime 101 (note: 7,0)
+
+Nombre de films récupérés : 20
+- Your Heart Will Be Broken (note: 7,0)
+- Avatar : De feu et de cendres (note: 7,3)
+- Mike & Nick & Nick & Alice (note: 6,7)
+- Pirouette fatale (note: 6,7)
+- GOAT : Rêver plus haut (note: 7,7)
+- Refuge Fatal (note: 6,8)
+- Projet dernière chance (note: 8,2)
+- Scream 7 (note: 5,9)
+- Send Help (note: 7,1)
+- Crime 101 (note: 7,0)
+
+Nombre de films récupérés : 20
+- Your Heart Will Be Broken (note: 7,0)
+- Avatar : De feu et de cendres (note: 7,3)
+- Mike & Nick & Nick & Alice (note: 6,7)
+- Pirouette fatale (note: 6,7)
+- GOAT : Rêver plus haut (note: 7,7)
+- Refuge Fatal (note: 6,8)
+- Projet dernière chance (note: 8,2)
+- Scream 7 (note: 5,9)
+- Send Help (note: 7,1)
+- Crime 101 (note: 7,0)
+
+Loading genres...
+Genres loaded: 19
+Loading movies for genre 0 page 1...
+Loading movies for genre 0 page 1...
+Movies loaded: 20
+Movies loaded: 20
+Loading genres...
+Genres loaded: 19
+Loading movies for genre 0 page 1...
+Loading movies for genre 0 page 1...
+Movies loaded: 20
+Movies loaded: 20
+Nombre de films récupérés : 20
+- Your Heart Will Be Broken (note: 7,0)
+- Avatar : De feu et de cendres (note: 7,3)
+- Mike & Nick & Nick & Alice (note: 6,7)
+- Pirouette fatale (note: 6,7)
+- GOAT : Rêver plus haut (note: 7,7)
+- Refuge Fatal (note: 6,8)
+- Projet dernière chance (note: 8,2)
+- Scream 7 (note: 5,9)
+- Send Help (note: 7,1)
+- Crime 101 (note: 7,0)
+
+Nombre de films récupérés : 20
+- Your Heart Will Be Broken (note: 7,0)
+- Avatar : De feu et de cendres (note: 7,3)
+- Mike & Nick & Nick & Alice (note: 6,7)
+- Pirouette fatale (note: 6,7)
+- GOAT : Rêver plus haut (note: 7,7)
+- Refuge Fatal (note: 6,8)
+- Projet dernière chance (note: 8,2)
+- Scream 7 (note: 5,9)
+- Send Help (note: 7,1)
+- Crime 101 (note: 7,0)
+
+Loading genres...
+Genres loaded: 19
+Loading movies for genre 0 page 1...
+Loading movies for genre 0 page 1...
+Movies loaded: 20
+Movies loaded: 20
+Loading genres...
+Genres loaded: 19
+Loading movies for genre 0 page 1...
+Loading movies for genre 0 page 1...
+Movies loaded: 20
+Movies loaded: 20
+Loading genres...
+Genres loaded: 19
+Loading movies for genre 0 page 1...
+Loading movies for genre 0 page 1...
+Movies loaded: 20
+Movies loaded: 20
+DispatcherUnhandledException: System.IO.FileNotFoundException: Could not load file or assembly 'MySql.Data, Version=9.6.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d'. Le fichier spécifié est introuvable.
+File name: 'MySql.Data, Version=9.6.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d'
+   at ProjetFilmv1.Services.dbservice.LoginUser(String email, String password)
+   at ProjetFilmv1.ConnexionPage.Login_Click(Object sender, RoutedEventArgs e) in C:\Users\DD\RiderProjects\projetfilm\ProjetFilmv1\ConnexionPage.xaml.cs:line 27
+   at System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   at System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   at System.Windows.Controls.Primitives.ButtonBase.OnClick()
+   at System.Windows.Controls.Button.OnClick()
+   at System.Windows.Controls.Primitives.ButtonBase.OnMouseLeftButtonUp(MouseButtonEventArgs e)
+   at System.Windows.RoutedEventArgs.InvokeHandler(Delegate handler, Object target)
+   at System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   at System.Windows.UIElement.ReRaiseEventAs(DependencyObject sender, RoutedEventArgs args, RoutedEvent newEvent)
+   at System.Windows.RoutedEventArgs.InvokeHandler(Delegate handler, Object target)
+   at System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   at System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   at System.Windows.UIElement.RaiseTrustedEvent(RoutedEventArgs args)
+   at System.Windows.Input.InputManager.ProcessStagingArea()
+   at System.Windows.Interop.HwndMouseInputProvider.ReportInput(IntPtr hwnd, InputMode mode, Int32 timestamp, RawMouseActions actions, Int32 x, Int32 y, Int32 wheel)
+   at System.Windows.Interop.HwndMouseInputProvider.FilterMessage(IntPtr hwnd, WindowMessage msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at System.Windows.Interop.HwndSource.InputFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+Loading genres...
+Genres loaded: 19
+Loading movies for genre 0 page 1...
+Loading movies for genre 0 page 1...
+Movies loaded: 20
+Movies loaded: 20
+DispatcherUnhandledException: System.IO.FileNotFoundException: Could not load file or assembly 'MySql.Data, Version=9.6.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d'. Le fichier spécifié est introuvable.
+File name: 'MySql.Data, Version=9.6.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d'
+   at ProjetFilmv1.Services.dbservice.LoginUser(String email, String password)
+   at ProjetFilmv1.ConnexionPage.Login_Click(Object sender, RoutedEventArgs e) in C:\Users\DD\RiderProjects\projetfilm\ProjetFilmv1\ConnexionPage.xaml.cs:line 27
+   at System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   at System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   at System.Windows.Controls.Primitives.ButtonBase.OnClick()
+   at System.Windows.Controls.Button.OnClick()
+   at System.Windows.Controls.Primitives.ButtonBase.OnMouseLeftButtonUp(MouseButtonEventArgs e)
+   at System.Windows.RoutedEventArgs.InvokeHandler(Delegate handler, Object target)
+   at System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   at System.Windows.UIElement.ReRaiseEventAs(DependencyObject sender, RoutedEventArgs args, RoutedEvent newEvent)
+   at System.Windows.RoutedEventArgs.InvokeHandler(Delegate handler, Object target)
+   at System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   at System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   at System.Windows.UIElement.RaiseTrustedEvent(RoutedEventArgs args)
+   at System.Windows.Input.InputManager.ProcessStagingArea()
+   at System.Windows.Interop.HwndMouseInputProvider.ReportInput(IntPtr hwnd, InputMode mode, Int32 timestamp, RawMouseActions actions, Int32 x, Int32 y, Int32 wheel)
+   at System.Windows.Interop.HwndMouseInputProvider.FilterMessage(IntPtr hwnd, WindowMessage msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at System.Windows.Interop.HwndSource.InputFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+Loading genres...
+Genres loaded: 19
+Loading movies for genre 0 page 1...
+Loading movies for genre 0 page 1...
+Movies loaded: 20
+Movies loaded: 20
+Loading genres...
+Genres loaded: 19
+Loading movies for genre 0 page 1...
+Loading movies for genre 0 page 1...
+Movies loaded: 20
+Movies loaded: 20
+Loading genres...
+Genres loaded: 19
+Loading movies for genre 0 page 1...
+Loading movies for genre 0 page 1...
+Movies loaded: 20
+Movies loaded: 20
+Loading genres...
+Genres loaded: 19
+Loading movies for genre 0 page 1...
+Loading movies for genre 0 page 1...
+Movies loaded: 20
+Movies loaded: 20
+Loading genres...
+Genres loaded: 19
+Loading movies for genre 0 page 1...
+Loading movies for genre 0 page 1...
+Movies loaded: 20
+Movies loaded: 20
+Loading genres...
+Genres loaded: 19
+Loading movies for genre 0 page 1...
+Loading movies for genre 0 page 1...
+Movies loaded: 20
+Movies loaded: 20
+Loading genres...
+Genres loaded: 19
+Loading movies for genre 0 page 1...
+Loading movies for genre 0 page 1...
+Movies loaded: 20
+Movies loaded: 20
+Loading genres...
+Genres loaded: 19
+Loading movies for genre 0 page 1...
+Loading movies for genre 0 page 1...
+Movies loaded: 20
+Movies loaded: 20
+Loading genres...
+Genres loaded: 19
+Loading movies for genre 0 page 1...
+Loading movies for genre 0 page 1...
+Movies loaded: 20
+Movies loaded: 20
+Loading genres...
+Genres loaded: 19
+Loading movies for genre 0 page 1...
+Loading movies for genre 0 page 1...
+Movies loaded: 20
+Movies loaded: 20
+Loading genres...
+Genres loaded: 19
+Loading movies for genre 0 page 1...
+Loading movies for genre 0 page 1...
+Movies loaded: 20
+Movies loaded: 20
+Loading genres...
+Genres loaded: 19
+Loading movies for genre 0 page 1...
+Loading movies for genre 0 page 1...
+Movies loaded: 20
+Movies loaded: 20
+Loading genres...
+Genres loaded: 19
+Loading movies for genre 0 page 1...
+Loading movies for genre 0 page 1...
+Movies loaded: 20
+Movies loaded: 20
+Nombre de films récupérés : 20
+- Your Heart Will Be Broken (note: 7,0)
+- Avatar : De feu et de cendres (note: 7,3)
+- Mike & Nick & Nick & Alice (note: 6,7)
+- Pirouette fatale (note: 6,7)
+- GOAT : Rêver plus haut (note: 7,7)
+- Refuge Fatal (note: 6,8)
+- Projet dernière chance (note: 8,2)
+- Scream 7 (note: 5,9)
+- Send Help (note: 7,1)
+- Crime 101 (note: 7,0)
+
+Loading genres...
+Genres loaded: 19
+Loading movies for genre 0 page 1...
+Loading movies for genre 0 page 1...
+Movies loaded: 20
+Movies loaded: 20
+Loading movies for genre 9648 page 1...
+Movies loaded: 20
+Loading movies for genre 878 page 1...
+Movies loaded: 20
+Loading genres...
+Genres loaded: 19
+Loading movies for genre 0 page 1...
+Loading movies for genre 0 page 1...
+Movies loaded: 20
+Movies loaded: 20
+Nombre de films récupérés : 20
+- Your Heart Will Be Broken (note: 7,0)
+- Avatar : De feu et de cendres (note: 7,3)
+- Mike & Nick & Nick & Alice (note: 6,7)
+- Pirouette fatale (note: 6,7)
+- GOAT : Rêver plus haut (note: 7,7)
+- Refuge Fatal (note: 6,8)
+- Projet dernière chance (note: 8,2)
+- Scream 7 (note: 5,9)
+- Send Help (note: 7,1)
+- Crime 101 (note: 7,0)
+
+Loading genres...
+Genres loaded: 19
+Loading movies for genre 0 page 1...
+Loading movies for genre 0 page 1...
+Movies loaded: 20
+Movies loaded: 20
+Nombre de films récupérés : 20
+- Your Heart Will Be Broken (note: 7,0)
+- Avatar : De feu et de cendres (note: 7,3)
+- Mike & Nick & Nick & Alice (note: 6,7)
+- Pirouette fatale (note: 6,7)
+- GOAT : Rêver plus haut (note: 7,7)
+- Refuge Fatal (note: 6,8)
+- Projet dernière chance (note: 8,2)
+- Scream 7 (note: 5,9)
+- Send Help (note: 7,1)
+- Crime 101 (note: 7,0)
+
+Loading genres...
+Genres loaded: 19
+Loading movies for genre 0 page 1...
+Loading movies for genre 0 page 1...
+Movies loaded: 20
+Movies loaded: 20
+Loading genres...
+Genres loaded: 19
+Loading movies for genre 0 page 1...
+Loading movies for genre 0 page 1...
+Movies loaded: 20
+Movies loaded: 20
+Loading genres...
+Genres loaded: 19
+Loading movies for genre 0 page 1...
+Loading movies for genre 0 page 1...
+Movies loaded: 20
+Movies loaded: 20
+Nombre de films récupérés : 20
+- Your Heart Will Be Broken (note: 7,0)
+- Avatar : De feu et de cendres (note: 7,3)
+- Mike & Nick & Nick & Alice (note: 6,7)
+- Pirouette fatale (note: 6,7)
+- GOAT : Rêver plus haut (note: 7,7)
+- Refuge Fatal (note: 6,8)
+- Projet dernière chance (note: 8,2)
+- Scream 7 (note: 5,9)
+- Send Help (note: 7,1)
+- Crime 101 (note: 7,0)
+
+Loading genres...
+Genres loaded: 19
+Loading movies for genre 0 page 1...
+Loading movies for genre 0 page 1...
+Movies loaded: 20
+Movies loaded: 20
+Loading genres...
+Genres loaded: 19
+Loading movies for genre 0 page 1...
+Loading movies for genre 0 page 1...
+Movies loaded: 20
+Movies loaded: 20
+Loading genres...
+Genres loaded: 19
+Loading movies for genre 0 page 1...
+Loading movies for genre 0 page 1...
+Movies loaded: 20
+Movies loaded: 20
+Loading genres...
+Genres loaded: 19
+Loading movies for genre 0 page 1...
+Loading movies for genre 0 page 1...
+Movies loaded: 20
+Movies loaded: 20
+Loading genres...
+Genres loaded: 19
+Loading movies for genre 0 page 1...
+Loading movies for genre 0 page 1...
+Movies loaded: 20
+Movies loaded: 20
+Nombre de films récupérés : 20
+- Your Heart Will Be Broken (note: 7,0)
+- Avatar : De feu et de cendres (note: 7,3)
+- Mike & Nick & Nick & Alice (note: 6,7)
+- Pirouette fatale (note: 6,7)
+- GOAT : Rêver plus haut (note: 7,7)
+- Refuge Fatal (note: 6,8)
+- Projet dernière chance (note: 8,2)
+- Scream 7 (note: 5,9)
+- Send Help (note: 7,1)
+- Crime 101 (note: 7,0)
+
+Loading genres...
+Genres loaded: 19
+Loading movies for genre 0 page 1...
+Loading movies for genre 0 page 1...
+Movies loaded: 20
+Movies loaded: 20
+Loading genres...
+Genres loaded: 19
+Loading movies for genre 0 page 1...
+Loading movies for genre 0 page 1...
+Movies loaded: 20
+Movies loaded: 20
+Nombre de films récupérés : 20
+- Your Heart Will Be Broken (note: 7,0)
+- Avatar : De feu et de cendres (note: 7,3)
+- Mike & Nick & Nick & Alice (note: 6,7)
+- Pirouette fatale (note: 6,7)
+- GOAT : Rêver plus haut (note: 7,7)
+- Refuge Fatal (note: 6,8)
+- Projet dernière chance (note: 8,2)
+- Scream 7 (note: 5,9)
+- Send Help (note: 7,1)
+- Crime 101 (note: 7,0)
+
+Loading genres...
+Genres loaded: 19
+Loading movies for genre 0 page 1...
+Loading movies for genre 0 page 1...
+Movies loaded: 20
+Movies loaded: 20
+Loading genres...
+Genres loaded: 19
+Loading movies for genre 0 page 1...
+Loading movies for genre 0 page 1...
+Movies loaded: 20
+Movies loaded: 20
+Loading genres...
+Genres loaded: 19
+Loading movies for genre 0 page 1...
+Loading movies for genre 0 page 1...
+Movies loaded: 20
+Movies loaded: 20
+Loading genres...
+Genres loaded: 19
+Loading movies for genre 0 page 1...
+Loading movies for genre 0 page 1...
+Movies loaded: 20
+Movies loaded: 20
+Nombre de films récupérés : 20
+- Your Heart Will Be Broken (note: 7,0)
+- Avatar : De feu et de cendres (note: 7,3)
+- Mike & Nick & Nick & Alice (note: 6,7)
+- Pirouette fatale (note: 6,7)
+- GOAT : Rêver plus haut (note: 7,7)
+- Refuge Fatal (note: 6,8)
+- Projet dernière chance (note: 8,2)
+- Scream 7 (note: 5,9)
+- Send Help (note: 7,1)
+- Crime 101 (note: 7,0)
+
+Loading genres...
+Genres loaded: 19
+Loading movies for genre 0 page 1...
+Loading movies for genre 0 page 1...
+Movies loaded: 20
+Movies loaded: 20
+Loading genres...
+Genres loaded: 19
+Loading movies for genre 0 page 1...
+Loading movies for genre 0 page 1...
+Movies loaded: 20
+Movies loaded: 20
+Nombre de films récupérés : 20
+- Your Heart Will Be Broken (note: 7,0)
+- Avatar : De feu et de cendres (note: 7,3)
+- Mike & Nick & Nick & Alice (note: 6,7)
+- Pirouette fatale (note: 6,7)
+- GOAT : Rêver plus haut (note: 7,7)
+- Refuge Fatal (note: 6,8)
+- Projet dernière chance (note: 8,2)
+- Scream 7 (note: 5,9)
+- Send Help (note: 7,1)
+- Crime 101 (note: 7,0)
+
+Nombre de films récupérés : 20
+- Your Heart Will Be Broken (note: 7,0)
+- Avatar : De feu et de cendres (note: 7,3)
+- Mike & Nick & Nick & Alice (note: 6,7)
+- Pirouette fatale (note: 6,7)
+- GOAT : Rêver plus haut (note: 7,7)
+- Refuge Fatal (note: 6,8)
+- Projet dernière chance (note: 8,2)
+- Scream 7 (note: 5,9)
+- Send Help (note: 7,1)
+- Crime 101 (note: 7,0)
+
