@@ -1,27 +1,26 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
-using ProjetFilmv1;
-using ProjetFilmV1;
 
-
-namespace ProfileApp 
+namespace ProjetFilmV1 
 {
-    public partial class MainWindow : Window 
+    public partial class GestionProfile : Page 
     {
-        public MainWindow()
+        public GestionProfile() 
         {
             InitializeComponent();
         }
-        
+
         private void OpenProfileDetails(object sender, RoutedEventArgs e)
         {
-            HeaderImg.Visibility = Visibility.Collapsed;
+            // Maintenant que MainContent est nommé dans le XAML, l'erreur disparaît
+            if (MainContent != null) 
+            {
+                MainContent.Visibility = Visibility.Collapsed;
+            }
             
-            MenuStackPanel.Visibility = Visibility.Collapsed;
-            
+            // On affiche la Frame et on navigue vers la page de détails
             MainFrame.Visibility = Visibility.Visible;
-            
-            MainFrame.Navigate(new GestionInfoProfil_xaml());
+            MainFrame.Navigate(new GestionInfoProfile());
         }
     }
 }

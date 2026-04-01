@@ -2,9 +2,9 @@
 
 namespace ProjetFilmV1 
 {
-    public partial class GestionInfoProfil_xaml : Page 
+    public partial class GestionInfoProfile : Page 
     {
-        public GestionInfoProfil_xaml()
+        public GestionInfoProfile()
         {
 
             InitializeComponent(); 
