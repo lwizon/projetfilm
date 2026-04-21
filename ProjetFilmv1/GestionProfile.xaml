@@ -59,7 +59,7 @@
                                 <ImageBrush ImageSource="/GestionProfile/img/photoprofile.jpg" Stretch="UniformToFill"/>
                             </Border.Background>
                         </Border>
-                        <TextBlock Text="Nom_Utilisateur" FontSize="22" FontWeight="Bold" Margin="0,15,0,5" HorizontalAlignment="Center"/>
+                        <TextBlock Text="{Binding NomAffiche}" FontSize="22" FontWeight="Bold" Margin="0,15,0,5" HorizontalAlignment="Center"/>
                         <Button Content="Modifier le profil" 
                                 Width="140" 
                                 Background="#202124" 
