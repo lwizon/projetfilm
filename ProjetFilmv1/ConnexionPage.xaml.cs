@@ -1,6 +1,7 @@
 using System;
 using System.Windows;
 using System.Windows.Controls;
+using ProjetFilmV1;
 using ProjetFilmv1.Services;
 
 namespace ProjetFilmv1
@@ -25,24 +26,19 @@ namespace ProjetFilmv1
             string email = EmailTextBox.Text;
             string mdp = PasswordBox.Password;
 
-            try
+            // On récupère l'ID (int) au lieu du booléen
+            int userId = _dbservice.LoginUser(email, mdp);
+
+            if (userId != -1) // Si l'ID est différent de -1, c'est que l'utilisateur existe
             {
-                bool isConnected = _dbservice.LoginUser(email, mdp);
+                // ON REMPLIT LA SESSION AUTOMATIQUEMENT
+                Session.IdUtilisateurConnecte = userId;
 
-                if (isConnected)
-                {
-                    if (Application.Current.MainWindow is MainWindow mainWindow)
-                    {
-                        mainWindow.SetAuthenticatedUser(email);
-                        mainWindow.NavigateToAccueil();
-                    }
+                MessageBox.Show("Connexion réussie !");
 
-                    MessageBox.Show("Connexion reussie !");
-                }
-                else
-                {
-                    MessageBox.Show("Email ou mot de passe incorrect");
-                }
+                // Redirection vers la page de profil (ou ton accueil)
+                // Elle saura maintenant toute seule quel profil afficher
+                NavigationService.Navigate(new GestionInfoProfile());
             }
             catch (Exception ex)
             {
