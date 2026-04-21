@@ -46,6 +46,11 @@ namespace ProjetFilmv1.Models
 
         [JsonPropertyName("name")]
         public string? Name { get; set; }
+
+        public override string ToString()
+        {
+            return string.IsNullOrWhiteSpace(Name) ? "Genre" : Name;
+        }
     }
 
     public class GenresResponse

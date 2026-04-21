@@ -1,3 +1,4 @@
+using System;
 using System.Windows;
 using System.Windows.Controls;
 using ProjetFilmv1.Services;
@@ -32,7 +33,7 @@ namespace ProjetFilmv1
                 MessageBox.Show("Connexion réussie : " + user.Nom);
                 // ouvrir la page suivante
             }
-            else
+            catch (Exception ex)
             {
                 MessageBox.Show("Email ou mot de passe incorrect.");
             }

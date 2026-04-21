@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using MySql.Data.MySqlClient;
 using ProjetFilmv1.Models;
 
@@ -8,13 +8,14 @@ namespace ProjetFilmv1.Services
     {
         bool LoginUser(string email, string password);
         void RegisterUser(string nom, string email, string password);
+        bool DeleteUser(string email);
+        string? GetUserName(string email);
     }
 
     public class dbservice : IUserService
     {
         private string connectionString = "Server=172.20.11.6;Database=projetfilm;User ID=user_bdd;Password=rootroot;";
 
-        // Vérifie si l'utilisateur existe (connexion)
         public bool LoginUser(string email, string password)
         {
             MySqlConnection connection = new MySqlConnection(connectionString);
@@ -28,9 +29,7 @@ namespace ProjetFilmv1.Services
                 command.Parameters.AddWithValue("@password", password);
 
                 connection.Open();
-
                 int count = Convert.ToInt32(command.ExecuteScalar());
-
                 return count > 0;
             }
             catch (Exception e)
@@ -44,7 +43,6 @@ namespace ProjetFilmv1.Services
             }
         }
 
-        // Créer un utilisateur
         public void RegisterUser(string nom, string email, string password)
         {
             MySqlConnection connection = new MySqlConnection(connectionString);
@@ -64,6 +62,55 @@ namespace ProjetFilmv1.Services
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+        public bool DeleteUser(string email)
+        {
+            MySqlConnection connection = new MySqlConnection(connectionString);
+
+            try
+            {
+                string query = "DELETE FROM users WHERE email=@email";
+                MySqlCommand command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@email", email);
+
+                connection.Open();
+                int rows = command.ExecuteNonQuery();
+                return rows > 0;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+        public string? GetUserName(string email)
+        {
+            MySqlConnection connection = new MySqlConnection(connectionString);
+
+            try
+            {
+                string query = "SELECT nom FROM users WHERE email=@email LIMIT 1";
+                MySqlCommand command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@email", email);
+
+                connection.Open();
+                return command.ExecuteScalar()?.ToString();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return null;
             }
             finally
             {
