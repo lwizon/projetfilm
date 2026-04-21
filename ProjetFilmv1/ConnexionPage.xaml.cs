@@ -1,3 +1,4 @@
+using System;
 using System.Windows;
 using System.Windows.Controls;
 using ProjetFilmV1;
@@ -39,9 +40,13 @@ namespace ProjetFilmv1
                 // Elle saura maintenant toute seule quel profil afficher
                 NavigationService.Navigate(new GestionInfoProfile());
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Email ou mot de passe incorrect");
+                MessageBox.Show(
+                    $"Erreur lors de la connexion : {ex.Message}",
+                    "Connexion impossible",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
             }
         }
     }
