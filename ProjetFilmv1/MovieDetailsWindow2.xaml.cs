@@ -1,15 +1,17 @@
 using System;
 using System.Diagnostics;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 using ProjetFilmv1.Models;
-using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 
 namespace ProjetFilmv1
 {
     public partial class MovieDetailsWindow2 : Page
     {
         private readonly Movie _movie;
+
         public MovieDetailsWindow2(Movie movie)
         {
             try
@@ -21,7 +23,15 @@ namespace ProjetFilmv1
             catch (Exception initEx)
             {
                 Debug.WriteLine($"InitializeComponent failed: {initEx}");
-                try { MessageBox.Show($"Erreur lors de l'initialisation:\n{initEx}", "Erreur XAML", MessageBoxButton.OK, MessageBoxImage.Error); } catch { }
+                try
+                {
+                    MessageBox.Show(
+                        $"Erreur lors de l'initialisation :\n{initEx}",
+                        "Erreur XAML",
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Error);
+                }
+                catch { }
                 return;
             }
 
@@ -31,29 +41,34 @@ namespace ProjetFilmv1
                 return;
             }
 
-            // Set window title
             try
             {
-                this.Title = movie.Title ?? "Détails du film";
+                Title = movie.Title ?? "Détails du film";
             }
-            catch { }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error setting title: {ex}");
+            }
 
-            // Fill text fields (guard against missing controls)
             try
             {
-                if (TitleText != null) TitleText.Text = movie.Title ?? "Sans titre";
-                if (VoteText != null) VoteText.Text = $"Note : {movie.VoteAverage:N1}";
-                if (OverviewText != null) OverviewText.Text = movie.Overview ?? string.Empty;
+                if (TitleText != null)
+                    TitleText.Text = movie.Title ?? "Sans titre";
+
+                if (VoteText != null)
+                    VoteText.Text = $"Note : {movie.VoteAverage:N1}";
+
+                if (OverviewText != null)
+                    OverviewText.Text = movie.Overview ?? string.Empty;
             }
             catch (Exception ex)
             {
                 Debug.WriteLine($"Error setting text fields: {ex}");
             }
 
-            // Load poster image safely
             try
             {
-                if (!string.IsNullOrEmpty(movie.PosterFullPath) && PosterImage != null)
+                if (!string.IsNullOrWhiteSpace(movie.PosterFullPath) && PosterImage != null)
                 {
                     if (Uri.TryCreate(movie.PosterFullPath, UriKind.Absolute, out var uri))
                     {
@@ -63,6 +78,7 @@ namespace ProjetFilmv1
                         bitmap.CacheOption = BitmapCacheOption.OnLoad;
                         bitmap.CreateOptions = BitmapCreateOptions.IgnoreImageCache;
                         bitmap.EndInit();
+
                         PosterImage.Source = bitmap;
                     }
                     else
@@ -71,6 +87,10 @@ namespace ProjetFilmv1
                         PosterImage.Source = null;
                     }
                 }
+                else if (PosterImage != null)
+                {
+                    PosterImage.Source = null;
+                }
             }
             catch (Exception ex)
             {
@@ -78,31 +98,55 @@ namespace ProjetFilmv1
                 try { PosterImage.Source = null; } catch { }
             }
 
+            
+            //Bouton Ajouter aux Favoris
+            try
+            {
+                if (FavoriteButton != null)
+                {
+                    FavoriteButton.Checked += (s, e) =>
+                    {
+                        Debug.WriteLine($"Film ajouté aux favoris : {_movie?.Title}");
+                    };
+
+                    FavoriteButton.Unchecked += (s, e) =>
+                    {
+                        Debug.WriteLine($"Film retiré des favoris : {_movie?.Title}");
+                    };
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error wiring FavoriteButton: {ex}");
+            }
+            
+            
             try
             {
                 if (CloseButton != null)
+                {
                     CloseButton.Click += (s, e) =>
                     {
                         if (NavigationService?.CanGoBack == true)
                             NavigationService.GoBack();
                     };
+                }
             }
             catch (Exception ex)
             {
                 Debug.WriteLine($"Error wiring CloseButton: {ex}");
             }
-            
-            // Bouton commentaire fonctionnel
+
             try
             {
                 if (AddCommentButton != null)
+                {
                     AddCommentButton.Click += (s, e) =>
                     {
                         var text = CommentTextBox?.Text?.Trim();
 
-                        if (!string.IsNullOrEmpty(text) && CommentsPanel != null)
+                        if (!string.IsNullOrWhiteSpace(text) && CommentsPanel != null)
                         {
-                            // Créer un nouveau TextBlock pour ce commentaire
                             var commentBlock = new TextBlock
                             {
                                 Text = text,
@@ -111,9 +155,12 @@ namespace ProjetFilmv1
                             };
 
                             CommentsPanel.Children.Add(commentBlock);
-                            CommentTextBox.Text = string.Empty;
+
+                            if (CommentTextBox != null)
+                                CommentTextBox.Text = string.Empty;
                         }
                     };
+                }
             }
             catch (Exception ex)
             {
