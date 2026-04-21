@@ -219,7 +219,6 @@
                              MaxHeight="260"
                              ScrollViewer.VerticalScrollBarVisibility="Auto"
                              MouseDoubleClick="SearchSuggestions_MouseDoubleClick"
-                             SelectionChanged="SearchSuggestions_SelectionChanged"
                              BorderThickness="0"
                              Padding="8"
                              Background="Transparent">

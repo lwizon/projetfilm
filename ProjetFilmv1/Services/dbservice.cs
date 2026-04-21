@@ -1,6 +1,5 @@
 using System;
 using MySql.Data.MySqlClient;
-using ProjetFilmv1.Models;
 
 namespace ProjetFilmv1.Services
 {
@@ -118,7 +117,4 @@ namespace ProjetFilmv1.Services
             }
         }
     }
-    
-    //commentaires
-    
 }
