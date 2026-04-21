@@ -25,32 +25,17 @@ namespace ProjetFilmv1
             string email = EmailTextBox.Text;
             string mdp = PasswordBox.Password;
 
-            try
+            var loginService = new LoginService();
+            var user = loginService.LoginUser(email, mdp);
+
+            if (user != null)
             {
-                bool isConnected = _dbservice.LoginUser(email, mdp);
-
-                if (isConnected)
-                {
-                    if (Application.Current.MainWindow is MainWindow mainWindow)
-                    {
-                        mainWindow.SetAuthenticatedUser(email);
-                        mainWindow.NavigateToAccueil();
-                    }
-
-                    MessageBox.Show("Connexion reussie !");
-                }
-                else
-                {
-                    MessageBox.Show("Email ou mot de passe incorrect");
-                }
+                MessageBox.Show("Connexion réussie : " + user.Nom);
+                // ouvrir la page suivante
             }
             catch (Exception ex)
             {
-                MessageBox.Show(
-                    $"Erreur lors de la connexion : {ex.Message}",
-                    "Connexion impossible",
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Error);
+                MessageBox.Show("Email ou mot de passe incorrect.");
             }
         }
     }
