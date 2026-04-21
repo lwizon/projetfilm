@@ -5,8 +5,7 @@ namespace ProjetFilmv1.Services
 {
     public interface IUserService
     {
-        // On change bool en int pour récupérer l'id_user
-        int LoginUser(string email, string password);
+        bool LoginUser(string email, string password);
         void RegisterUser(string nom, string email, string password);
         bool DeleteUser(string email);
         string? GetUserName(string email);
@@ -16,59 +15,56 @@ namespace ProjetFilmv1.Services
     {
         private string connectionString = "Server=172.20.11.6;Database=projetfilm;User ID=user_bdd;Password=rootroot;";
 
-        public int LoginUser(string email, string password)
+        public bool LoginUser(string email, string password)
         {
-            // Le bloc 'using' ferme la connexion automatiquement à la fin
-            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            MySqlConnection connection = new MySqlConnection(connectionString);
+
+            try
             {
-                try
-                {
-                    // On demande l'id_user au lieu de simplement compter
-                    string query = "SELECT id_user FROM users WHERE email=@email AND password=@password";
+                string query = "SELECT COUNT(*) FROM users WHERE email=@email AND password=@password";
 
-                    MySqlCommand command = new MySqlCommand(query, connection);
-                    command.Parameters.AddWithValue("@email", email);
-                    command.Parameters.AddWithValue("@password", password);
+                MySqlCommand command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@email", email);
+                command.Parameters.AddWithValue("@password", password);
 
-                    connection.Open();
-
-                    // ExecuteScalar renvoie la première colonne de la première ligne (id_user)
-                    object result = command.ExecuteScalar();
-
-                    if (result != null)
-                    {
-                        return Convert.ToInt32(result); // Succès : on renvoie l'ID (ex: 27)
-                    }
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine("Erreur BDD : " + e.Message);
-                }
+                connection.Open();
+                int count = Convert.ToInt32(command.ExecuteScalar());
+                return count > 0;
             }
-
-            return -1; // Échec : on renvoie -1 si l'utilisateur n'est pas trouvé
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return false;
+            }
+            finally
+            {
+                connection.Close();
+            }
         }
 
         public void RegisterUser(string nom, string email, string password)
         {
-            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            MySqlConnection connection = new MySqlConnection(connectionString);
+
+            try
             {
-                try
-                {
-                    string query = "INSERT INTO users (nom, email, password) VALUES (@nom, @email, @password)";
-                    MySqlCommand command = new MySqlCommand(query, connection);
+                string query = "INSERT INTO users (nom, email, password) VALUES (@nom, @email, @password)";
+                MySqlCommand command = new MySqlCommand(query, connection);
 
-                    command.Parameters.AddWithValue("@nom", nom);
-                    command.Parameters.AddWithValue("@email", email);
-                    command.Parameters.AddWithValue("@password", password);
+                command.Parameters.AddWithValue("@nom", nom);
+                command.Parameters.AddWithValue("@email", email);
+                command.Parameters.AddWithValue("@password", password);
 
-                    connection.Open();
-                    command.ExecuteNonQuery();
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e.Message);
-                }
+                connection.Open();
+                command.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            finally
+            {
+                connection.Close();
             }
         }
 
