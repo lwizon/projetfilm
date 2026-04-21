@@ -63,6 +63,7 @@ public partial class App : Application
         SetBrush("SurfaceAltBrush", darkTheme ? "#1F2430" : "#F7F4FF");
         SetBrush("TextBrush", darkTheme ? "#F8FAFC" : "#18181B");
         SetBrush("SecondaryTextBrush", darkTheme ? "#CBD5E1" : "#5B6475");
+        SetBrush("OnDarkTextBrush", darkTheme ? "#E6E1D8" : "#FFFFFF");
         SetBrush("AccentBrush", "#7D5FFF");
         SetBrush("AccentSoftBrush", darkTheme ? "#2A2246" : "#F1EDFF");
         SetBrush("BorderBrush", darkTheme ? "#31384A" : "#E5DEFF");

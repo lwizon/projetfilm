@@ -814,3 +814,11 @@ Nombre de films récupérés : 20
 - Send Help (note: 7,1)
 - Crime 101 (note: 7,0)
 
+Erreur LoadMoviesForCurrentSelectionAsync: System.Net.Http.HttpRequestException: Response status code does not indicate success: 502 (Bad Gateway).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at ProjetFilmv1.Services.TmdbService.GetMoviesByGenreResponseAsync(Int32 genreId, Int32 page) in C:\Users\DD\RiderProjects\projetfilm\ProjetFilmv1\Services\TmdbService.cs:line 39
+   at ProjetFilmv1.AccueilPage.LoadMoviesForCurrentSelectionAsync() in C:\Users\DD\RiderProjects\projetfilm\ProjetFilmv1\AccueilPage.xaml.cs:line 130
+Erreur LoadMoviesForCurrentSelectionAsync: System.Net.Http.HttpRequestException: Response status code does not indicate success: 502 (Bad Gateway).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at ProjetFilmv1.Services.TmdbService.GetMoviesByGenreResponseAsync(Int32 genreId, Int32 page) in C:\Users\DD\RiderProjects\projetfilm\ProjetFilmv1\Services\TmdbService.cs:line 39
+   at ProjetFilmv1.AccueilPage.LoadMoviesForCurrentSelectionAsync() in C:\Users\DD\RiderProjects\projetfilm\ProjetFilmv1\AccueilPage.xaml.cs:line 130

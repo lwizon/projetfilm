@@ -8,6 +8,44 @@
         MinWidth="360"
         MinHeight="640"
         WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <Style x:Key="SearchButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="{DynamicResource AccentBrush}" />
+            <Setter Property="Foreground" Value="{DynamicResource OnDarkTextBrush}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource AccentBrush}" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Padding" Value="18,10" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="SearchButtonBorder"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="18"
+                                Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="SearchButtonBorder" Property="Opacity" Value="0.92"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="SearchButtonBorder" Property="Opacity" Value="0.84"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="SearchButtonBorder" Property="Background" Value="{DynamicResource BorderBrush}"/>
+                                <Setter TargetName="SearchButtonBorder" Property="BorderBrush" Value="{DynamicResource BorderBrush}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
     <Grid Background="{DynamicResource AppBackgroundBrush}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -19,7 +57,7 @@
             <DockPanel.Resources>
                 <Style x:Key="TopButtonStyle" TargetType="Button">
                     <Setter Property="Background" Value="Transparent" />
-                    <Setter Property="Foreground" Value="White" />
+                    <Setter Property="Foreground" Value="{DynamicResource OnDarkTextBrush}" />
                     <Setter Property="BorderThickness" Value="0" />
                     <Setter Property="Padding" Value="10,6" />
                     <Setter Property="FontSize" Value="14" />
@@ -48,6 +86,7 @@
                     <Setter Property="Padding" Value="16,10" />
                     <Setter Property="FontSize" Value="15" />
                 </Style>
+
             </DockPanel.Resources>
 
             <Border Background="{DynamicResource NavBackgroundBrush}" DockPanel.Dock="Top" MinHeight="60" Padding="0,8">
@@ -67,12 +106,12 @@
                                 <ImageBrush ImageSource="Images/Logo.png" Stretch="UniformToFill"/>
                             </Border.Background>
                         </Border>
-                        <TextBlock Text="FILMATRON 2000" Foreground="White" FontWeight="SemiBold" FontSize="16" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                        <TextBlock Text="FILMATRON 2000" Foreground="{DynamicResource OnDarkTextBrush}" FontWeight="SemiBold" FontSize="16" VerticalAlignment="Center" Margin="10,0,0,0"/>
                     </StackPanel>
 
                     <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Margin="12,4">
                         <Button Style="{StaticResource FeaturedNavButtonStyle}" Click="Accueil_Click" Margin="4,0">
-                            <TextBlock Text="Voir les films" FontWeight="Bold" Foreground="White"/>
+                            <TextBlock Text="Voir les films" FontWeight="Bold" Foreground="{DynamicResource OnDarkTextBrush}"/>
                         </Button>
                     </WrapPanel>
 
@@ -92,7 +131,7 @@
                                     </Border>
                                 </ControlTemplate>
                             </Button.Template>
-                            <TextBlock Text="P" Foreground="White" FontWeight="Bold"/>
+                            <TextBlock Text="P" Foreground="{DynamicResource OnDarkTextBrush}" FontWeight="Bold"/>
                             <Button.ContextMenu>
                                 <ContextMenu>
                                     <MenuItem Header="Profil" Click="ProfileMenu_Profil_Click" />
@@ -151,15 +190,11 @@
 
                             <Button Grid.Column="2"
                                     Content="Rechercher"
+                                    Style="{StaticResource SearchButtonStyle}"
                                     Click="Search_Click"
                                     VerticalAlignment="Center"
                                     Margin="8,0,0,0"
-                                    Padding="18,10"
-                                    Cursor="Hand"
-                                    Background="{DynamicResource AccentBrush}"
-                                    Foreground="White"
-                                    BorderThickness="0"
-                                    FontWeight="SemiBold" />
+                                    MinHeight="40"/>
                         </Grid>
                     </Border>
                 </Grid>
@@ -224,7 +259,7 @@
                 Margin="0,0,24,24"
                 Click="ThemeToggleButton_Click"
                 Background="{DynamicResource AccentBrush}"
-                Foreground="White"
+                Foreground="{DynamicResource OnDarkTextBrush}"
                 BorderThickness="0"
                 Cursor="Hand">
             <Button.Template>
@@ -237,7 +272,7 @@
                     </Border>
                 </ControlTemplate>
             </Button.Template>
-            <TextBlock x:Name="ThemeToggleIcon" Text="☾" FontSize="20" FontWeight="Bold" Foreground="White"/>
+            <TextBlock x:Name="ThemeToggleIcon" Text="☾" FontSize="20" FontWeight="Bold" Foreground="{DynamicResource OnDarkTextBrush}"/>
         </Button>
     </Grid>
 </Window>

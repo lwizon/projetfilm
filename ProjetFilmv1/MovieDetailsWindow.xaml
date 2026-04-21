@@ -4,15 +4,15 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="Détails du film"
+        Title="Details du film"
         Height="780"
         Width="1100"
         MinWidth="860"
         MinHeight="620"
         WindowStartupLocation="CenterOwner"
         ResizeMode="CanResize">
-    <Grid Background="#F3F4F6">
-        <Border Margin="18" Padding="18" Background="White" CornerRadius="18">
+    <Grid Background="{DynamicResource AppBackgroundBrush}">
+        <Border Margin="18" Padding="18" Background="{DynamicResource SurfaceBrush}" BorderBrush="{DynamicResource BorderBrush}" BorderThickness="1" CornerRadius="18">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="340"/>
@@ -25,32 +25,32 @@
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
 
-                <Border Grid.Row="0" Grid.RowSpan="3" Grid.Column="0" CornerRadius="14" ClipToBounds="True" Margin="0,0,22,0" Background="#E5E7EB">
+                <Border Grid.Row="0" Grid.RowSpan="3" Grid.Column="0" CornerRadius="14" ClipToBounds="True" Margin="0,0,22,0" Background="{DynamicResource SurfaceAltBrush}">
                     <Image x:Name="PosterImage" Stretch="UniformToFill"/>
                 </Border>
 
                 <StackPanel Grid.Column="1" Grid.Row="0" Margin="0,0,22,12">
-                    <TextBlock x:Name="TitleText" FontSize="28" FontWeight="Bold" TextWrapping="Wrap"/>
-                    <TextBlock x:Name="SubtitleText" Margin="0,6,0,0" Foreground="#6B7280" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="TitleText" FontSize="28" FontWeight="Bold" TextWrapping="Wrap" Foreground="{DynamicResource TextBrush}"/>
+                    <TextBlock x:Name="SubtitleText" Margin="0,6,0,0" Foreground="{DynamicResource SecondaryTextBrush}" TextWrapping="Wrap"/>
                 </StackPanel>
 
                 <StackPanel Grid.Column="1" Grid.Row="1" Margin="0,0,22,0">
-                    <TextBlock Text="Synopsis" FontSize="18" FontWeight="SemiBold" Margin="0,0,0,10"/>
+                    <TextBlock Text="Synopsis" FontSize="18" FontWeight="SemiBold" Margin="0,0,0,10" Foreground="{DynamicResource TextBrush}"/>
                     <ScrollViewer VerticalScrollBarVisibility="Auto">
-                        <TextBlock x:Name="OverviewText" TextWrapping="Wrap" FontSize="14" LineHeight="22"/>
+                        <TextBlock x:Name="OverviewText" TextWrapping="Wrap" FontSize="14" LineHeight="22" Foreground="{DynamicResource SecondaryTextBrush}"/>
                     </ScrollViewer>
                 </StackPanel>
 
                 <StackPanel Grid.Column="2" Grid.Row="0" Grid.RowSpan="2">
-                    <Border Background="#FFF7E8" CornerRadius="16" Padding="16" Margin="0,0,0,16">
+                    <Border Background="{DynamicResource AccentSoftBrush}" BorderBrush="{DynamicResource BorderBrush}" BorderThickness="1" CornerRadius="16" Padding="16" Margin="0,0,0,16">
                         <StackPanel>
-                            <TextBlock Text="Note" FontSize="18" FontWeight="SemiBold"/>
-                            <TextBlock x:Name="VoteText" FontSize="30" FontWeight="Bold" Margin="0,8,0,0"/>
-                            <TextBlock x:Name="VoteHintText" Foreground="#6B7280" Text="Basé sur la note TMDB"/>
+                            <TextBlock Text="Note" FontSize="18" FontWeight="SemiBold" Foreground="{DynamicResource TextBrush}"/>
+                            <TextBlock x:Name="VoteText" FontSize="30" FontWeight="Bold" Margin="0,8,0,0" Foreground="{DynamicResource AccentBrush}"/>
+                            <TextBlock x:Name="VoteHintText" Foreground="{DynamicResource SecondaryTextBrush}" Text="Base sur la note TMDB"/>
                         </StackPanel>
                     </Border>
 
-                    <Border Background="#F9FAFB" CornerRadius="16" Padding="16">
+                    <Border Background="{DynamicResource SurfaceAltBrush}" BorderBrush="{DynamicResource BorderBrush}" BorderThickness="1" CornerRadius="16" Padding="16">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto"/>
@@ -59,7 +59,7 @@
                                 <RowDefinition Height="Auto"/>
                             </Grid.RowDefinitions>
 
-                            <TextBlock Text="Commentaires" FontSize="18" FontWeight="SemiBold" Margin="0,0,0,10"/>
+                            <TextBlock Text="Commentaires" FontSize="18" FontWeight="SemiBold" Margin="0,0,0,10" Foreground="{DynamicResource TextBrush}"/>
                             <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
                                 <StackPanel x:Name="CommentsPanel"/>
                             </ScrollViewer>
@@ -74,13 +74,16 @@
                                     Grid.Row="3"
                                     Content="Ajouter un commentaire"
                                     HorizontalAlignment="Right"
-                                    Padding="12,6"/>
+                                    Padding="12,6"
+                                    Background="{DynamicResource AccentBrush}"
+                                    Foreground="{DynamicResource OnDarkTextBrush}"
+                                    BorderThickness="0"/>
                         </Grid>
                     </Border>
                 </StackPanel>
 
                 <StackPanel Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,16,0,0">
-                    <Button x:Name="CloseButton" Content="Fermer" Width="100" Click="CloseButton_Click"/>
+                    <Button x:Name="CloseButton" Content="Fermer" Width="100" Click="CloseButton_Click" Background="{DynamicResource AccentBrush}" Foreground="{DynamicResource OnDarkTextBrush}" BorderThickness="0"/>
                 </StackPanel>
             </Grid>
         </Border>
