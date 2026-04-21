@@ -2,15 +2,17 @@ using System;
 using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using ProjetFilmv1.Models;
-using System.Windows.Controls.Primitives;
+using ProjetFilmv1.Services;
 
 namespace ProjetFilmv1
 {
     public partial class MovieDetailsWindow2 : Page
     {
         private readonly Movie _movie;
+        private readonly CommentService _commentService = new CommentService();
 
         public MovieDetailsWindow2(Movie movie)
         {
@@ -98,8 +100,6 @@ namespace ProjetFilmv1
                 try { PosterImage.Source = null; } catch { }
             }
 
-            
-            //Bouton Ajouter aux Favoris
             try
             {
                 if (FavoriteButton != null)
@@ -119,8 +119,7 @@ namespace ProjetFilmv1
             {
                 Debug.WriteLine($"Error wiring FavoriteButton: {ex}");
             }
-            
-            
+
             try
             {
                 if (CloseButton != null)
@@ -141,31 +140,98 @@ namespace ProjetFilmv1
             {
                 if (AddCommentButton != null)
                 {
-                    AddCommentButton.Click += (s, e) =>
-                    {
-                        var text = CommentTextBox?.Text?.Trim();
-
-                        if (!string.IsNullOrWhiteSpace(text) && CommentsPanel != null)
-                        {
-                            var commentBlock = new TextBlock
-                            {
-                                Text = text,
-                                TextWrapping = TextWrapping.Wrap,
-                                Margin = new Thickness(0, 0, 0, 8)
-                            };
-
-                            CommentsPanel.Children.Add(commentBlock);
-
-                            if (CommentTextBox != null)
-                                CommentTextBox.Text = string.Empty;
-                        }
-                    };
+                    AddCommentButton.Click += (s, e) => AddComment();
                 }
             }
             catch (Exception ex)
             {
                 Debug.WriteLine($"Error wiring AddCommentButton: {ex}");
             }
+
+            LoadComments();
         }
+
+        private void AddComment()
+{
+    var text = CommentTextBox?.Text?.Trim();
+
+    if (string.IsNullOrWhiteSpace(text))
+    {
+        MessageBox.Show("Veuillez écrire un commentaire.");
+        return;
+    }
+
+    if (!SessionManager.IsLoggedIn || SessionManager.CurrentUser == null)
+    {
+        MessageBox.Show("Vous devez être connecté pour commenter.");
+        return;
+    }
+
+    try
+    {
+        _commentService.AddComment(_movie.Title, SessionManager.CurrentUser.IdUser, text);
+
+        if (CommentTextBox != null)
+            CommentTextBox.Text = string.Empty;
+
+        LoadComments();
+    }
+    catch (Exception ex)
+    {
+        MessageBox.Show($"Erreur lors de l'ajout du commentaire : {ex.Message}");
+    }
+}
+
+private void LoadComments()
+{
+    if (_movie == null || CommentsPanel == null)
+        return;
+
+    CommentsPanel.Children.Clear();
+
+    try
+    {
+        var comments = _commentService.GetCommentsByFilmTitle(_movie.Title);
+
+        foreach (var comment in comments)
+        {
+            var border = new Border
+            {
+                Background = Brushes.White,
+                BorderBrush = new SolidColorBrush(Color.FromRgb(227, 231, 238)),
+                BorderThickness = new Thickness(1),
+                CornerRadius = new CornerRadius(10),
+                Padding = new Thickness(10),
+                Margin = new Thickness(0, 0, 0, 8)
+            };
+
+            var stack = new StackPanel();
+
+            var authorText = new TextBlock
+            {
+                Text = comment.UserName,
+                FontWeight = FontWeights.Bold,
+                Foreground = new SolidColorBrush(Color.FromRgb(30, 136, 229)),
+                Margin = new Thickness(0, 0, 0, 4)
+            };
+
+            var contentText = new TextBlock
+            {
+                Text = comment.Contenu,
+                TextWrapping = TextWrapping.Wrap
+            };
+
+            stack.Children.Add(authorText);
+            stack.Children.Add(contentText);
+
+            border.Child = stack;
+            CommentsPanel.Children.Add(border);
+        }
+    }
+    catch (Exception ex)
+    {
+        MessageBox.Show($"Erreur lors du chargement des commentaires : {ex.Message}");
+    }
+}
     }
 }

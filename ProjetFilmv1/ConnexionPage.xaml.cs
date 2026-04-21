@@ -24,15 +24,17 @@ namespace ProjetFilmv1
             string email = EmailTextBox.Text;
             string mdp = PasswordBox.Password;
 
-            bool isConnected = _dbservice.LoginUser(email, mdp);
+            var loginService = new LoginService();
+            var user = loginService.LoginUser(email, mdp);
 
-            if (isConnected)
+            if (user != null)
             {
-                MessageBox.Show("Connexion réussie !");
+                MessageBox.Show("Connexion réussie : " + user.Nom);
+                // ouvrir la page suivante
             }
             else
             {
-                MessageBox.Show("Email ou mot de passe incorrect");
+                MessageBox.Show("Email ou mot de passe incorrect.");
             }
         }
     }
