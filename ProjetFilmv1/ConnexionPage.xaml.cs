@@ -40,11 +40,7 @@ namespace ProjetFilmv1
             }
             catch (Exception ex)
             {
-                MessageBox.Show(
-                    $"Erreur lors de la connexion : {ex.Message}",
-                    "Connexion impossible",
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Error);
+                MessageBox.Show("Email ou mot de passe incorrect.");
             }
         }
     }
