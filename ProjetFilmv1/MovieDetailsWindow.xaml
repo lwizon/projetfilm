@@ -75,7 +75,7 @@
                                    Margin="12,0,0,0"
                                    VerticalAlignment="Center"
                                    Foreground="{DynamicResource SecondaryTextBrush}"
-                                   Text="Connectez-vous pour enregistrer ce film."/>
+                                   Text=""/>
                     </StackPanel>
                 </StackPanel>
 
@@ -112,14 +112,14 @@
                                 Foreground="{DynamicResource TextBrush}"/>
                             
 
-                            <ScrollViewer Height="200"
+                            <ScrollViewer Height="125"
                                           VerticalScrollBarVisibility="Auto"
                                           Margin="0,0,0,10">
                                 <StackPanel x:Name="CommentsPanel"/>
                             </ScrollViewer>
                             <TextBox x:Name="CommentTextBox"
                                      Grid.Row="2"
-                                     Height="78"
+                                     Height="50"
                                      Margin="0,12,0,10"
                                      TextWrapping="Wrap"
                                      AcceptsReturn="True"
