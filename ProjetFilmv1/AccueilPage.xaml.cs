@@ -77,17 +77,7 @@ namespace ProjetFilmv1
                 if (_suppressPageComboChanged)
                     return;
 
-                if (PageComboBox.SelectedItem is int p)
-                {
-                    _currentPage = p;
-                    await LoadMoviesForCurrentSelectionAsync();
-                }
-                else if (PageComboBox.SelectedItem is object obj && int.TryParse(obj.ToString(), out var v))
-                {
-                    _currentPage = v;
-                    await LoadMoviesForCurrentSelectionAsync();
-                }
-            };
+            PageComboBox.SelectedIndex = 0;
 
             GenreComboBox.SelectionChanged += async (s, e) =>
             {
@@ -96,6 +86,9 @@ namespace ProjetFilmv1
                 else
                     _currentGenreId = 0;
 
+            GenreComboBox.SelectionChanged += async (_, _) =>
+            {
+                _currentGenreId = GenreComboBox.SelectedItem is Genre genre ? genre.Id : 0;
                 _currentPage = 1;
 
                 _suppressPageComboChanged = true;
@@ -105,9 +98,9 @@ namespace ProjetFilmv1
                 await LoadMoviesForCurrentSelectionAsync();
             };
 
-            PrevPageButton.Click += async (s, e) =>
+            PrevPageButton.Click += async (_, _) =>
             {
-                if (_currentPage > 1)
+                if (_currentPage <= 1)
                 {
                     _currentPage--;
 
@@ -117,7 +110,6 @@ namespace ProjetFilmv1
 
                     await LoadMoviesForCurrentSelectionAsync();
                 }
-            };
 
             NextPageButton.Click += async (s, e) =>
             {
@@ -177,7 +169,6 @@ namespace ProjetFilmv1
         {
             try
             {
-                Debug.WriteLine("Loading genres...");
                 var list = await _tmdb.GetGenresAsync();
                 Debug.WriteLine($"Genres loaded: {list.Count}");
 
@@ -221,7 +212,7 @@ namespace ProjetFilmv1
                 foreach (var m in movies)
                     Movies.Add(m);
 
-                _totalPages = resp?.TotalPages ?? 1;
+                _totalPages = response?.TotalPages ?? 1;
                 PageText.Text = $"Page {_currentPage} / {_totalPages}";
 
                 try
@@ -230,8 +221,7 @@ namespace ProjetFilmv1
 
                     if (PageComboBox.Items.Count >= 1)
                     {
-                        var index = Math.Max(0, Math.Min(PageComboBox.Items.Count - 1, _currentPage - 1));
-                        PageComboBox.SelectedIndex = index;
+                        PageComboBox.SelectedIndex = Math.Max(0, Math.Min(PageComboBox.Items.Count - 1, _currentPage - 1));
                     }
 
                     PageComboBox.IsEnabled = _totalPages > 1;

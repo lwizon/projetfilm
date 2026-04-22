@@ -134,7 +134,6 @@
                                 Content="Fermer"
                                 Width="90"/>
                     </StackPanel>
-                </StackPanel>
 
                 <!-- Colonne droite : note circulaire + commentaires -->
                <StackPanel Grid.Row="1" Grid.Column="2" Margin="16,0,0,0">
