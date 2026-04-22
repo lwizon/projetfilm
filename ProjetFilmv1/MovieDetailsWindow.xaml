@@ -11,6 +11,39 @@
         MinHeight="620"
         WindowStartupLocation="CenterOwner"
         ResizeMode="CanResize">
+    <Window.Resources>
+        <Style x:Key="FavoriteActionButtonStyle" TargetType="Button">
+            <Setter Property="Padding" Value="14,10"/>
+            <Setter Property="Foreground" Value="{DynamicResource OnDarkTextBrush}"/>
+            <Setter Property="Background" Value="{DynamicResource AccentBrush}"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="ButtonBorder"
+                                Background="{TemplateBinding Background}"
+                                CornerRadius="14"
+                                Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="ButtonBorder" Property="Opacity" Value="0.92"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="ButtonBorder" Property="Opacity" Value="0.82"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="ButtonBorder" Property="Opacity" Value="0.55"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
     <Grid Background="{DynamicResource AppBackgroundBrush}">
         <Border Margin="18" Padding="18" Background="{DynamicResource SurfaceBrush}" BorderBrush="{DynamicResource BorderBrush}" BorderThickness="1" CornerRadius="18">
             <Grid>
@@ -32,6 +65,18 @@
                 <StackPanel Grid.Column="1" Grid.Row="0" Margin="0,0,22,12">
                     <TextBlock x:Name="TitleText" FontSize="28" FontWeight="Bold" TextWrapping="Wrap" Foreground="{DynamicResource TextBrush}"/>
                     <TextBlock x:Name="SubtitleText" Margin="0,6,0,0" Foreground="{DynamicResource SecondaryTextBrush}" TextWrapping="Wrap"/>
+                    <StackPanel Orientation="Horizontal" Margin="0,18,0,0">
+                        <Button x:Name="FavoriteButton"
+                                Content="Ajouter aux favoris"
+                                MinWidth="210"
+                                Click="FavoriteButton_Click"
+                                Style="{StaticResource FavoriteActionButtonStyle}"/>
+                        <TextBlock x:Name="FavoriteStatusText"
+                                   Margin="12,0,0,0"
+                                   VerticalAlignment="Center"
+                                   Foreground="{DynamicResource SecondaryTextBrush}"
+                                   Text="Connectez-vous pour enregistrer ce film."/>
+                    </StackPanel>
                 </StackPanel>
 
                 <StackPanel Grid.Column="1" Grid.Row="1" Margin="0,0,22,0">

@@ -556,3 +556,78 @@ Loading movies for genre 0 page 1...
 Loading movies for genre 0 page 1...
 Movies loaded: 20
 Movies loaded: 20
+Error loading favorite state: MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'Favoris' in 'SELECT'
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacketAsync(Boolean execAsync)
+   at MySql.Data.MySqlClient.NativeDriver.GetResultAsync(Int32 affectedRow, Int64 insertedId, Boolean execAsync)
+   at MySql.Data.MySqlClient.Driver.GetResultAsync(Int32 statementId, Int32 affectedRows, Int64 insertedId, Boolean execAsync)
+   at MySql.Data.MySqlClient.Driver.NextResultAsync(Int32 statementId, Boolean force, Boolean execAsync)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResultAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResultAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteScalarAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteScalar()
+   at ProjetFilmv1.Services.FavoritesService.GetFavorites(Int32 userId) in C:\Users\DD\RiderProjects\projetfilm\ProjetFilmv1\Services\FavoritesService.cs:line 27
+   at ProjetFilmv1.Services.FavoritesService.IsFavorite(Int32 userId, Int32 movieId) in C:\Users\DD\RiderProjects\projetfilm\ProjetFilmv1\Services\FavoritesService.cs:line 38
+   at ProjetFilmv1.MovieDetailsWindow.RefreshFavoriteState() in C:\Users\DD\RiderProjects\projetfilm\ProjetFilmv1\MovieDetailsWindow.xaml.cs:line 230
+Error loading favorite state: MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'Favoris' in 'SELECT'
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacketAsync(Boolean execAsync)
+   at MySql.Data.MySqlClient.NativeDriver.GetResultAsync(Int32 affectedRow, Int64 insertedId, Boolean execAsync)
+   at MySql.Data.MySqlClient.Driver.GetResultAsync(Int32 statementId, Int32 affectedRows, Int64 insertedId, Boolean execAsync)
+   at MySql.Data.MySqlClient.Driver.NextResultAsync(Int32 statementId, Boolean force, Boolean execAsync)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResultAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResultAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteScalarAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteScalar()
+   at ProjetFilmv1.Services.FavoritesService.GetFavorites(Int32 userId) in C:\Users\DD\RiderProjects\projetfilm\ProjetFilmv1\Services\FavoritesService.cs:line 27
+   at ProjetFilmv1.Services.FavoritesService.IsFavorite(Int32 userId, Int32 movieId) in C:\Users\DD\RiderProjects\projetfilm\ProjetFilmv1\Services\FavoritesService.cs:line 38
+   at ProjetFilmv1.MovieDetailsWindow.RefreshFavoriteState() in C:\Users\DD\RiderProjects\projetfilm\ProjetFilmv1\MovieDetailsWindow.xaml.cs:line 230
+Error loading favorite state: MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'Favoris' in 'SELECT'
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacketAsync(Boolean execAsync)
+   at MySql.Data.MySqlClient.NativeDriver.GetResultAsync(Int32 affectedRow, Int64 insertedId, Boolean execAsync)
+   at MySql.Data.MySqlClient.Driver.GetResultAsync(Int32 statementId, Int32 affectedRows, Int64 insertedId, Boolean execAsync)
+   at MySql.Data.MySqlClient.Driver.NextResultAsync(Int32 statementId, Boolean force, Boolean execAsync)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResultAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResultAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteScalarAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteScalar()
+   at ProjetFilmv1.Services.FavoritesService.GetFavorites(Int32 userId) in C:\Users\DD\RiderProjects\projetfilm\ProjetFilmv1\Services\FavoritesService.cs:line 27
+   at ProjetFilmv1.Services.FavoritesService.IsFavorite(Int32 userId, Int32 movieId) in C:\Users\DD\RiderProjects\projetfilm\ProjetFilmv1\Services\FavoritesService.cs:line 38
+   at ProjetFilmv1.MovieDetailsWindow.RefreshFavoriteState() in C:\Users\DD\RiderProjects\projetfilm\ProjetFilmv1\MovieDetailsWindow.xaml.cs:line 230
+Error loading favorite state: MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'favoris' in 'SELECT'
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacketAsync(Boolean execAsync)
+   at MySql.Data.MySqlClient.NativeDriver.GetResultAsync(Int32 affectedRow, Int64 insertedId, Boolean execAsync)
+   at MySql.Data.MySqlClient.Driver.GetResultAsync(Int32 statementId, Int32 affectedRows, Int64 insertedId, Boolean execAsync)
+   at MySql.Data.MySqlClient.Driver.NextResultAsync(Int32 statementId, Boolean force, Boolean execAsync)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResultAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResultAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteScalarAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteScalar()
+   at ProjetFilmv1.Services.FavoritesService.GetFavorites(Int32 userId) in C:\Users\DD\RiderProjects\projetfilm\ProjetFilmv1\Services\FavoritesService.cs:line 27
+   at ProjetFilmv1.Services.FavoritesService.IsFavorite(Int32 userId, Int32 movieId) in C:\Users\DD\RiderProjects\projetfilm\ProjetFilmv1\Services\FavoritesService.cs:line 38
+   at ProjetFilmv1.MovieDetailsWindow.RefreshFavoriteState() in C:\Users\DD\RiderProjects\projetfilm\ProjetFilmv1\MovieDetailsWindow.xaml.cs:line 230
+Error loading favorite state: MySql.Data.MySqlClient.MySqlException (0x80004005): CREATE command denied to user 'user_bdd'@'172.20.0.130' for table `projetfilm`.`films_favoris`
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacketAsync(Boolean execAsync)
+   at MySql.Data.MySqlClient.NativeDriver.GetResultAsync(Int32 affectedRow, Int64 insertedId, Boolean execAsync)
+   at MySql.Data.MySqlClient.Driver.GetResultAsync(Int32 statementId, Int32 affectedRows, Int64 insertedId, Boolean execAsync)
+   at MySql.Data.MySqlClient.Driver.NextResultAsync(Int32 statementId, Boolean force, Boolean execAsync)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResultAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResultAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQueryAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at ProjetFilmv1.Services.FavoritesService.EnsureFavoritesTable(MySqlConnection connection) in C:\Users\DD\RiderProjects\projetfilm\ProjetFilmv1\Services\FavoritesService.cs:line 144
+   at ProjetFilmv1.Services.FavoritesService.IsFavorite(Int32 userId, Int32 movieId) in C:\Users\DD\RiderProjects\projetfilm\ProjetFilmv1\Services\FavoritesService.cs:line 55
+   at ProjetFilmv1.MovieDetailsWindow.RefreshFavoriteState() in C:\Users\DD\RiderProjects\projetfilm\ProjetFilmv1\MovieDetailsWindow.xaml.cs:line 230

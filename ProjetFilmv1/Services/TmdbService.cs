@@ -81,5 +81,22 @@ namespace ProjetFilmv1.Services
             var data = await SearchMoviesResponseAsync(query, page);
             return data?.Results ?? new List<Movie>();
         }
+
+        public async Task<Movie?> GetMovieByIdAsync(int movieId)
+        {
+            var url = $"movie/{movieId}?api_key={_apiKey}&language=fr-FR";
+            using var resp = await _http.GetAsync(url);
+
+            if (!resp.IsSuccessStatusCode)
+            {
+                return null;
+            }
+
+            var json = await resp.Content.ReadAsStringAsync();
+            return JsonSerializer.Deserialize<Movie>(json, new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            });
+        }
     }
 }
