@@ -13,6 +13,7 @@ namespace ProjetFilmv1
     public partial class AccueilPage : Page, INotifyPropertyChanged
     {
         private readonly TmdbService _tmdb = new TmdbService();
+
         public ObservableCollection<Movie> Movies { get; } = new ObservableCollection<Movie>();
         public ObservableCollection<Genre> Genres { get; } = new ObservableCollection<Genre>();
 
@@ -59,9 +60,11 @@ namespace ProjetFilmv1
             {
                 _currentGenreId = GenreComboBox.SelectedItem is Genre genre ? genre.Id : 0;
                 _currentPage = 1;
+
                 _suppressPageComboChanged = true;
                 PageComboBox.SelectedIndex = 0;
                 _suppressPageComboChanged = false;
+
                 await LoadMoviesForCurrentSelectionAsync();
             };
 
@@ -119,7 +122,11 @@ namespace ProjetFilmv1
             catch (Exception ex)
             {
                 Debug.WriteLine($"Erreur LoadGenresAsync: {ex}");
-                MessageBox.Show($"Erreur lors de la récupération des genres : {ex.Message}", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(
+                    $"Erreur lors de la récupération des genres : {ex.Message}",
+                    "Erreur",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
             }
         }
 
@@ -161,7 +168,11 @@ namespace ProjetFilmv1
             catch (Exception ex)
             {
                 Debug.WriteLine($"Erreur LoadMoviesForCurrentSelectionAsync: {ex}");
-                MessageBox.Show($"Erreur lors de la récupération des films : {ex.Message}", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(
+                    $"Erreur lors de la récupération des films : {ex.Message}",
+                    "Erreur",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
             }
         }
 
@@ -193,6 +204,45 @@ namespace ProjetFilmv1
         protected void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        private void UpdatePaneLayout()
+        {
+            try
+            {
+                if (LeftColumn == null || RightColumn == null)
+                    return;
+
+                if (SelectedMovie != null)
+                {
+                    LeftColumn.Width = new GridLength(1, GridUnitType.Star);
+                    RightColumn.Width = new GridLength(2, GridUnitType.Star);
+                }
+                else
+                {
+                    LeftColumn.Width = new GridLength(1, GridUnitType.Star);
+                    RightColumn.Width = new GridLength(1, GridUnitType.Star);
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Erreur UpdatePaneLayout: {ex}");
+            }
+        }
+
+        private void MoviesListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            try
+            {
+                if (MoviesListBox.SelectedItem is Movie movie)
+                    SelectedMovie = movie;
+                else
+                    SelectedMovie = null;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Erreur MoviesListBox_SelectionChanged: {ex}");
+            }
         }
     }
 }
