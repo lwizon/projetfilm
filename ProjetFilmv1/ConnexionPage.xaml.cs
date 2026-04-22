@@ -1,6 +1,7 @@
 using System;
 using System.Windows;
 using System.Windows.Controls;
+using ProjetFilmV1;
 using ProjetFilmv1.Services;
 
 namespace ProjetFilmv1
@@ -22,8 +23,10 @@ namespace ProjetFilmv1
 
         private void Login_Click(object sender, RoutedEventArgs e)
         {
-            string email = EmailTextBox.Text;
-            string mdp = PasswordBox.Password;
+            try
+            {
+                string email = EmailTextBox.Text;
+                string mdp = PasswordBox.Password;
 
             try
             {
