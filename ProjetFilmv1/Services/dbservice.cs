@@ -11,6 +11,7 @@ namespace ProjetFilmv1.Services
         void RegisterUser(string nom, string email, string password);
         bool DeleteUser(string email);
         string? GetUserName(string email);
+        List<UserResult> SearchUsers(string query);
     }
 
     public class dbservice : IUserService
@@ -121,8 +122,60 @@ namespace ProjetFilmv1.Services
                 connection.Close();
             }
         }
+        public List<UserResult> SearchUsers(string query)
+        { // On prépare une liste vide qui va accueillir les résultats
+            var results = new List<UserResult>();
+            MySqlConnection connection = new MySqlConnection(connectionString);
+            try
+            {
+                // LIKE avec %query% = "contient ce texte quelque part"
+                // Exemple : query = "jea" trouve "Jean", "Jeanne", "jean@mail.com"
+                // On cherche dans le nom OU dans l'email
+                string sql = "SELECT nom, email FROM users WHERE nom LIKE @q OR email LIKE @q LIMIT 5";
+                MySqlCommand command = new MySqlCommand(sql, connection);
+
+                // Le @ devant "q" protège contre les injections SQL
+                // Sans ça, un utilisateur malveillant pourrait écrire du SQL dans la barre de recherche
+                command.Parameters.AddWithValue("@q", $"%{query}%");
+
+                connection.Open();
+                MySqlDataReader reader = command.ExecuteReader();
+                // reader.Read() avance ligne par ligne dans les résultats
+                // Tant qu'il y a une ligne à lire, on continue
+                while (reader.Read())
+                {
+                    results.Add(new UserResult
+                    {
+                        Nom   = reader["nom"]?.ToString()   ?? "",
+                        Email = reader["email"]?.ToString() ?? ""
+                    });
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return results;
+        }
     }
     
     //commentaires
-    
+    public class UserResult
+    {
+        // Le nom de l'utilisateur (colonne "nom" dans ta BDD)
+        public string Nom { get; set; } = "";
+
+        // L'email de l'utilisateur (colonne "email" dans ta BDD)
+        public string Email { get; set; } = "";
+
+        // Cette propriété n'existe pas en BDD, elle est calculée automatiquement
+        // quand on écrit UserResult.Display, C# retourne "Jean — jean@mail.com"
+        // C'est ce texte qui sera affiché dans la liste déroulante
+        public string Display => $"{Nom}  —  {Email}";
+    }
 }

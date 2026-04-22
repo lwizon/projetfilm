@@ -22,6 +22,7 @@ namespace ProjetFilmv1
         private bool _isUserLoggedIn;
         private string? _connectedUserEmail;
         private string? _connectedUserName;
+        private string _searchMode = "film";
 
         private readonly SuggestionItem _dummySuggestion = new SuggestionItem();
 
@@ -37,6 +38,33 @@ namespace ProjetFilmv1
             UpdateThemeToggleButton();
             UpdateAuthenticationButtons();
             MainFrame.Navigate(new AccueilPage());
+        }
+        // Déclenché quand l'utilisateur clique sur le bouton radio "Films"
+        private void FilmModeButton_Checked(object sender, RoutedEventArgs e)
+        {
+            _searchMode = "film";
+
+            // On vérifie que SearchBox existe avant de le vider
+            // (nécessaire car cet événement peut se déclencher pendant l'initialisation)
+            if (SearchBox != null)
+            {
+                SearchBox.Text = "";
+            }
+
+            HideSuggestions(); // On cache les suggestions de l'ancien mode
+        }
+
+// Déclenché quand l'utilisateur clique sur le bouton radio "Utilisateurs"
+        private void UserModeButton_Checked(object sender, RoutedEventArgs e)
+        {
+            _searchMode = "user";
+
+            if (SearchBox != null)
+            {
+                SearchBox.Text = "";
+            }
+
+            HideSuggestions();
         }
 
         public void SetAuthenticatedUser(string email)
@@ -115,6 +143,8 @@ namespace ProjetFilmv1
 
         private void HideSuggestions()
         {
+            if (SuggestionsBorder == null) return;
+            
             var fade = new DoubleAnimation(1, 0, _animDuration) { EasingFunction = new QuadraticEase() };
             var slide = new DoubleAnimation(0, -6, _animDuration) { EasingFunction = new QuadraticEase() };
 
@@ -164,62 +194,104 @@ namespace ProjetFilmv1
         }
 
         private async void SearchBox_TextChanged(object sender, TextChangedEventArgs e)
+{
+    var text = SearchBox.Text?.Trim() ?? string.Empty;
+
+    // --- DEBOUNCE (inchangé, voir explication précédente) ---
+    _cts?.Cancel();
+    _cts = new CancellationTokenSource();
+    var token = _cts.Token;
+
+    try
+    {
+        await Task.Delay(300, token);
+    }
+    catch (TaskCanceledException)
+    {
+        return;
+    }
+
+    // Si la barre est vide, on cache tout et on s'arrête
+    if (string.IsNullOrEmpty(text))
+    {
+        SearchSuggestions.ItemsSource = null;
+        HideSuggestions();
+        return;
+    }
+
+    try
+    {
+        if (_searchMode == "film")
         {
-            var text = SearchBox.Text?.Trim() ?? string.Empty;
-
-            _cts?.Cancel();
-            _cts = new CancellationTokenSource();
-            var token = _cts.Token;
-
-            try
-            {
-                await Task.Delay(300, token);
-            }
-            catch (TaskCanceledException)
-            {
-                return;
-            }
-
-            if (string.IsNullOrEmpty(text))
-            {
-                SearchSuggestions.ItemsSource = null;
-                HideSuggestions();
-                return;
-            }
-
-            try
-            {
-                var results = await _tmdb.SearchMoviesAsync(text, 1);
-                var titles = results
-                    .Take(5)
-                    .Select(m => new SuggestionItem
-                    {
-                        Id = m.Id,
-                        Title = m.Title ?? string.Empty,
-                        PosterImage = m.PosterFullPath,
-                        Rating = m.VoteAverage > 0 ? m.VoteAverage.ToString("0.0") : "-",
-                        Description = string.IsNullOrWhiteSpace(m.Overview) ? "" : m.Overview.Length > 120 ? m.Overview.Substring(0, 117) + "..." : m.Overview,
-                    })
-                    .ToList();
-
-                if (titles.Count > 0)
+            // =============================================
+            // MODE FILM — code existant, rien ne change
+            // =============================================
+            var results = await _tmdb.SearchMoviesAsync(text, 1);
+            var titles = results
+                .Take(5)
+                .Select(m => new SuggestionItem
                 {
-                    SearchSuggestions.ItemsSource = titles;
-                    SearchSuggestions.DisplayMemberPath = "Title";
-                    ShowSuggestions();
-                }
-                else
-                {
-                    SearchSuggestions.ItemsSource = null;
-                    HideSuggestions();
-                }
+                    Id          = m.Id,
+                    Title       = m.Title ?? string.Empty,
+                    PosterImage = m.PosterFullPath,
+                    Rating      = m.VoteAverage > 0 ? m.VoteAverage.ToString("0.0") : "-",
+                    Description = string.IsNullOrWhiteSpace(m.Overview) ? "" :
+                                  m.Overview.Length > 120
+                                      ? m.Overview.Substring(0, 117) + "..."
+                                      : m.Overview
+                })
+                .ToList();
+
+            if (titles.Count > 0)
+            {
+                SearchSuggestions.ItemsSource = titles;
+                SearchSuggestions.DisplayMemberPath = "Title";
+                ShowSuggestions();
             }
-            catch
+            else
             {
                 SearchSuggestions.ItemsSource = null;
                 HideSuggestions();
             }
         }
+        else
+        {
+            // =============================================
+            // MODE UTILISATEUR — nouveau bloc
+            // =============================================
+
+            // Task.Run() exécute SearchUsers sur un thread séparé
+            // POURQUOI ? SearchUsers parle à la base de données MySQL,
+            // ce qui est une opération lente (réseau, disque).
+            // Si on l'appelait directement ici, l'interface se figerait
+            // pendant la requête. Task.Run() évite ça.
+            var users = await Task.Run(() => _dbservice.SearchUsers(text));
+
+            if (users.Count > 0)
+            {
+                SearchSuggestions.ItemsSource = users;
+
+                // "Display" correspond à la propriété Display de UserResult
+                // qui retourne "Jean — jean@mail.com"
+                SearchSuggestions.DisplayMemberPath = "Display";
+                ShowSuggestions();
+            }
+            else
+            {
+                SearchSuggestions.ItemsSource = null;
+                HideSuggestions();
+            }
+        }
+    }
+    catch
+    {
+        // En cas d'erreur (BDD inaccessible, réseau coupé, etc.)
+        // on cache proprement les suggestions sans faire planter l'app
+        SearchSuggestions.ItemsSource = null;
+        HideSuggestions();
+    }
+}
+
 
         private void SearchBox_KeyDown(object sender, KeyEventArgs e)
         {
@@ -257,14 +329,34 @@ namespace ProjetFilmv1
 
             if (string.IsNullOrEmpty(query))
             {
-                MessageBox.Show("Veuillez entrer un titre de film a rechercher.", "Recherche vide", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show(
+                    "Veuillez entrer un texte à rechercher.",
+                    "Recherche vide",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Information);
                 return;
             }
 
-            MainFrame.Navigate(new SearchResultsPage(query));
-            SuggestionsBorder.Visibility = Visibility.Collapsed;
-            SetSearchAreaVisibility(true);
+            if (_searchMode == "film")
+            {
+                // Comportement existant inchangé :
+                // on navigue vers la page de résultats de films
+                MainFrame.Navigate(new SearchResultsPage(query));
+                SuggestionsBorder.Visibility = Visibility.Collapsed;
+                SetSearchAreaVisibility(true);
+            }
+            else
+            {
+                // En mode utilisateur, les résultats sont déjà visibles
+                // dans la liste déroulante grâce à SearchBox_TextChanged.
+                // On s'assure juste qu'elle est bien affichée.
+                if (SuggestionsBorder.Visibility != Visibility.Visible)
+                {
+                    ShowSuggestions();
+                }
+            }
         }
+
         
         private void SearchSuggestions_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
