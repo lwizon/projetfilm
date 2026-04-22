@@ -205,44 +205,5 @@ namespace ProjetFilmv1
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-
-        private void UpdatePaneLayout()
-        {
-            try
-            {
-                if (LeftColumn == null || RightColumn == null)
-                    return;
-
-                if (SelectedMovie != null)
-                {
-                    LeftColumn.Width = new GridLength(1, GridUnitType.Star);
-                    RightColumn.Width = new GridLength(2, GridUnitType.Star);
-                }
-                else
-                {
-                    LeftColumn.Width = new GridLength(1, GridUnitType.Star);
-                    RightColumn.Width = new GridLength(1, GridUnitType.Star);
-                }
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine($"Erreur UpdatePaneLayout: {ex}");
-            }
-        }
-
-        private void MoviesListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            try
-            {
-                if (MoviesListBox.SelectedItem is Movie movie)
-                    SelectedMovie = movie;
-                else
-                    SelectedMovie = null;
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine($"Erreur MoviesListBox_SelectionChanged: {ex}");
-            }
-        }
     }
 }

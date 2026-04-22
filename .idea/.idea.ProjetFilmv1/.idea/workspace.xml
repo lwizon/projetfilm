@@ -8,11 +8,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8edff7d4-ad7d-4e2e-87f3-a43ca20b22ac" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/AuthPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/AuthPage.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/ConnexionPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/ConnexionPage.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/GestionProfile.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/GestionProfile.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/GestionProfile.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/GestionProfile.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/AccueilPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/AccueilPage.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/MovieDetailsWindow2.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/MovieDetailsWindow2.xaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjetFilmv1/bin/Debug/net9.0-windows/ProjetFilmv1.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/bin/Debug/net9.0-windows/ProjetFilmv1.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjetFilmv1/bin/Debug/net9.0-windows/ProjetFilmv1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/bin/Debug/net9.0-windows/ProjetFilmv1.pdb" afterDir="false" />
     </list>
@@ -25,7 +22,7 @@
     <option name="firstShow" value="false" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="7" />
+    <option name="cachedIndexableFilesCount" value="8" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -134,6 +131,7 @@
       <workItem from="1776691527489" duration="1788000" />
       <workItem from="1776772696136" duration="5794000" />
       <workItem from="1776839266924" duration="53000" />
+      <workItem from="1776839339191" duration="518000" />
     </task>
     <task id="LOCAL-00001" summary="init V2">
       <option name="closed" value="true" />
@@ -199,7 +197,15 @@
       <option name="project" value="LOCAL" />
       <updated>1776775468460</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="reparafion">
+      <option name="closed" value="true" />
+      <created>1776839601029</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1776839601029</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -218,7 +224,8 @@
     <MESSAGE value="grand renouveau grand changement" />
     <MESSAGE value="unversioned files des grands changements" />
     <MESSAGE value="Nouvelle interface trop classe" />
-    <option name="LAST_COMMIT_MESSAGE" value="Nouvelle interface trop classe" />
+    <MESSAGE value="reparafion" />
+    <option name="LAST_COMMIT_MESSAGE" value="reparafion" />
     <option name="LAST_CHUNK_COMMIT_MESSAGE" value="test cache" />
   </component>
   <component name="XDebuggerManager">
