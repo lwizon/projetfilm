@@ -58,8 +58,8 @@ namespace ProjetFilmv1
 
             try
             {
-                var isConnected = _dbservice.LoginUser(email, password);
-                if (!isConnected)
+                var userId = _dbservice.LoginUser(email, password);
+                if (userId == -1)
                 {
                     MessageBox.Show("Email ou mot de passe incorrect.", "Connexion impossible", MessageBoxButton.OK, MessageBoxImage.Warning);
                     return;
@@ -67,6 +67,7 @@ namespace ProjetFilmv1
 
                 if (Application.Current.MainWindow is MainWindow mainWindow)
                 {
+                    Session.IdUtilisateurConnecte = userId;
                     mainWindow.SetAuthenticatedUser(email);
                     mainWindow.NavigateToAccueil();
                 }

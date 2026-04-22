@@ -8,13 +8,23 @@ namespace ProjetFilmV1
 {
     public partial class GestionProfile : Page
     {
-        // Ta chaîne de connexion (la même que d'habitude)
-        private string _connectionString = "Server=172.20.11.6;Port=3306;Database=projetfilm;Uid=admin_bdd;Pwd=rootroot;";
+        private readonly string _connectionString = "Server=172.20.11.6;Port=3306;Database=projetfilm;Uid=admin_bdd;Pwd=rootroot;";
+        private readonly string? _displayName;
 
         public GestionProfile() 
         {
             InitializeComponent();
             ChargerNomUtilisateur();
+        }
+
+        public GestionProfile(string displayName) : this()
+        {
+            _displayName = displayName;
+
+            if (!string.IsNullOrWhiteSpace(displayName) && UserNameText != null)
+            {
+                UserNameText.Text = displayName;
+            }
         }
 
         private void ChargerNomUtilisateur()
@@ -31,10 +41,13 @@ namespace ProjetFilmV1
 
                     object result = cmd.ExecuteScalar();
 
-                    if (result != null)
+                    if (result != null && UserNameText != null)
                     {
-                        // On envoie le nom au XAML via le DataContext
-                        this.DataContext = new { NomAffiche = result.ToString() };
+                        UserNameText.Text = result.ToString();
+                    }
+                    else if (!string.IsNullOrWhiteSpace(_displayName) && UserNameText != null)
+                    {
+                        UserNameText.Text = _displayName;
                     }
                 }
             }

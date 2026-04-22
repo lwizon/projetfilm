@@ -23,22 +23,20 @@ namespace ProjetFilmv1
 
         private void Login_Click(object sender, RoutedEventArgs e)
         {
-            string email = EmailTextBox.Text;
-            string mdp = PasswordBox.Password;
-
-            // On récupère l'ID (int) au lieu du booléen
-            int userId = _dbservice.LoginUser(email, mdp);
-
-            if (userId != -1) // Si l'ID est différent de -1, c'est que l'utilisateur existe
+            try
             {
-                // ON REMPLIT LA SESSION AUTOMATIQUEMENT
-                Session.IdUtilisateurConnecte = userId;
+                string email = EmailTextBox.Text;
+                string mdp = PasswordBox.Password;
 
-                MessageBox.Show("Connexion réussie !");
+                int userId = _dbservice.LoginUser(email, mdp);
 
-                // Redirection vers la page de profil (ou ton accueil)
-                // Elle saura maintenant toute seule quel profil afficher
-                NavigationService.Navigate(new GestionInfoProfile());
+                if (userId != -1)
+                {
+                    Session.IdUtilisateurConnecte = userId;
+
+                    MessageBox.Show("Connexion reussie !");
+                    NavigationService?.Navigate(new GestionInfoProfile());
+                }
             }
             catch (Exception ex)
             {
