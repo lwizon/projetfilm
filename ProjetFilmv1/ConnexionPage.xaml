@@ -3,14 +3,27 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       Title="Connexion">
     <Grid Background="White">
-        <StackPanel Margin="20" VerticalAlignment="Top">
-            <TextBlock Text="Connexion" FontSize="24" FontWeight="Bold" Margin="0,0,0,10"/>
-            <TextBlock Text="Email:"/>
-            <TextBox x:Name="EmailTextBox" Width="300" Margin="0,4,0,8"/>
-            <TextBlock Text="Mot de passe:"/>
-            <PasswordBox x:Name="PasswordBox" Width="300" Margin="0,4,0,12"/>
-            <Button Content="Se connecter" Width="120" Click="Login_Click"/>
-        </StackPanel>
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <Grid Margin="20">
+                <Border HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Width="Auto"
+                        MaxWidth="460"
+                        Padding="28"
+                        CornerRadius="18"
+                        BorderBrush="#E5E7EB"
+                        BorderThickness="1"
+                        Background="{DynamicResource SurfaceBrush}">
+                    <StackPanel>
+                        <TextBlock Text="Connexion" FontSize="24" FontWeight="Bold" Margin="0,0,0,18"/>
+                        <TextBlock Text="Email:"/>
+                        <TextBox x:Name="EmailTextBox" Margin="0,4,0,12" MinWidth="220"/>
+                        <TextBlock Text="Mot de passe:"/>
+                        <PasswordBox x:Name="PasswordBox" Margin="0,4,0,18" MinWidth="220"/>
+                        <Button Content="Se connecter" MinWidth="140" HorizontalAlignment="Left" Click="Login_Click"/>
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </ScrollViewer>
     </Grid>
 </Page>
-

@@ -4,13 +4,12 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 using ProjetFilmv1.Models;
-using System.Windows.Controls.Primitives;
 
 namespace ProjetFilmv1
 {
     public partial class MovieDetailsWindow2 : Page
     {
-        private readonly Movie _movie;
+        private readonly Movie? _movie;
 
         public MovieDetailsWindow2(Movie movie)
         {
@@ -31,7 +30,10 @@ namespace ProjetFilmv1
                         MessageBoxButton.OK,
                         MessageBoxImage.Error);
                 }
-                catch { }
+                catch
+                {
+                }
+
                 return;
             }
 
@@ -43,7 +45,7 @@ namespace ProjetFilmv1
 
             try
             {
-                Title = movie.Title ?? "Détails du film";
+                Title = movie.Title ?? "Details du film";
             }
             catch (Exception ex)
             {
@@ -95,37 +97,20 @@ namespace ProjetFilmv1
             catch (Exception ex)
             {
                 Debug.WriteLine($"Error loading poster image: {ex}");
-                try { PosterImage.Source = null; } catch { }
-            }
-
-            
-            //Bouton Ajouter aux Favoris
-            try
-            {
-                if (FavoriteButton != null)
+                try
                 {
-                    FavoriteButton.Checked += (s, e) =>
-                    {
-                        Debug.WriteLine($"Film ajouté aux favoris : {_movie?.Title}");
-                    };
-
-                    FavoriteButton.Unchecked += (s, e) =>
-                    {
-                        Debug.WriteLine($"Film retiré des favoris : {_movie?.Title}");
-                    };
+                    PosterImage.Source = null;
+                }
+                catch
+                {
                 }
             }
-            catch (Exception ex)
-            {
-                Debug.WriteLine($"Error wiring FavoriteButton: {ex}");
-            }
-            
-            
+
             try
             {
                 if (CloseButton != null)
                 {
-                    CloseButton.Click += (s, e) =>
+                    CloseButton.Click += (_, _) =>
                     {
                         if (NavigationService?.CanGoBack == true)
                             NavigationService.GoBack();
@@ -141,7 +126,7 @@ namespace ProjetFilmv1
             {
                 if (AddCommentButton != null)
                 {
-                    AddCommentButton.Click += (s, e) =>
+                    AddCommentButton.Click += (_, _) =>
                     {
                         var text = CommentTextBox?.Text?.Trim();
 
