@@ -27,3 +27,5 @@ namespace ProjetFilmv1.Services
         public static bool IsLoggedIn => CurrentUser != null;
     }
 }
+
+//deded
