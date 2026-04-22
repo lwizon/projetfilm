@@ -1,6 +1,7 @@
 using System;
 using System.Windows;
 using System.Windows.Controls;
+using ProjetFilmV1;
 using ProjetFilmv1.Services;
 
 namespace ProjetFilmv1
@@ -22,16 +23,20 @@ namespace ProjetFilmv1
 
         private void Login_Click(object sender, RoutedEventArgs e)
         {
-            string email = EmailTextBox.Text;
-            string mdp = PasswordBox.Password;
-
-            var loginService = new LoginService();
-            var user = loginService.LoginUser(email, mdp);
-
-            if (user != null)
+            try
             {
-                MessageBox.Show("Connexion réussie : " + user.Nom);
-                // ouvrir la page suivante
+                string email = EmailTextBox.Text;
+                string mdp = PasswordBox.Password;
+
+                int userId = _dbservice.LoginUser(email, mdp);
+
+                if (userId != -1)
+                {
+                    Session.IdUtilisateurConnecte = userId;
+
+                    MessageBox.Show("Connexion reussie !");
+                    NavigationService?.Navigate(new GestionInfoProfile());
+                }
             }
             catch (Exception ex)
             {

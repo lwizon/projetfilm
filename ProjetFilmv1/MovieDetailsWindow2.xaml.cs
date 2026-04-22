@@ -97,7 +97,13 @@ namespace ProjetFilmv1
             catch (Exception ex)
             {
                 Debug.WriteLine($"Error loading poster image: {ex}");
-                try { PosterImage.Source = null; } catch { }
+                try
+                {
+                    PosterImage.Source = null;
+                }
+                catch
+                {
+                }
             }
 
             try
