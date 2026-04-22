@@ -1,22 +1,23 @@
 <Page x:Class="ProjetFilmV1.GestionProfile"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:models="clr-namespace:ProjetFilmv1.Models"
       Title="Profil"
       Background="{DynamicResource AppBackgroundBrush}">
     <Page.Resources>
-        <Style x:Key="FlatButton" TargetType="Button">
+        <Style x:Key="MenuButtonStyle" TargetType="Button">
             <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="Foreground" Value="{DynamicResource TextBrush}"/>
+            <Setter Property="Foreground" Value="{DynamicResource SecondaryTextBrush}"/>
             <Setter Property="FontSize" Value="15"/>
-            <Setter Property="Padding" Value="15,10"/>
-            <Setter Property="Margin" Value="0,2"/>
+            <Setter Property="Padding" Value="16,12"/>
+            <Setter Property="Margin" Value="0,0,0,6"/>
             <Setter Property="Cursor" Value="Hand"/>
             <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="HorizontalContentAlignment" Value="Left"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
-                        <Border Background="{TemplateBinding Background}" CornerRadius="5" Padding="{TemplateBinding Padding}">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="14" Padding="{TemplateBinding Padding}">
                             <ContentPresenter HorizontalAlignment="Left" VerticalAlignment="Center"/>
                         </Border>
                     </ControlTemplate>
@@ -29,60 +30,333 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
+
+        <Style x:Key="FavoriteCardButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="Margin" Value="0,0,18,18"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{DynamicResource SurfaceBrush}"
+                                BorderBrush="{DynamicResource BorderBrush}"
+                                BorderThickness="1"
+                                CornerRadius="18"
+                                Width="220"
+                                Height="360">
+                            <Border.Effect>
+                                <DropShadowEffect BlurRadius="18" ShadowDepth="4" Opacity="0.08" Color="#111827"/>
+                            </Border.Effect>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="220"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Border Grid.Row="0" Margin="10,10,10,0" CornerRadius="14" ClipToBounds="True" Background="{DynamicResource SurfaceAltBrush}">
+                                    <Grid>
+                                        <Image Source="{Binding PosterFullPath}" Stretch="UniformToFill"/>
+                                        <Border HorizontalAlignment="Right"
+                                                VerticalAlignment="Top"
+                                                Margin="10"
+                                                Background="#CC0F172A"
+                                                CornerRadius="10"
+                                                Padding="8,4">
+                                            <TextBlock Text="{Binding VoteAverage, StringFormat={}{0:N1}}"
+                                                       Foreground="White"
+                                                       FontWeight="Bold"/>
+                                        </Border>
+                                    </Grid>
+                                </Border>
+
+                                <StackPanel Grid.Row="1" Margin="14,14,14,0">
+                                    <TextBlock Text="{Binding Title}"
+                                               FontSize="16"
+                                               FontWeight="Bold"
+                                               TextWrapping="Wrap"
+                                               Foreground="{DynamicResource TextBrush}"
+                                               MaxHeight="46"/>
+                                    <Border HorizontalAlignment="Left"
+                                            Margin="0,10,0,0"
+                                            Background="{DynamicResource AccentSoftBrush}"
+                                            CornerRadius="10"
+                                            Padding="10,4">
+                                        <TextBlock Text="Ouvrir la fiche"
+                                                   Foreground="{DynamicResource AccentBrush}"
+                                                   FontWeight="SemiBold"/>
+                                    </Border>
+                                </StackPanel>
+
+                                <TextBlock Grid.Row="2"
+                                           Margin="14,12,14,14"
+                                           Text="{Binding Overview}"
+                                           TextWrapping="Wrap"
+                                           TextTrimming="CharacterEllipsis"
+                                           Foreground="{DynamicResource SecondaryTextBrush}"
+                                           MaxHeight="76"/>
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Page.Resources>
 
     <Grid>
-        <Border Background="{DynamicResource NavBackgroundBrush}" Height="180" VerticalAlignment="Top"/>
+        <Border Height="220" VerticalAlignment="Top" Background="{DynamicResource NavBackgroundBrush}"/>
 
-        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
-            <StackPanel x:Name="MainContent" VerticalAlignment="Top" HorizontalAlignment="Stretch" Margin="20,40,20,20">
-                <TextBlock Text="Mon Compte" FontSize="28" FontWeight="Bold" Foreground="{DynamicResource OnDarkTextBrush}" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+        <Grid Margin="26,42,26,26">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="24"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
 
-                <Border Background="{DynamicResource SurfaceBrush}" BorderBrush="{DynamicResource BorderBrush}" BorderThickness="1" CornerRadius="15" Width="Auto" MaxWidth="480" HorizontalAlignment="Center" Padding="30" Margin="0,0,0,40">
-                    <Border.Effect>
-                        <DropShadowEffect BlurRadius="20" Color="#000000" Opacity="0.08" ShadowDepth="2"/>
-                    </Border.Effect>
+            <Border Grid.Column="0"
+                    Background="{DynamicResource SurfaceBrush}"
+                    BorderBrush="{DynamicResource BorderBrush}"
+                    BorderThickness="1"
+                    CornerRadius="24"
+                    Padding="24">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="22" Color="#000000" Opacity="0.08" ShadowDepth="4"/>
+                </Border.Effect>
 
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
 
-                        <StackPanel Grid.Row="0" HorizontalAlignment="Center" Margin="0,0,0,20">
-                            <Border Width="90" Height="90" CornerRadius="45" BorderBrush="{DynamicResource BorderBrush}" BorderThickness="2">
-                                <Border.Background>
-                                    <ImageBrush ImageSource="/GestionProfile/img/photoprofile.jpg" Stretch="UniformToFill"/>
-                                </Border.Background>
-                            </Border>
-                            <TextBlock x:Name="UserNameText" Text="Nom_Utilisateur" FontSize="22" FontWeight="Bold" Margin="0,15,0,5" HorizontalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center"/>
-                            <Button Content="Modifier le profil"
-                                    MinWidth="160"
-                                    Background="{DynamicResource AccentBrush}"
-                                    Foreground="{DynamicResource OnDarkTextBrush}"
-                                    Padding="10,5"
-                                    BorderThickness="0"
-                                    Cursor="Hand"
-                                    Click="OpenProfileDetails"/>
-                        </StackPanel>
+                    <StackPanel Grid.Row="0" HorizontalAlignment="Center" Margin="0,0,0,24">
+                        <Border Width="96" Height="96" CornerRadius="48" BorderBrush="{DynamicResource BorderBrush}" BorderThickness="2">
+                            <Border.Background>
+                                <ImageBrush ImageSource="/GestionProfile/img/photoprofile.jpg" Stretch="UniformToFill"/>
+                            </Border.Background>
+                        </Border>
+                        <TextBlock x:Name="UserNameText"
+                                   Text="Nom_Utilisateur"
+                                   Margin="0,16,0,6"
+                                   FontSize="24"
+                                   FontWeight="Bold"
+                                   TextAlignment="Center"
+                                   TextWrapping="Wrap"
+                                   Foreground="{DynamicResource TextBrush}"/>
+                        <TextBlock Text="Votre espace personnel"
+                                   Foreground="{DynamicResource SecondaryTextBrush}"
+                                   HorizontalAlignment="Center"/>
+                    </StackPanel>
 
-                        <Separator Grid.Row="1" Background="{DynamicResource BorderBrush}" Margin="0,10"/>
+                    <Button Grid.Row="1"
+                            Content="Modifier le profil"
+                            MinWidth="170"
+                            HorizontalAlignment="Center"
+                            Margin="0,0,0,22"
+                            Background="{DynamicResource AccentBrush}"
+                            Foreground="{DynamicResource OnDarkTextBrush}"
+                            Padding="12,7"
+                            BorderThickness="0"
+                            Cursor="Hand"
+                            Click="OpenProfileDetails"/>
 
-                        <StackPanel Grid.Row="2" Margin="0,10,0,0">
-                            <Button Content="Parametres" Style="{StaticResource FlatButton}"/>
-                            <Button Content="Mes critiques" Style="{StaticResource FlatButton}"/>
-                            <Button Content="Mes notes" Style="{StaticResource FlatButton}"/>
-                            <Button Content="Mes favoris" Style="{StaticResource FlatButton}"/>
-                            <Button Content="Mon Top 10" Style="{StaticResource FlatButton}"/>
-                            <Separator Background="{DynamicResource BorderBrush}" Margin="0,10"/>
-                            <Button x:Name="LogoutButton" Content="Supprimer le compte" Style="{StaticResource FlatButton}" Foreground="#D32F2F" Click="LogoutButton_Click"/>
-                        </StackPanel>
-                    </Grid>
-                </Border>
-            </StackPanel>
-        </ScrollViewer>
+                    <StackPanel Grid.Row="2">
+                        <Button x:Name="ShowOverviewButton"
+                                Content="Vue d'ensemble"
+                                Style="{StaticResource MenuButtonStyle}"
+                                Click="ShowOverviewButton_Click"/>
+                        <Button x:Name="ShowFavoritesButton"
+                                Content="Mes favoris"
+                                Style="{StaticResource MenuButtonStyle}"
+                                Click="ShowFavoritesButton_Click"/>
+                        <Button Content="Mes critiques" Style="{StaticResource MenuButtonStyle}"/>
+                        <Button Content="Mes notes" Style="{StaticResource MenuButtonStyle}"/>
+                        <Button Content="Mon Top 10" Style="{StaticResource MenuButtonStyle}"/>
+                    </StackPanel>
 
-        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" Background="{DynamicResource SurfaceBrush}" Visibility="Collapsed"/>
+                    <Button Grid.Row="3"
+                            x:Name="LogoutButton"
+                            Content="Supprimer le compte"
+                            Style="{StaticResource MenuButtonStyle}"
+                            Foreground="#D32F2F"
+                            Click="LogoutButton_Click"/>
+                </Grid>
+            </Border>
+
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="0" Margin="0,0,0,18">
+                    <TextBlock x:Name="ContentTitleText"
+                               Text="Vue d'ensemble"
+                               FontSize="30"
+                               FontWeight="Bold"
+                               Foreground="{DynamicResource OnDarkTextBrush}"/>
+                    <TextBlock x:Name="ContentSubtitleText"
+                               Text="Retrouvez vos raccourcis de compte et vos films enregistres."
+                               Margin="0,6,0,0"
+                               Foreground="{DynamicResource OnDarkTextBrush}"
+                               Opacity="0.8"/>
+                </StackPanel>
+
+                <Grid Grid.Row="1">
+                    <Border x:Name="OverviewSection"
+                            Background="{DynamicResource SurfaceBrush}"
+                            BorderBrush="{DynamicResource BorderBrush}"
+                            BorderThickness="1"
+                            CornerRadius="24"
+                            Padding="28">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="22" Color="#000000" Opacity="0.06" ShadowDepth="4"/>
+                        </Border.Effect>
+
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <TextBlock Text="Un espace plus clair pour retrouver rapidement vos contenus"
+                                       FontSize="22"
+                                       FontWeight="Bold"
+                                       Foreground="{DynamicResource TextBrush}"
+                                       TextWrapping="Wrap"/>
+
+                            <UniformGrid Grid.Row="1" Columns="3" Margin="0,24,0,0">
+                                <Border Margin="0,0,16,0"
+                                        Background="{DynamicResource AccentSoftBrush}"
+                                        CornerRadius="18"
+                                        Padding="20">
+                                    <StackPanel>
+                                        <TextBlock Text="Favoris"
+                                                   FontSize="18"
+                                                   FontWeight="Bold"
+                                                   Foreground="{DynamicResource AccentBrush}"/>
+                                        <TextBlock x:Name="FavoritesCountText"
+                                                   Margin="0,18,0,6"
+                                                   FontSize="30"
+                                                   FontWeight="Bold"
+                                                   Foreground="{DynamicResource TextBrush}"/>
+                                        <TextBlock Text="Films enregistres dans votre collection personnelle."
+                                                   TextWrapping="Wrap"
+                                                   Foreground="{DynamicResource SecondaryTextBrush}"/>
+                                    </StackPanel>
+                                </Border>
+
+                                <Border Margin="0,0,16,0"
+                                        Background="{DynamicResource SurfaceAltBrush}"
+                                        CornerRadius="18"
+                                        Padding="20">
+                                    <StackPanel>
+                                        <TextBlock Text="Profil"
+                                                   FontSize="18"
+                                                   FontWeight="Bold"
+                                                   Foreground="{DynamicResource TextBrush}"/>
+                                        <TextBlock Text="Modifiez votre nom, email et mot de passe depuis le bouton de profil."
+                                                   Margin="0,18,0,0"
+                                                   TextWrapping="Wrap"
+                                                   Foreground="{DynamicResource SecondaryTextBrush}"/>
+                                    </StackPanel>
+                                </Border>
+
+                                <Border Background="{DynamicResource SurfaceAltBrush}"
+                                        CornerRadius="18"
+                                        Padding="20">
+                                    <StackPanel>
+                                        <TextBlock Text="Navigation"
+                                                   FontSize="18"
+                                                   FontWeight="Bold"
+                                                   Foreground="{DynamicResource TextBrush}"/>
+                                        <TextBlock Text="Ouvrez l'onglet Favoris pour revoir une fiche film en un clic."
+                                                   Margin="0,18,0,0"
+                                                   TextWrapping="Wrap"
+                                                   Foreground="{DynamicResource SecondaryTextBrush}"/>
+                                    </StackPanel>
+                                </Border>
+                            </UniformGrid>
+                        </Grid>
+                    </Border>
+
+                    <Border x:Name="FavoritesSection"
+                            Visibility="Collapsed"
+                            Background="{DynamicResource SurfaceBrush}"
+                            BorderBrush="{DynamicResource BorderBrush}"
+                            BorderThickness="1"
+                            CornerRadius="24"
+                            Padding="28">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="22" Color="#000000" Opacity="0.06" ShadowDepth="4"/>
+                        </Border.Effect>
+
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Ma selection"
+                                           FontSize="22"
+                                           FontWeight="Bold"
+                                           Foreground="{DynamicResource TextBrush}"/>
+                                <Border Margin="12,0,0,0"
+                                        Background="{DynamicResource AccentSoftBrush}"
+                                        CornerRadius="999"
+                                        Padding="10,4">
+                                    <TextBlock x:Name="FavoritesBadgeText"
+                                               Foreground="{DynamicResource AccentBrush}"
+                                               FontWeight="SemiBold"/>
+                                </Border>
+                            </StackPanel>
+
+                            <Grid Grid.Row="1" Margin="0,22,0,0">
+                                <TextBlock x:Name="FavoritesEmptyState"
+                                           Text="Aucun favori pour l'instant. Ajoutez des films depuis leur fiche pour les retrouver ici."
+                                           Visibility="Collapsed"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           TextAlignment="Center"
+                                           TextWrapping="Wrap"
+                                           MaxWidth="380"
+                                           FontSize="16"
+                                           Foreground="{DynamicResource SecondaryTextBrush}"/>
+
+                                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                                    <ItemsControl x:Name="FavoritesItemsControl"
+                                                  ItemsSource="{Binding FavoriteMovies}">
+                                        <ItemsControl.ItemsPanel>
+                                            <ItemsPanelTemplate>
+                                                <WrapPanel/>
+                                            </ItemsPanelTemplate>
+                                        </ItemsControl.ItemsPanel>
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate DataType="{x:Type models:FavoriteMovieItem}">
+                                                <Button Style="{StaticResource FavoriteCardButtonStyle}"
+                                                        Click="OpenFavoriteMovie_Click">
+                                                    <Button.DataContext>
+                                                        <Binding/>
+                                                    </Button.DataContext>
+                                                </Button>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                </ScrollViewer>
+                            </Grid>
+                        </Grid>
+                    </Border>
+
+                    <Frame x:Name="MainFrame"
+                           NavigationUIVisibility="Hidden"
+                           Background="{DynamicResource SurfaceBrush}"
+                           Visibility="Collapsed"/>
+                </Grid>
+            </Grid>
+        </Grid>
     </Grid>
 </Page>

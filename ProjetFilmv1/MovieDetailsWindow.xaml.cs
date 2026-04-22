@@ -14,6 +14,8 @@ namespace ProjetFilmv1
         
         private readonly Movie _movie;
         private readonly CommentService _commentService = new CommentService();
+        private readonly FavoritesService _favoritesService = new FavoritesService();
+        private bool _isFavorite;
 
         public MovieDetailsWindow(Movie movie)
         {
@@ -57,6 +59,9 @@ namespace ProjetFilmv1
             {
                 if (TitleText != null)
                     TitleText.Text = movie.Title ?? "Sans titre";
+
+                if (SubtitleText != null)
+                    SubtitleText.Text = movie.Id > 0 ? $"TMDB #{movie.Id}" : "Fiche film";
 
                 if (VoteText != null)
                     VoteText.Text = $"Note : {movie.VoteAverage:N1}";
@@ -143,6 +148,8 @@ namespace ProjetFilmv1
             //     Debug.WriteLine($"Error wiring CloseButton: {ex}");
             // }
 
+            RefreshFavoriteState();
+
             try
             {
                 if (AddCommentButton != null)
@@ -161,6 +168,99 @@ namespace ProjetFilmv1
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+        private void FavoriteButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (Session.IdUtilisateurConnecte <= 0)
+            {
+                MessageBox.Show(
+                    "Vous devez etre connecte pour ajouter un film aux favoris.",
+                    "Connexion requise",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Information);
+                RefreshFavoriteState();
+                return;
+            }
+
+            if (_movie == null)
+            {
+                return;
+            }
+
+            try
+            {
+                _isFavorite = _favoritesService.ToggleFavorite(Session.IdUtilisateurConnecte, _movie);
+                UpdateFavoriteUi();
+
+                MessageBox.Show(
+                    _isFavorite
+                        ? "Le film a ete ajoute a vos favoris."
+                        : "Le film a ete retire de vos favoris.",
+                    "Favoris",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    $"Erreur lors de la mise a jour des favoris : {ex.Message}",
+                    "Favoris",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
+            }
+        }
+
+        private void RefreshFavoriteState()
+        {
+            if (FavoriteButton == null || FavoriteStatusText == null)
+            {
+                return;
+            }
+
+            if (Session.IdUtilisateurConnecte <= 0 || _movie == null || _movie.Id <= 0)
+            {
+                _isFavorite = false;
+                UpdateFavoriteUi();
+                return;
+            }
+
+            try
+            {
+                _isFavorite = _favoritesService.IsFavorite(Session.IdUtilisateurConnecte, _movie.Id);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error loading favorite state: {ex}");
+                _isFavorite = false;
+            }
+
+            UpdateFavoriteUi();
+        }
+
+        private void UpdateFavoriteUi()
+        {
+            if (FavoriteButton == null || FavoriteStatusText == null)
+            {
+                return;
+            }
+
+            if (Session.IdUtilisateurConnecte <= 0)
+            {
+                FavoriteButton.Content = "Ajouter aux favoris";
+                FavoriteButton.IsEnabled = true;
+                FavoriteButton.Background = (Brush)FindResource("AccentBrush");
+                FavoriteStatusText.Text = "Connectez-vous pour enregistrer ce film.";
+                return;
+            }
+
+            FavoriteButton.Content = _isFavorite ? "Retirer des favoris" : "Ajouter aux favoris";
+            FavoriteButton.Background = _isFavorite
+                ? new SolidColorBrush(Color.FromRgb(191, 74, 74))
+                : (Brush)FindResource("AccentBrush");
+            FavoriteStatusText.Text = _isFavorite
+                ? "Ce film apparait deja dans votre onglet Favoris."
+                : "Ajoutez ce film pour le retrouver plus tard dans votre compte.";
         }
 
         private void AddComment()

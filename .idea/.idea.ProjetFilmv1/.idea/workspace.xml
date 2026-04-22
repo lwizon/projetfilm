@@ -8,8 +8,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8edff7d4-ad7d-4e2e-87f3-a43ca20b22ac" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/shelf/Uncommitted_changes_before_Update_at_03_12_2025_10_31__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/AuthPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/AuthPage.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/Commentaires/SessionManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/Commentaires/SessionManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/GestionProfile.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/GestionProfile.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/GestionProfile.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/GestionProfile.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/MainWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/MainWindow.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/MovieDetailsWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/MovieDetailsWindow.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/MovieDetailsWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/MovieDetailsWindow.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/ProjetFilmv1.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/ProjetFilmv1.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/SearchResultsPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/SearchResultsPage.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/SearchResultsPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/SearchResultsPage.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/Services/TmdbService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/Services/TmdbService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjetFilmv1/bin/Debug/net9.0-windows/ProjetFilmv1.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/bin/Debug/net9.0-windows/ProjetFilmv1.deps.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjetFilmv1/bin/Debug/net9.0-windows/ProjetFilmv1.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/bin/Debug/net9.0-windows/ProjetFilmv1.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjetFilmv1/bin/Debug/net9.0-windows/ProjetFilmv1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/bin/Debug/net9.0-windows/ProjetFilmv1.pdb" afterDir="false" />
@@ -78,7 +88,7 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1": "true",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "lucasdev",
+    "git-widget-placeholder": "nicolard",
     "junie.onboarding.icon.badge.shown": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",

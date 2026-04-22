@@ -87,6 +87,8 @@ namespace ProjetFilmv1
             _isUserLoggedIn = false;
             _connectedUserEmail = null;
             _connectedUserName = null;
+            Session.IdUtilisateurConnecte = 0;
+            SessionManager.CurrentUser = null;
             UpdateAuthenticationButtons();
         }
 
