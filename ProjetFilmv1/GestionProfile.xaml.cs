@@ -1,28 +1,69 @@
+﻿using System;
 using System.Windows;
 using System.Windows.Controls;
-using ProjetFilmv1;
+using MySql.Data.MySqlClient;
+using ProjetFilmv1; // Ne pas oublier pour MySQL
 
 namespace ProjetFilmV1
 {
     public partial class GestionProfile : Page
     {
-        public GestionProfile() : this("Utilisateur")
-        {
-        }
+        private readonly string _connectionString = "Server=172.20.11.6;Port=3306;Database=projetfilm;Uid=admin_bdd;Pwd=rootroot;";
+        private readonly string? _displayName;
 
-        public GestionProfile(string userName)
+        public GestionProfile() 
         {
             InitializeComponent();
-            UserNameText.Text = string.IsNullOrWhiteSpace(userName) ? "Utilisateur" : userName;
+            ChargerNomUtilisateur();
+        }
+
+        public GestionProfile(string displayName) : this()
+        {
+            _displayName = displayName;
+
+            if (!string.IsNullOrWhiteSpace(displayName) && UserNameText != null)
+            {
+                UserNameText.Text = displayName;
+            }
+        }
+
+        private void ChargerNomUtilisateur()
+        {
+            try 
+            {
+                using (MySqlConnection conn = new MySqlConnection(_connectionString))
+                {
+                    conn.Open();
+                    // On cherche le 'nom' pour l'ID stocké en session
+                    string sql = "SELECT nom FROM users WHERE id_user = @id";
+                    MySqlCommand cmd = new MySqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@id", Session.IdUtilisateurConnecte);
+
+                    object result = cmd.ExecuteScalar();
+
+                    if (result != null && UserNameText != null)
+                    {
+                        UserNameText.Text = result.ToString();
+                    }
+                    else if (!string.IsNullOrWhiteSpace(_displayName) && UserNameText != null)
+                    {
+                        UserNameText.Text = _displayName;
+                    }
+                }
+            }
+            catch (Exception ex) 
+            {
+                MessageBox.Show("Erreur chargement nom : " + ex.Message);
+            }
         }
 
         private void OpenProfileDetails(object sender, RoutedEventArgs e)
         {
-            if (MainContent != null)
+            if (MainContent != null) 
             {
                 MainContent.Visibility = Visibility.Collapsed;
             }
-
+            
             MainFrame.Visibility = Visibility.Visible;
             MainFrame.Navigate(new GestionInfoProfile());
         }

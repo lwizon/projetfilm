@@ -8,21 +8,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8edff7d4-ad7d-4e2e-87f3-a43ca20b22ac" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjetFilmv1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/AccueilPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/AccueilPage.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/App.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/App.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/App.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/App.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/AuthPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/AuthPage.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/GestionInfoProfil.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/GestionInfoProfil.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/GestionProfile.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/GestionProfile.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/MainWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/MainWindow.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/Models/TmdbModels.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/Models/TmdbModels.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/MovieDetailsWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/MovieDetailsWindow.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/MovieDetailsWindow2.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/MovieDetailsWindow2.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/SearchResultsPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/SearchResultsPage.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/AccueilPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/AccueilPage.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/MovieDetailsWindow2.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/MovieDetailsWindow2.xaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjetFilmv1/bin/Debug/net9.0-windows/ProjetFilmv1.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/bin/Debug/net9.0-windows/ProjetFilmv1.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjetFilmv1/bin/Debug/net9.0-windows/ProjetFilmv1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/bin/Debug/net9.0-windows/ProjetFilmv1.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetFilmv1/bin/Debug/net9.0-windows/tmdb_debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetFilmv1/bin/Debug/net9.0-windows/tmdb_debug.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,12 +22,12 @@
     <option name="firstShow" value="false" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="7" />
+    <option name="cachedIndexableFilesCount" value="8" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="nicolaz" />
+        <entry key="$PROJECT_DIR$" value="nicolini" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -56,6 +45,7 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/.tmpbuild/appsettings.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ProjetFilmv1/GestionProfile.xaml.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ProjetFilmv1/Models/SuggestionItem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ProjetFilmv1/obj/Debug/net9.0-windows/MainWindow.g.cs" root0="SKIP_HIGHLIGHTING" />
@@ -85,7 +75,7 @@
     &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
     &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1&quot;: &quot;true&quot;,
     &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;nicolini&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;testeloi&quot;,
     &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -139,7 +129,9 @@
       <workItem from="1774958240862" duration="1271000" />
       <workItem from="1775028058076" duration="4126000" />
       <workItem from="1776691527489" duration="1788000" />
-      <workItem from="1776772696136" duration="2151000" />
+      <workItem from="1776772696136" duration="5794000" />
+      <workItem from="1776839266924" duration="53000" />
+      <workItem from="1776839339191" duration="518000" />
     </task>
     <task id="LOCAL-00001" summary="init V2">
       <option name="closed" value="true" />
@@ -197,7 +189,23 @@
       <option name="project" value="LOCAL" />
       <updated>1775056351495</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Nouvelle interface trop classe">
+      <option name="closed" value="true" />
+      <created>1776775468460</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1776775468460</updated>
+    </task>
+    <task id="LOCAL-00009" summary="reparafion">
+      <option name="closed" value="true" />
+      <created>1776839601029</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1776839601029</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -215,7 +223,9 @@
     <MESSAGE value="test cache" />
     <MESSAGE value="grand renouveau grand changement" />
     <MESSAGE value="unversioned files des grands changements" />
-    <option name="LAST_COMMIT_MESSAGE" value="unversioned files des grands changements" />
+    <MESSAGE value="Nouvelle interface trop classe" />
+    <MESSAGE value="reparafion" />
+    <option name="LAST_COMMIT_MESSAGE" value="reparafion" />
     <option name="LAST_CHUNK_COMMIT_MESSAGE" value="test cache" />
   </component>
   <component name="XDebuggerManager">
