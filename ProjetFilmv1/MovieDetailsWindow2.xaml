@@ -125,7 +125,7 @@
                         <TextBlock x:Name="OverviewText"
                                    TextWrapping="Wrap"/>
                     </ScrollViewer>
-
+</StackPanel>
                     <!-- Bouton fermer en bas à droite du centre -->
                     <StackPanel Orientation="Horizontal"
                                 HorizontalAlignment="Right"
