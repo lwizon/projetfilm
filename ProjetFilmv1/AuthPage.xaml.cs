@@ -1,6 +1,7 @@
 using System;
 using System.Windows;
 using System.Windows.Controls;
+using ProjetFilmv1.Models;
 using ProjetFilmv1.Services;
 
 namespace ProjetFilmv1
@@ -68,6 +69,12 @@ namespace ProjetFilmv1
                 if (Application.Current.MainWindow is MainWindow mainWindow)
                 {
                     Session.IdUtilisateurConnecte = userId;
+                    SessionManager.CurrentUser = new User
+                    {
+                        IdUser = userId,
+                        Email = email,
+                        Nom = _dbservice.GetUserName(email) ?? email
+                    };
                     mainWindow.SetAuthenticatedUser(email);
                     mainWindow.NavigateToAccueil();
                 }

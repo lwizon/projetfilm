@@ -35,4 +35,11 @@
       <ApplicationDefinition Remove="App.xaml" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Compile Remove="Outils\**\*.cs" />
+      <EmbeddedResource Remove="Outils\**\*" />
+      <None Remove="Outils\**\*" />
+      <Page Remove="Outils\**\*.xaml" />
+    </ItemGroup>
+
 </Project>

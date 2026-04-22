@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using ProjetFilmv1.Services;
 using ProjetFilmv1.Models;
 using System.Threading.Tasks;
@@ -48,6 +49,24 @@ namespace ProjetFilmv1
                 NoResultsText.Text = "Erreur lors de la recherche. Vérifiez votre connexion ou la clé API.";
                 NoResultsText.Visibility = Visibility.Visible;
             }
+        }
+
+        private void ResultsList_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (ResultsList.SelectedItem is not Movie movie)
+            {
+                return;
+            }
+
+            var owner = Window.GetWindow(this);
+            var detailsWindow = new MovieDetailsWindow(movie)
+            {
+                Owner = owner,
+                WindowStartupLocation = WindowStartupLocation.CenterOwner
+            };
+
+            detailsWindow.ShowDialog();
+            ResultsList.SelectedItem = null;
         }
     }
 }
